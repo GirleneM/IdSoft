@@ -11,7 +11,7 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Raphael Oliveira
+ * @author IDsoft
  */
 public class UsuarioTableModel extends AbstractTableModel {
   /**
