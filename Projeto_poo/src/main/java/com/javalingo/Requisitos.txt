@@ -1,0 +1,9 @@
+Font: tahoma 
+tamanho: 14;
+
+botoes:
+
+nomebotao.setborder(null);
+nomebotao.setfocusable(false);
+
+nome: branco;
