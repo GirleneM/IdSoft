@@ -1,4 +1,4 @@
-package com.example.view;
+package com.javalingo.view;
 
 import java.awt.EventQueue;
 
@@ -11,7 +11,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.net.URL;
@@ -20,8 +19,6 @@ import java.awt.event.ActionEvent;
 import com.javalingo.model.Usuario;
 import com.javalingo.repository.UsuarioDAO;
 
-import com.javalingo.view.Login;
-import com.javalingo.view.Principal;
 
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -36,7 +33,7 @@ public class Login extends JFrame {
 
 	/**
 	 * 
-	 *
+	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField ctUsuario;

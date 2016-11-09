@@ -1,4 +1,4 @@
-package com.example.view;
+package com.javalingo.view;
 
 import java.awt.EventQueue;
 

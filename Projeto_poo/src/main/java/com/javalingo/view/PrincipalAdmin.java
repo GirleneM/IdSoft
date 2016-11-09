@@ -1,4 +1,4 @@
-package com.example.view;
+package com.javalingo.view;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -93,8 +93,7 @@ public class PrincipalAdmin extends JFrame {
 		JMenuItem mntmUsuarios = new JMenuItem("Usuários");
 		mntmUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ListaUsuario lu = new ListaUsuario();
-				lu.setVisible(true);
+				
 				dispose();
 			}
 		});
@@ -106,8 +105,8 @@ public class PrincipalAdmin extends JFrame {
 		JMenuItem mntmQuestoes = new JMenuItem("Questoes");
 		mntmQuestoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ListaQuestao lq= new ListaQuestao();
-				lq.setVisible(true);
+				
+				
 				dispose();
 			}
 		});
