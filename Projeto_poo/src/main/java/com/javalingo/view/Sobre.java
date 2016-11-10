@@ -73,53 +73,30 @@ public class Sobre extends JFrame {
 		btnVoltar.setBounds(10, 227, 89, 23);
 		contentPane.add(btnVoltar);
 		
-		JLabel lblJavalingo = new JLabel("2016, Javalingo");
-		lblJavalingo.setForeground(Color.WHITE);
-		lblJavalingo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblJavalingo.setBounds(331, 227, 103, 23);
-		contentPane.add(lblJavalingo);
-		
-		JLabel lblVerso = new JLabel("Versão 1.0");
+		JLabel lblVerso = new JLabel("<html><p align = right>Versão 1.0<br>2016, Javalingo</p></html>");
 		lblVerso.setForeground(Color.WHITE);
 		lblVerso.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblVerso.setBounds(362, 203, 70, 23);
+		lblVerso.setBounds(325, 203, 107, 47);
 		contentPane.add(lblVerso);
 		
-		JLabel lblEquipeDeDesenvolvedores = new JLabel("Equipe de Desenvolvedores");
-		lblEquipeDeDesenvolvedores.setForeground(Color.WHITE);
-		lblEquipeDeDesenvolvedores.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEquipeDeDesenvolvedores.setBounds(10, 11, 174, 23);
-		contentPane.add(lblEquipeDeDesenvolvedores);
+		JLabel lblNewLabel = new JLabel("IDsotf");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setBounds(195, 0, 239, 30);
+		contentPane.add(lblNewLabel);
 		
-		JLabel lblRaphaelSanto = new JLabel("Raphael Santos");
-		lblRaphaelSanto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblRaphaelSanto.setForeground(Color.WHITE);
-		lblRaphaelSanto.setBounds(10, 45, 124, 23);
-		contentPane.add(lblRaphaelSanto);
+		JLabel lblEquipe = new JLabel("<html>Desenvolvimento:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
+				+ "Designer:<br><br>Luciano Gomes</html>");
+		lblEquipe.setForeground(Color.WHITE);
+		lblEquipe.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEquipe.setBounds(10, 36, 122, 180);
+		contentPane.add(lblEquipe);
 		
-		JLabel lblMateusDaniel = new JLabel("Mateus Daniel");
-		lblMateusDaniel.setForeground(Color.WHITE);
-		lblMateusDaniel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMateusDaniel.setBounds(10, 66, 124, 23);
-		contentPane.add(lblMateusDaniel);
-		
-		JLabel lblBrunoAlisson = new JLabel("Bruno Alisson");
-		lblBrunoAlisson.setForeground(Color.WHITE);
-		lblBrunoAlisson.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblBrunoAlisson.setBounds(10, 89, 124, 23);
-		contentPane.add(lblBrunoAlisson);
-		
-		JLabel lblGirleneMaria = new JLabel("Girlene Maria");
-		lblGirleneMaria.setForeground(Color.WHITE);
-		lblGirleneMaria.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblGirleneMaria.setBounds(10, 112, 124, 23);
-		contentPane.add(lblGirleneMaria);
-		
-		JLabel lblLucianoNeto = new JLabel("Luciano Neto");
-		lblLucianoNeto.setForeground(Color.WHITE);
-		lblLucianoNeto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblLucianoNeto.setBounds(10, 135, 124, 23);
-		contentPane.add(lblLucianoNeto);
+		JLabel lblEquipe2 = new JLabel("<html><p align = right>Teste:<br><br>Girlene Maria<br>Bruno Allison</p></html>");
+		lblEquipe2.setForeground(Color.WHITE);
+		lblEquipe2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEquipe2.setBounds(347, 36, 77, 117);
+		contentPane.add(lblEquipe2);
 		
 		JLabel label = new JLabel("");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 14));
