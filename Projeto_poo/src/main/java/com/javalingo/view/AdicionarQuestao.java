@@ -205,7 +205,7 @@ public class AdicionarQuestao extends JFrame {
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnSalvar.setBackground(new Color(100, 149, 237));
 		btnSalvar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\salvar2.png"));
+				"C:\\img\\Icones\\salvar2.png"));
 		btnSalvar.setBounds(323, 227, 101, 23);
 		contentPane.add(btnSalvar);
 
@@ -218,7 +218,7 @@ public class AdicionarQuestao extends JFrame {
 			}
 		});
 		btnVoltar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\voltar2.png"));
+				"C:\\img\\Icones\\voltar2.png"));
 		btnVoltar.setBorderPainted(false);
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.setFocusPainted(false);
@@ -250,7 +250,7 @@ public class AdicionarQuestao extends JFrame {
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo3.jpg"));
+				"C:\\img\\Imagens\\fundo3.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

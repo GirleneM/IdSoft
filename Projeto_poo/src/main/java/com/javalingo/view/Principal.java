@@ -89,13 +89,13 @@ public class Principal extends JFrame {
 			}
 		});
 		btnLogout.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\logout2.png"));
+				"C:\\img\\Icones\\logout2.png"));
 		btnLogout.setBounds(322, 7, 102, 23);
 		contentPane.add(btnLogout);
 
 		JButton btnTutorial = new JButton("Tutorial");
 		btnTutorial.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\tutorial2.png"));
+				"C:\\img\\Icones\\tutorial2.png"));
 		btnTutorial.setForeground(Color.WHITE);
 		btnTutorial.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnTutorial.setBorderPainted(false);
@@ -114,7 +114,7 @@ public class Principal extends JFrame {
 			}
 		});
 		btnJogar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\play2.png"));
+				"C:\\img\\Icones\\play2.png"));
 		btnJogar.setForeground(Color.WHITE);
 		btnJogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnJogar.setBorderPainted(false);
@@ -125,7 +125,7 @@ public class Principal extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo2.jpg"));
+				"C:\\img\\Imagens\\fundo2.jpg"));
 		lblNewLabel.setBounds(0, 0, 434, 261);
 		contentPane.add(lblNewLabel);
 	}

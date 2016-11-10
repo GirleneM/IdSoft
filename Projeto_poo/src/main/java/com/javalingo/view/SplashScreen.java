@@ -34,7 +34,7 @@ public class SplashScreen extends JWindow {
 		setBounds(x, y, width, height);
 
 		JLabel label = new JLabel(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo1.jpg"));
+				"C:\\img\\Imagens\\fundo1.jpg"));
 		JLabel copyrt = new JLabel("Copyright 2016, Javalingo", JLabel.CENTER);
 		copyrt.setFont(new Font("Papyrus", Font.BOLD, 14));
 		JProgressBar bp = new JProgressBar();

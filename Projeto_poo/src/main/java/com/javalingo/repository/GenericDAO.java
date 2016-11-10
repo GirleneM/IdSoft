@@ -14,9 +14,11 @@ public abstract class GenericDAO<T> implements DAO<T>{
 	    private Session sessao;
 	    @SuppressWarnings("rawtypes")
 		private Class classe;
+		@SuppressWarnings({ "rawtypes", "unused" })
 		private List usuario;
 
-	    public GenericDAO(Class classe) {
+	    @SuppressWarnings("rawtypes")
+		public GenericDAO(Class classe) {
 	        this.classe = classe;
 	    }
 

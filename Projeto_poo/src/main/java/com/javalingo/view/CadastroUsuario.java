@@ -123,7 +123,7 @@ public class CadastroUsuario extends JFrame {
 		btSalvar.setForeground(Color.WHITE);
 		btSalvar.setBackground(new Color(100, 149, 237));
 		btSalvar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\salvar2.png"));
+				"C:\\img\\Icones\\salvar2.png"));
 		btSalvar.setBorderPainted(false);
 		btSalvar.setContentAreaFilled(false);
 		btSalvar.setFocusPainted(false);
@@ -169,7 +169,7 @@ public class CadastroUsuario extends JFrame {
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\voltar2.png"));
+				"C:\\img\\Icones\\voltar2.png"));
 		btnVoltar.setBorder(null);
 		btnVoltar.setFocusable(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -189,7 +189,7 @@ public class CadastroUsuario extends JFrame {
 
 		label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo3.jpg"));
+				"C:\\img\\Imagens\\fundo3.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

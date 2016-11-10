@@ -66,7 +66,7 @@ public class PrincipalAdmin extends JFrame {
 
 		JMenu mnNovo = new JMenu("Novo");
 		mnNovo.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\add.png"));
+				"C:\\img\\Icones\\add.png"));
 		mnNovo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		menuBar.add(mnNovo);
 
@@ -80,13 +80,12 @@ public class PrincipalAdmin extends JFrame {
 		});
 		mntmQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mntmQuesto.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\questao.png"));
+				"C:\\img\\Icones\\questao.png"));
 		mnNovo.add(mntmQuesto);
 
 		JMenu mnLista = new JMenu("Lista");
 		mnLista.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\listar"
-				+ ".png"));
+				"C:\\img\\Icones\\listar.png"));
 		mnLista.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		menuBar.add(mnLista);
 
@@ -100,7 +99,7 @@ public class PrincipalAdmin extends JFrame {
 		});
 		mntmUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mntmUsuarios.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\user.png"));
+				"C:\\img\\Icones\\user.png"));
 		mnLista.add(mntmUsuarios);
 		
 		JMenuItem mntmQuestoes = new JMenuItem("Questoes");
@@ -111,7 +110,7 @@ public class PrincipalAdmin extends JFrame {
 				dispose();
 			}
 		});
-		mntmQuestoes.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\questao.png"));
+		mntmQuestoes.setIcon(new ImageIcon("C:\\img\\Icones\\questao.png"));
 		mntmQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mnLista.add(mntmQuestoes);
 		contentPane = new JPanel();
@@ -141,13 +140,13 @@ public class PrincipalAdmin extends JFrame {
 		btnLogout.setForeground(new Color(255, 255, 255));
 		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnLogout.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\logout2.png"));
+				"C:\\img\\Icones\\logout2.png"));
 		btnLogout.setBounds(335, 11, 99, 23);
 		contentPane.add(btnLogout);
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo1.jpg"));
+				"C:\\img\\Imagens\\fundo1.jpg"));
 		label.setBounds(0, 0, 434, 240);
 		contentPane.add(label);
 	}

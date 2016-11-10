@@ -97,13 +97,13 @@ public class ListaUsuario extends JFrame {
 		});
 		btnVoltar.setForeground(new Color(255, 255, 255));
 		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon("C:\\img\\Icones\\voltar2.png"));
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setBounds(10, 227, 89, 23);
 		contentPane.add(btnVoltar);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo3.jpg"));
+		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo3.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 		PreencherTabela();

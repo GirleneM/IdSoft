@@ -61,7 +61,7 @@ public class TelaInicial extends JFrame {
 		btLogin.setForeground(Color.WHITE);
 		btLogin.setBackground(new Color(100, 149, 237));
 		btLogin.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\login2.png"));
+				"C:\\img\\Icones\\login2.png"));
 		btLogin.setBorderPainted(false);
 		btLogin.setContentAreaFilled(false);
 		btLogin.setFocusPainted(false);
@@ -81,7 +81,7 @@ public class TelaInicial extends JFrame {
 		btCadastrar.setBackground(new Color(100, 149, 237));
 		btCadastrar.setForeground(Color.WHITE);
 		btCadastrar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\user2.png"));
+				"C:\\img\\Icones\\new.png"));
 		btCadastrar.setBorderPainted(false);
 		btCadastrar.setContentAreaFilled(false);
 		btCadastrar.setFocusPainted(false);
@@ -100,7 +100,7 @@ public class TelaInicial extends JFrame {
 		btSair.setBackground(new Color(100, 149, 237));
 		btSair.setForeground(Color.WHITE);
 		btSair.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\logout2.png"));
+				"C:\\img\\Icones\\logout2.png"));
 		btSair.setBorderPainted(false);
 		btSair.setContentAreaFilled(false);
 		btSair.setFocusPainted(false);
@@ -119,7 +119,7 @@ public class TelaInicial extends JFrame {
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo2.jpg"));
+				"C:\\img\\Imagens\\fundo2.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}
