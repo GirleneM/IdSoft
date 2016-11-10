@@ -155,7 +155,7 @@ public class Login extends JFrame {
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\fundo2.jpg"));
+				"C:\\img\\Imagens\\fundo2.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}
