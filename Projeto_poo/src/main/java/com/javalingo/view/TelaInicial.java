@@ -4,7 +4,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.FontUIResource;
+import javax.swing.plaf.OptionPaneUI;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -55,6 +58,14 @@ public class TelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		UIManager.getDefaults().put("OptionPane.background",new Color(100, 149, 237));
+		UIManager.put ("Panel.background", new Color(100, 149, 237));
+		UIManager.put("Button.background", new Color(100, 149, 237));
+		UIManager.put("Button.foreground", new Color(255, 255, 255));		
+		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("TAHOMA",Font.PLAIN,14)));
+		UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("TAHOMA",Font.PLAIN,14)));
+		UIManager.put("OptionPane.messageForeground", Color.WHITE);
+		
 
 		JButton btLogin = new JButton("Login");
 		btLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -103,7 +114,7 @@ public class TelaInicial extends JFrame {
 		btSair.setFocusPainted(false);
 		btSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente rair?", "Selecione uma opção",
+				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente Sair?", "Selecione uma opção",
 						JOptionPane.OK_CANCEL_OPTION);
 				if (i == JOptionPane.YES_OPTION) {
 					System.exit(0);
