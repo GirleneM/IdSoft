@@ -20,6 +20,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class ListaUsuario extends JFrame {
 
@@ -70,9 +71,12 @@ public class ListaUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuarios");
+		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuários");
+		lblListaDeUsuarios.setVerticalAlignment(SwingConstants.TOP);
+		lblListaDeUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lblListaDeUsuarios.setForeground(Color.WHITE);
 		lblListaDeUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblListaDeUsuarios.setBounds(156, 11, 120, 28);
+		lblListaDeUsuarios.setBounds(0, 11, 434, 28);
 		contentPane.add(lblListaDeUsuarios);
 
 		table = new JTable();
@@ -81,7 +85,7 @@ public class ListaUsuario extends JFrame {
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 414, 143);
+		scrollPane.setBounds(10, 36, 414, 180);
 		contentPane.add(scrollPane);
 		
 		JButton btnVoltar = new JButton("Voltar");

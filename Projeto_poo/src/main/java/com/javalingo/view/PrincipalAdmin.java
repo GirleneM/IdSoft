@@ -102,7 +102,7 @@ public class PrincipalAdmin extends JFrame {
 				"C:\\img\\Icones\\user.png"));
 		mnLista.add(mntmUsuarios);
 		
-		JMenuItem mntmQuestoes = new JMenuItem("Questoes");
+		JMenuItem mntmQuestoes = new JMenuItem("Questões");
 		mntmQuestoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListaQuestao lq = new ListaQuestao();

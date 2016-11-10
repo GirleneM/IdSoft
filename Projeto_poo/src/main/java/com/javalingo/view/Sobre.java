@@ -76,13 +76,13 @@ public class Sobre extends JFrame {
 		JLabel lblJavalingo = new JLabel("2016, Javalingo");
 		lblJavalingo.setForeground(Color.WHITE);
 		lblJavalingo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblJavalingo.setBounds(331, 11, 103, 23);
+		lblJavalingo.setBounds(331, 227, 103, 23);
 		contentPane.add(lblJavalingo);
 		
 		JLabel lblVerso = new JLabel("Versão 1.0");
 		lblVerso.setForeground(Color.WHITE);
 		lblVerso.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblVerso.setBounds(362, 34, 70, 23);
+		lblVerso.setBounds(362, 203, 70, 23);
 		contentPane.add(lblVerso);
 		
 		JLabel lblEquipeDeDesenvolvedores = new JLabel("Equipe de Desenvolvedores");
@@ -124,7 +124,7 @@ public class Sobre extends JFrame {
 		JLabel label = new JLabel("");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		label.setForeground(Color.WHITE);
-		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo2.jpg"));
+		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo1.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

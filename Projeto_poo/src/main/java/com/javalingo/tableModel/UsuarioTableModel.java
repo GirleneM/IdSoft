@@ -11,14 +11,14 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Idsoft
+ * @author IDsoft
  */
 public class UsuarioTableModel extends AbstractTableModel {
   /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nomeColunas[] = {"ID", "Nome", "Email", "Usuario"};
+	private String nomeColunas[] = {"ID", "Nome", "Email", "Usuário"};
     private List<Usuario> usuarios;
         
     

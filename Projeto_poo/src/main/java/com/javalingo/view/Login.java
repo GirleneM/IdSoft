@@ -78,18 +78,18 @@ public class Login extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuário :");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(100, 153, 57, 17);
+		lblUsuario.setBounds(122, 153, 57, 17);
 		contentPane.add(lblUsuario);
 
 		ctUsuario = new JTextField();
-		ctUsuario.setBounds(167, 153, 120, 20);
+		ctUsuario.setBounds(189, 153, 120, 20);
 		contentPane.add(ctUsuario);
 		ctUsuario.setColumns(10);
 
 		JLabel lblSenha = new JLabel("Senha   :");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSenha.setForeground(Color.WHITE);
-		lblSenha.setBounds(100, 182, 57, 20);
+		lblSenha.setBounds(122, 181, 57, 20);
 		contentPane.add(lblSenha);
 
 		JButton btnLogar = new JButton("Logar");
@@ -150,7 +150,7 @@ public class Login extends JFrame {
 		contentPane.add(btnVoltar);
 
 		ctSenha = new JPasswordField();
-		ctSenha.setBounds(167, 184, 120, 20);
+		ctSenha.setBounds(189, 184, 120, 20);
 		contentPane.add(ctSenha);
 
 		JLabel label = new JLabel("");

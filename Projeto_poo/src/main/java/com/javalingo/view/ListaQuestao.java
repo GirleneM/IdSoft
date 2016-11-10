@@ -19,6 +19,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class ListaQuestao extends JFrame {
 
@@ -54,7 +55,7 @@ public class ListaQuestao extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaQuestao() {
-		setTitle("Javalingo - Liste de Questoes");
+		setTitle("Javalingo - Lista de Questões");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -67,7 +68,10 @@ public class ListaQuestao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblListaDeQuestoes = new JLabel("Lista de Questoes");
+		JLabel lblListaDeQuestoes = new JLabel("Lista de Questões");
+		lblListaDeQuestoes.setHorizontalAlignment(SwingConstants.CENTER);
+		lblListaDeQuestoes.setForeground(Color.WHITE);
+		lblListaDeQuestoes.setVerticalAlignment(SwingConstants.TOP);
 		lblListaDeQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblListaDeQuestoes.setBounds(156, 11, 120, 28);
 		contentPane.add(lblListaDeQuestoes);
@@ -78,7 +82,7 @@ public class ListaQuestao extends JFrame {
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 414, 143);
+		scrollPane.setBounds(10, 36, 414, 180);
 		contentPane.add(scrollPane);
 		
 		JButton btnVoltar = new JButton("Voltar");

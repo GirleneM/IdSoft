@@ -21,6 +21,7 @@ import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class CadastroUsuario extends JFrame {
 
@@ -74,9 +75,10 @@ public class CadastroUsuario extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblCadastrarse = new JLabel("Cadastro");
+		lblCadastrarse.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastrarse.setForeground(Color.WHITE);
 		lblCadastrarse.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCadastrarse.setBounds(184, 27, 68, 14);
+		lblCadastrarse.setBounds(0, 27, 434, 14);
 		contentPane.add(lblCadastrarse);
 
 		JLabel lblNome = new JLabel("Nome*   :");

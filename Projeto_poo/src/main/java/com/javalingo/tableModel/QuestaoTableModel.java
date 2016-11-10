@@ -11,14 +11,14 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Raphael Oliveira
+ * @author IDsoft
  */
 public class QuestaoTableModel extends AbstractTableModel {
   /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-private String nomeColunas[] = {"ID", "Questao", "Resposta", "Dificuldade", "Alternativa A", "Alternativa B" , "Alternativa C" , "Alternativa D"};
+private String nomeColunas[] = {"ID", "Questão", "Resposta", "Dificuldade", "A", "B" , "C" , "D"};
     private List<Questao> questoes;
     
     public QuestaoTableModel(List<Questao> qustoes){

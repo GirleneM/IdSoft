@@ -73,7 +73,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btLogin.setBounds(161, 159, 120, 23);
+		btLogin.setBounds(0, 159, 434, 23);
 		contentPane.add(btLogin);
 
 		JButton btCadastrar = new JButton("Cadastrar");
@@ -92,7 +92,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btCadastrar.setBounds(161, 193, 120, 23);
+		btCadastrar.setBounds(0, 193, 434, 23);
 		contentPane.add(btCadastrar);
 
 		JButton btSair = new JButton("Sair");
@@ -114,7 +114,7 @@ public class TelaInicial extends JFrame {
 				}
 			}
 		});
-		btSair.setBounds(161, 227, 120, 23);
+		btSair.setBounds(0, 227, 434, 23);
 		contentPane.add(btSair);
 		
 		JButton btSobre = new JButton("Sobre");

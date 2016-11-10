@@ -48,7 +48,7 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
-		setTitle("Javalingo - Tutorial");
+		setTitle("Javalingo - Inicio");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -103,9 +103,12 @@ public class Principal extends JFrame {
 		btnTutorial.setFocusPainted(false);
 		btnTutorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Tutorial t = new Tutorial();
+				t.setVisible(true);
+				dispose();
 			}
 		});
-		btnTutorial.setBounds(174, 207, 102, 23);
+		btnTutorial.setBounds(0, 207, 434, 23);
 		contentPane.add(btnTutorial);
 
 		JButton btnJogar = new JButton("Jogar");
@@ -120,7 +123,7 @@ public class Principal extends JFrame {
 		btnJogar.setBorderPainted(false);
 		btnJogar.setContentAreaFilled(false);
 		btnJogar.setFocusPainted(false);
-		btnJogar.setBounds(174, 173, 102, 23);
+		btnJogar.setBounds(0, 173, 434, 23);
 		contentPane.add(btnJogar);
 
 		JLabel lblNewLabel = new JLabel("");
