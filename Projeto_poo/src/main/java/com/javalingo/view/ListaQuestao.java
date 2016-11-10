@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class ListaQuestao extends JFrame {
 
@@ -30,6 +31,7 @@ public class ListaQuestao extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable table;
+	private JTextField ctPesquisar;
 
 	private void PreencherTabela() {
 		QuestaoDAO qd = new QuestaoDAO();
@@ -179,6 +181,48 @@ public class ListaQuestao extends JFrame {
 		btnAlterarQuesto.setBorder(null);
 		btnAlterarQuesto.setBounds(413, 529, 127, 23);
 		contentPane.add(btnAlterarQuesto);
+		
+		JButton btnPesquisar = new JButton("Pesquisar Questão");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(ctPesquisar.getText().isEmpty()){
+		            JOptionPane.showMessageDialog(null, "Preencha o campo!", "Falha", JOptionPane.ERROR_MESSAGE);
+		        }
+		        else{
+		            QuestaoDAO qd = new QuestaoDAO();
+		            QuestaoTableModel qtm = new QuestaoTableModel(qd.listar("questao", ctPesquisar.getText()));
+		            table.setModel(qtm);
+		        }
+			}
+		});
+		btnPesquisar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/musica-searcher.png")));
+		btnPesquisar.setForeground(Color.WHITE);
+		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisar.setFocusable(false);
+		btnPesquisar.setContentAreaFilled(false);
+		btnPesquisar.setBorder(null);
+		btnPesquisar.setBounds(571, 529, 140, 23);
+		contentPane.add(btnPesquisar);
+		
+		ctPesquisar = new JTextField();
+		ctPesquisar.setBounds(572, 498, 140, 20);
+		contentPane.add(ctPesquisar);
+		ctPesquisar.setColumns(10);
+		
+		JButton btnRefresh = new JButton("Refresh");
+		btnRefresh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PreencherTabela();
+			}
+		});
+		btnRefresh.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/reload (1).png")));
+		btnRefresh.setForeground(Color.WHITE);
+		btnRefresh.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRefresh.setFocusable(false);
+		btnRefresh.setContentAreaFilled(false);
+		btnRefresh.setBorder(null);
+		btnRefresh.setBounds(597, 11, 127, 23);
+		contentPane.add(btnRefresh);
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
