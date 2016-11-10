@@ -22,6 +22,7 @@ public class Tutorial extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	protected static final String String = null;
 	private JPanel contentPane;
 
 	/**
@@ -31,7 +32,7 @@ public class Tutorial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Tutorial frame = new Tutorial();
+					Tutorial frame = new Tutorial(String, String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +44,7 @@ public class Tutorial extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Tutorial() {
+	public Tutorial(String nomeUser, String idUser) {
 		setTitle("Javalingo - Tutorial");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -89,6 +90,24 @@ public class Tutorial extends JFrame {
 		lblTexto2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTexto2.setBounds(229, 28, 172, 203);
 		contentPane.add(lblTexto2);
+		
+		JButton btnVoltar_1 = new JButton("Voltar");
+		btnVoltar_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Principal p = new Principal(nomeUser, idUser);
+				p.setVisible(true);
+				dispose();
+			}
+		});
+		btnVoltar_1.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar_1.setForeground(Color.WHITE);
+		btnVoltar_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar_1.setFocusable(false);
+		btnVoltar_1.setContentAreaFilled(false);
+		btnVoltar_1.setBorder(null);
+		btnVoltar_1.setBackground(new Color(30, 144, 255));
+		btnVoltar_1.setBounds(37, 229, 89, 23);
+		contentPane.add(btnVoltar_1);
 		
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));

@@ -103,7 +103,7 @@ public class Principal extends JFrame {
 		btnTutorial.setFocusPainted(false);
 		btnTutorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Tutorial t = new Tutorial();
+				Tutorial t = new Tutorial(nomeUser, idUser);
 				t.setVisible(true);
 				dispose();
 			}
