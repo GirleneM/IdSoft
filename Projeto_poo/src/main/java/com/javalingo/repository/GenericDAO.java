@@ -12,7 +12,6 @@ import org.hibernate.criterion.Restrictions;
 
 public abstract class GenericDAO<T> implements DAO<T>{
 	
-	    private Session sessao;
 	    @SuppressWarnings("rawtypes")
 		private Class classe;
 	    
