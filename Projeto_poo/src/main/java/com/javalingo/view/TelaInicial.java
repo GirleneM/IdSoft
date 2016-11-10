@@ -116,6 +116,23 @@ public class TelaInicial extends JFrame {
 		});
 		btSair.setBounds(161, 227, 120, 23);
 		contentPane.add(btSair);
+		
+		JButton btSobre = new JButton("Sobre");
+		btSobre.setBorderPainted(false);
+		btSobre.setContentAreaFilled(false);
+		btSobre.setFocusPainted(false);
+		btSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Sobre s = new Sobre();
+				s.setVisible(true);
+				dispose();
+			}
+		});
+		btSobre.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\tutorial2.png"));
+		btSobre.setForeground(Color.WHITE);
+		btSobre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btSobre.setBounds(320, 11, 104, 23);
+		contentPane.add(btSobre);
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
