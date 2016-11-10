@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.FontUIResource;
-import javax.swing.plaf.OptionPaneUI;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
