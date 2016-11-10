@@ -21,7 +21,6 @@ import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import javax.swing.SwingConstants;
 
 public class CadastroUsuario extends JFrame {
 
@@ -75,10 +74,9 @@ public class CadastroUsuario extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblCadastrarse = new JLabel("Cadastro");
-		lblCadastrarse.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastrarse.setForeground(Color.WHITE);
 		lblCadastrarse.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCadastrarse.setBounds(0, 27, 434, 14);
+		lblCadastrarse.setBounds(184, 27, 68, 14);
 		contentPane.add(lblCadastrarse);
 
 		JLabel lblNome = new JLabel("Nome*   :");
@@ -124,8 +122,7 @@ public class CadastroUsuario extends JFrame {
 		btSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btSalvar.setForeground(Color.WHITE);
 		btSalvar.setBackground(new Color(100, 149, 237));
-		btSalvar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\salvar2.png"));
+		btSalvar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
 		btSalvar.setBorderPainted(false);
 		btSalvar.setContentAreaFilled(false);
 		btSalvar.setFocusPainted(false);
@@ -170,8 +167,7 @@ public class CadastroUsuario extends JFrame {
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
 		btnVoltar.setBorder(null);
 		btnVoltar.setFocusable(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -190,8 +186,7 @@ public class CadastroUsuario extends JFrame {
 		contentPane.add(ctSenha);
 
 		label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\img\\Imagens\\fundo3.jpg"));
+		label.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

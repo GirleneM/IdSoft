@@ -58,7 +58,7 @@ public class Sobre extends JFrame {
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setIcon(new ImageIcon("C:\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setBorderPainted(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -124,7 +124,7 @@ public class Sobre extends JFrame {
 		JLabel label = new JLabel("");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		label.setForeground(Color.WHITE);
-		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo1.jpg"));
+		label.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Imagens/fundo1.jpg")));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

@@ -65,8 +65,7 @@ public class PrincipalAdmin extends JFrame {
 		setJMenuBar(menuBar);
 
 		JMenu mnNovo = new JMenu("Novo");
-		mnNovo.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\add.png"));
+		mnNovo.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/add.png")));
 		mnNovo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		menuBar.add(mnNovo);
 
@@ -79,13 +78,11 @@ public class PrincipalAdmin extends JFrame {
 			}
 		});
 		mntmQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		mntmQuesto.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\questao.png"));
+		mntmQuesto.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/questao.png")));
 		mnNovo.add(mntmQuesto);
 
 		JMenu mnLista = new JMenu("Lista");
-		mnLista.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\listar.png"));
+		mnLista.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/listar.png")));
 		mnLista.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		menuBar.add(mnLista);
 
@@ -98,19 +95,18 @@ public class PrincipalAdmin extends JFrame {
 			}
 		});
 		mntmUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		mntmUsuarios.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\user.png"));
+		mntmUsuarios.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/user.png")));
 		mnLista.add(mntmUsuarios);
 		
-		JMenuItem mntmQuestoes = new JMenuItem("Questões");
+		JMenuItem mntmQuestoes = new JMenuItem("Questoes");
 		mntmQuestoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ListaQuestao lq = new ListaQuestao();
+				ListaQuestao lq= new ListaQuestao();
 				lq.setVisible(true);
 				dispose();
 			}
 		});
-		mntmQuestoes.setIcon(new ImageIcon("C:\\img\\Icones\\questao.png"));
+		mntmQuestoes.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/questao.png")));
 		mntmQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mnLista.add(mntmQuestoes);
 		contentPane = new JPanel();
@@ -139,14 +135,12 @@ public class PrincipalAdmin extends JFrame {
 		btnLogout.setBackground(new Color(100, 149, 237));
 		btnLogout.setForeground(new Color(255, 255, 255));
 		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLogout.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\logout2.png"));
+		btnLogout.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/logout2.png")));
 		btnLogout.setBounds(335, 11, 99, 23);
 		contentPane.add(btnLogout);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\img\\Imagens\\fundo1.jpg"));
+		label.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
 		label.setBounds(0, 0, 434, 240);
 		contentPane.add(label);
 	}

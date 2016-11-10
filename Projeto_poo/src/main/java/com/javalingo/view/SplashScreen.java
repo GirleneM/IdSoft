@@ -33,8 +33,8 @@ public class SplashScreen extends JWindow {
 		int y = (screen.height - height) / 2;
 		setBounds(x, y, width, height);
 
-		JLabel label = new JLabel(new ImageIcon(
-				"C:\\img\\Imagens\\fundo1.jpg"));
+		JLabel label = new JLabel();
+		label.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo1.jpg")));
 		JLabel copyrt = new JLabel("Copyright 2016, Javalingo", JLabel.CENTER);
 		copyrt.setFont(new Font("Papyrus", Font.BOLD, 14));
 		JProgressBar bp = new JProgressBar();

@@ -20,7 +20,6 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
 
 public class ListaUsuario extends JFrame {
 
@@ -61,8 +60,8 @@ public class ListaUsuario extends JFrame {
 		setTitle("Javalingo - Lista de Usuários");
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		int WIDTH = 450;
-		int HEIGHT = 300;
+		int WIDTH = 750;
+		int HEIGHT = 600;
 		int x = (screen.width - WIDTH) / 2;
 		int y = (screen.height - HEIGHT) / 2;
 		setBounds(x, y, WIDTH, HEIGHT);
@@ -71,12 +70,9 @@ public class ListaUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuários");
-		lblListaDeUsuarios.setVerticalAlignment(SwingConstants.TOP);
-		lblListaDeUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
-		lblListaDeUsuarios.setForeground(Color.WHITE);
+		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuarios");
 		lblListaDeUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblListaDeUsuarios.setBounds(0, 11, 434, 28);
+		lblListaDeUsuarios.setBounds(156, 11, 120, 28);
 		contentPane.add(lblListaDeUsuarios);
 
 		table = new JTable();
@@ -85,7 +81,7 @@ public class ListaUsuario extends JFrame {
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 414, 180);
+		scrollPane.setBounds(10, 36, 714, 295);
 		contentPane.add(scrollPane);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -101,14 +97,14 @@ public class ListaUsuario extends JFrame {
 		});
 		btnVoltar.setForeground(new Color(255, 255, 255));
 		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setIcon(new ImageIcon("C:\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon(ListaUsuario.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBounds(10, 227, 89, 23);
+		btnVoltar.setBounds(10, 527, 89, 23);
 		contentPane.add(btnVoltar);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo3.jpg"));
-		label.setBounds(0, 0, 434, 261);
+		label.setIcon(new ImageIcon(ListaUsuario.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
+		label.setBounds(0, 0, 734, 561);
 		contentPane.add(label);
 		PreencherTabela();
 	}

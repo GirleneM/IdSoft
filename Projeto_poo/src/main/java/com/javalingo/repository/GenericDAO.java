@@ -9,16 +9,14 @@ import javax.swing.JOptionPane;
 import org.hibernate.criterion.Restrictions;
 
 
+
 public abstract class GenericDAO<T> implements DAO<T>{
 	
 	    private Session sessao;
 	    @SuppressWarnings("rawtypes")
 		private Class classe;
-		@SuppressWarnings({ "rawtypes", "unused" })
-		private List usuario;
-
-	    @SuppressWarnings("rawtypes")
-		public GenericDAO(Class classe) {
+	    
+		public GenericDAO(@SuppressWarnings("rawtypes") Class classe) {
 	        this.classe = classe;
 	    }
 
@@ -44,22 +42,22 @@ public abstract class GenericDAO<T> implements DAO<T>{
 
     @Override
     public boolean alterar(T t) {
-        try {
-        	Session sessao = null;
-            sessao = getSession().openSession();
-            sessao.beginTransaction();
-            sessao.update(t);
-            sessao.getTransaction().commit();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro!");
-            return false;
-        }
-        finally{
-        sessao.close();
-        }
-        return true;
-    }
+		Session sessao = null;
+
+		try {
+			sessao = getSession().openSession();
+			sessao.beginTransaction();
+
+			sessao.update(t);
+			sessao.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		} finally {
+			sessao.close();
+		}
+		return true;
+	}
     
 
     @Override

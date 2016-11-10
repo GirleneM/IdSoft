@@ -60,8 +60,7 @@ public class TelaInicial extends JFrame {
 		btLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btLogin.setForeground(Color.WHITE);
 		btLogin.setBackground(new Color(100, 149, 237));
-		btLogin.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\login2.png"));
+		btLogin.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/login2.png")));
 		btLogin.setBorderPainted(false);
 		btLogin.setContentAreaFilled(false);
 		btLogin.setFocusPainted(false);
@@ -73,15 +72,14 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btLogin.setBounds(0, 159, 434, 23);
+		btLogin.setBounds(161, 159, 120, 23);
 		contentPane.add(btLogin);
 
 		JButton btCadastrar = new JButton("Cadastrar");
 		btCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btCadastrar.setBackground(new Color(100, 149, 237));
 		btCadastrar.setForeground(Color.WHITE);
-		btCadastrar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\new.png"));
+		btCadastrar.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/new.png")));
 		btCadastrar.setBorderPainted(false);
 		btCadastrar.setContentAreaFilled(false);
 		btCadastrar.setFocusPainted(false);
@@ -92,15 +90,14 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btCadastrar.setBounds(0, 193, 434, 23);
+		btCadastrar.setBounds(161, 193, 120, 23);
 		contentPane.add(btCadastrar);
 
 		JButton btSair = new JButton("Sair");
 		btSair.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btSair.setBackground(new Color(100, 149, 237));
 		btSair.setForeground(Color.WHITE);
-		btSair.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\logout2.png"));
+		btSair.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/logout2.png")));
 		btSair.setBorderPainted(false);
 		btSair.setContentAreaFilled(false);
 		btSair.setFocusPainted(false);
@@ -114,7 +111,7 @@ public class TelaInicial extends JFrame {
 				}
 			}
 		});
-		btSair.setBounds(0, 227, 434, 23);
+		btSair.setBounds(161, 227, 120, 23);
 		contentPane.add(btSair);
 		
 		JButton btSobre = new JButton("Sobre");
@@ -128,17 +125,16 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btSobre.setIcon(new ImageIcon("C:\\img\\Icones\\tutorial2.png"));
+		btSobre.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/tutorial2.png")));
 		btSobre.setForeground(Color.WHITE);
 		btSobre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btSobre.setBounds(320, 11, 104, 23);
 		contentPane.add(btSobre);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\img\\Imagens\\fundo2.jpg"));
-		label.setBounds(0, 0, 434, 261);
-		contentPane.add(label);
+		JLabel lblinicial = new JLabel("Sobre Nos\r\n");
+		lblinicial.setForeground(Color.WHITE);
+		lblinicial.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblinicial.setBounds(0, 0, 434, 261);
+		contentPane.add(lblinicial);
 	}
-
 }

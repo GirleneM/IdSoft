@@ -8,6 +8,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -25,6 +26,7 @@ public class Principal extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	protected static final String String = null;
 	private JPanel contentPane;
 
 	/**
@@ -34,7 +36,7 @@ public class Principal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Principal frame = new Principal();
+					Principal frame = new Principal(String, String);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -47,8 +49,8 @@ public class Principal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal() {
-		setTitle("Javalingo - Inicio");
+	public Principal(String nomeUser, String idUser) {
+		setTitle("Javalingo - Opções");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -60,11 +62,11 @@ public class Principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JLabel lblLogado = new JLabel("Bem Vindo, ");
+		
+		JLabel lblLogado = new JLabel("Bem Vindo, " + nomeUser);
 		lblLogado.setForeground(Color.WHITE);
 		lblLogado.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblLogado.setBounds(10, 11, 87, 14);
+		lblLogado.setBounds(10, 7, 196, 19);
 		contentPane.add(lblLogado);
 
 		JButton btnLogout = new JButton("Logout");
@@ -88,14 +90,12 @@ public class Principal extends JFrame {
 				}
 			}
 		});
-		btnLogout.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\logout2.png"));
+		btnLogout.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/logout2.png")));
 		btnLogout.setBounds(322, 7, 102, 23);
 		contentPane.add(btnLogout);
 
 		JButton btnTutorial = new JButton("Tutorial");
-		btnTutorial.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\tutorial2.png"));
+		btnTutorial.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/tutorial2.png")));
 		btnTutorial.setForeground(Color.WHITE);
 		btnTutorial.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnTutorial.setBorderPainted(false);
@@ -108,34 +108,39 @@ public class Principal extends JFrame {
 				dispose();
 			}
 		});
-		btnTutorial.setBounds(0, 207, 434, 23);
+		btnTutorial.setBounds(174, 207, 102, 23);
 		contentPane.add(btnTutorial);
 
 		JButton btnJogar = new JButton("Jogar");
 		btnJogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
-		btnJogar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\play2.png"));
+		btnJogar.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/play2.png")));
 		btnJogar.setForeground(Color.WHITE);
 		btnJogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnJogar.setBorderPainted(false);
 		btnJogar.setContentAreaFilled(false);
 		btnJogar.setFocusPainted(false);
-		btnJogar.setBounds(0, 173, 434, 23);
+		btnJogar.setBounds(174, 173, 102, 23);
 		contentPane.add(btnJogar);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\img\\Imagens\\fundo2.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
 		lblNewLabel.setBounds(0, 0, 434, 261);
 		contentPane.add(lblNewLabel);
 	}
+
 
 	public void play(String nomedoaudio) {
 		URL url = getClass().getResource(nomedoaudio + ".wav");
 		AudioClip audio = Applet.newAudioClip(url);
 		audio.play();
 	}
+	
+
+			
 }
+	
+

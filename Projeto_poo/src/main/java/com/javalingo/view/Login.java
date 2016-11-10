@@ -78,26 +78,25 @@ public class Login extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuário :");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(122, 153, 57, 17);
+		lblUsuario.setBounds(100, 153, 57, 17);
 		contentPane.add(lblUsuario);
 
 		ctUsuario = new JTextField();
-		ctUsuario.setBounds(189, 153, 120, 20);
+		ctUsuario.setBounds(167, 153, 120, 20);
 		contentPane.add(ctUsuario);
 		ctUsuario.setColumns(10);
 
 		JLabel lblSenha = new JLabel("Senha   :");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSenha.setForeground(Color.WHITE);
-		lblSenha.setBounds(122, 181, 57, 20);
+		lblSenha.setBounds(100, 182, 57, 20);
 		contentPane.add(lblSenha);
 
 		JButton btnLogar = new JButton("Logar");
 		btnLogar.setForeground(Color.WHITE);
 		btnLogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnLogar.setBackground(new Color(100, 149, 237));
-		btnLogar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\login2.png"));
+		btnLogar.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Icones/login2.png")));
 		btnLogar.setBorder(null);
 		btnLogar.setFocusable(false);
 		btnLogar.setContentAreaFilled(false);
@@ -107,21 +106,23 @@ public class Login extends JFrame {
 				UsuarioDAO usuarioDAO = new UsuarioDAO();
 				Usuario usuario = new Usuario();
 				usuario = usuarioDAO.Acesso(ctUsuario.getText(), ctSenha.getText());
-
 				if (UsuarioDAO.acesso) {
 					JOptionPane.showMessageDialog(null, "Bem Vindo(a), " + usuario.getNome(), "Logado!", JOptionPane.INFORMATION_MESSAGE);
 					// Chama uma tela
-					Principal p = new Principal();
+					long id = usuario.getIdUsuario();
+					String s = Long.toString(id);
+					Principal p = new Principal(usuario.getNome(), s);
 					p.setVisible(true);
 					dispose();
-
+					
+					
 				} else if (ctUsuario.getText().equals("idsoft") && ctSenha.getText().equals("javalingo")) {
 					JOptionPane.showMessageDialog(null, "Admin Logado!");
 					// Chama uma tela
 					PrincipalAdmin pa = new PrincipalAdmin();
 					pa.setVisible(true);
 					dispose();
-
+					
 				} else {
 					JOptionPane.showMessageDialog(null, "Login ou Senha Incorretos");
 				}
@@ -134,8 +135,7 @@ public class Login extends JFrame {
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setIcon(new ImageIcon(
-				"C:\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
 		btnVoltar.setBorder(null);
 		btnVoltar.setFocusable(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -150,12 +150,11 @@ public class Login extends JFrame {
 		contentPane.add(btnVoltar);
 
 		ctSenha = new JPasswordField();
-		ctSenha.setBounds(189, 184, 120, 20);
+		ctSenha.setBounds(167, 184, 120, 20);
 		contentPane.add(ctSenha);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(
-				"C:\\img\\Imagens\\fundo2.jpg"));
+		label.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}
@@ -164,6 +163,22 @@ public class Login extends JFrame {
 		URL url = getClass().getResource(nomedoaudio + ".wav");
 		AudioClip audio = Applet.newAudioClip(url);
 		audio.play();
+		
 	}
 
+	public JTextField getCtUsuario() {
+		return ctUsuario;
+	}
+
+	public void setCtUsuario(JTextField ctUsuario) {
+		this.ctUsuario = ctUsuario;
+	}
+
+	public JPasswordField getCtSenha() {
+		return ctSenha;
+	}
+
+	public void setCtSenha(JPasswordField ctSenha) {
+		this.ctSenha = ctSenha;
+	}
 }
