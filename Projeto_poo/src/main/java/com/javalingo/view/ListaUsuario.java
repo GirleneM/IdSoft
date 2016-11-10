@@ -75,7 +75,7 @@ public class ListaUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuarios");
+		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuários");
 		lblListaDeUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblListaDeUsuarios.setBounds(312, 11, 120, 28);
 		contentPane.add(lblListaDeUsuarios);
@@ -89,7 +89,7 @@ public class ListaUsuario extends JFrame {
 		scrollPane.setBounds(10, 36, 714, 295);
 		contentPane.add(scrollPane);
 		
-		JButton btnPesquisar = new JButton("Pesquisar Usuario");
+		JButton btnPesquisar = new JButton("Pesquisar Usuário");
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(ctPesquisar.getText().isEmpty()){

@@ -33,6 +33,7 @@ public class AdicionarQuestao extends JFrame {
 	private JTextField ctRespB;
 	private JTextField ctRespC;
 	private JTextField ctRespD;
+	@SuppressWarnings("unused")
 	private Questao questao;
 
 	/**
@@ -160,7 +161,7 @@ public class AdicionarQuestao extends JFrame {
 			bp2.add(respC);
 			bp2.add(respD);
 		}
-		JButton btnSalvar = new JButton("Salvar ");
+		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setBorderPainted(false);
 		btnSalvar.setContentAreaFilled(false);
 		btnSalvar.setFocusPainted(false);
@@ -213,7 +214,7 @@ public class AdicionarQuestao extends JFrame {
 		btnSalvar.setBounds(323, 227, 101, 23);
 		contentPane.add(btnSalvar);
 
-		JButton btnVoltar = new JButton("Voltar\r\n");
+		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PrincipalAdmin pa = new PrincipalAdmin();
@@ -359,7 +360,7 @@ public class AdicionarQuestao extends JFrame {
 			bp2.add(respC);
 			bp2.add(respD);
 		}
-		JButton btnSalvar = new JButton("Salvar ");
+		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setBorderPainted(false);
 		btnSalvar.setContentAreaFilled(false);
 		btnSalvar.setFocusPainted(false);
@@ -412,7 +413,7 @@ public class AdicionarQuestao extends JFrame {
 		btnSalvar.setBounds(323, 227, 101, 23);
 		contentPane.add(btnSalvar);
 
-		JButton btnVoltar = new JButton("Voltar\r\n");
+		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PrincipalAdmin pa = new PrincipalAdmin();

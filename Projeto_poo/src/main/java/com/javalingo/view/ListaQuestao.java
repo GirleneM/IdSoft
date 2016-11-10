@@ -58,7 +58,7 @@ public class ListaQuestao extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaQuestao() {
-		setTitle("Javalingo - Liste de Questoes");
+		setTitle("Javalingo - Lista de Questões");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 750;
@@ -71,7 +71,7 @@ public class ListaQuestao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblListaDeQuestoes = new JLabel("Lista de Questoes");
+		JLabel lblListaDeQuestoes = new JLabel("Lista de Questões");
 		lblListaDeQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblListaDeQuestoes.setBounds(314, 11, 120, 28);
 		contentPane.add(lblListaDeQuestoes);
@@ -112,7 +112,7 @@ public class ListaQuestao extends JFrame {
 				int linha = table.getSelectedRow();
 			    
 			    if(linha<0){
-			        JOptionPane.showMessageDialog(null, "Selecione uma Questao!", "Erro!", JOptionPane.ERROR_MESSAGE);
+			        JOptionPane.showMessageDialog(null, "Selecione uma Questão!", "Erro!", JOptionPane.ERROR_MESSAGE);
 			      }
 			    else{
 			        
@@ -123,7 +123,7 @@ public class ListaQuestao extends JFrame {
 			         if(JOptionPane.showConfirmDialog(rootPane, "Deseja Excluir?", "Excluir", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_NO_OPTION) 
 			    
 			    {
-			    JOptionPane.showMessageDialog(rootPane, "Questao excluida com sucesso!");
+			    JOptionPane.showMessageDialog(rootPane, "Questão excluída com sucesso!");
 			      qd.remover(q);
 			      PreencherTabela();
 			      }

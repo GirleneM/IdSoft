@@ -67,17 +67,17 @@ public class Tutorial extends JFrame {
 				
 			}
 		});
-		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setForeground(Color.BLACK);
 		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/play2.png")));
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/play.png")));
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBounds(335, 227, 89, 23);
+		btnVoltar.setBounds(312, 229, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		JLabel lblTexto = new JLabel("<html><u><center>Tutorial</center></u><br><p align = justify>O Javalingo é um jogo destinado "
 				+ "a testar os conhecimentos e o grau de afinidade em JAVA. O usuário terá de responder as perguntas e "
 				+ "escolher a alternativa que julgue correta dentre as quatro que estarão disponíveis.</p></html>");
-		lblTexto.setForeground(Color.WHITE);
+		lblTexto.setForeground(Color.BLACK);
 		lblTexto.setVerticalAlignment(SwingConstants.TOP);
 		lblTexto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTexto.setBounds(38, 11, 172, 220);
@@ -85,7 +85,7 @@ public class Tutorial extends JFrame {
 		
 		JLabel lblTexto2 = new JLabel("<html><p align = justify>Ao fim do questionário será exibido a quantidade de erros e acertos "
 				+ "e um percentual do quanto ele está apto a progrmar em JAVA.</p></html>");
-		lblTexto2.setForeground(Color.WHITE);
+		lblTexto2.setForeground(Color.BLACK);
 		lblTexto2.setVerticalAlignment(SwingConstants.TOP);
 		lblTexto2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTexto2.setBounds(229, 28, 172, 203);
@@ -99,8 +99,8 @@ public class Tutorial extends JFrame {
 				dispose();
 			}
 		});
-		btnVoltar_1.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar_1.setForeground(Color.WHITE);
+		btnVoltar_1.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar.png")));
+		btnVoltar_1.setForeground(Color.BLACK);
 		btnVoltar_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar_1.setFocusable(false);
 		btnVoltar_1.setContentAreaFilled(false);
@@ -110,7 +110,7 @@ public class Tutorial extends JFrame {
 		contentPane.add(btnVoltar_1);
 		
 		JLabel lblFundo = new JLabel("");
-		lblFundo.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Imagens/livro.png")));
 		lblFundo.setBounds(0, 0, 434, 261);
 		contentPane.add(lblFundo);
 	}

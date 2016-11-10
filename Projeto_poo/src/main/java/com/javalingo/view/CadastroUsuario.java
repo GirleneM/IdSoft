@@ -90,7 +90,7 @@ public class CadastroUsuario extends JFrame {
 		contentPane.add(ctNome);
 		ctNome.setColumns(10);
 
-		JLabel lblUsuario = new JLabel("Usuario* :");
+		JLabel lblUsuario = new JLabel("Usuário* :");
 		lblUsuario.setForeground(Color.WHITE);
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblUsuario.setBounds(10, 97, 83, 14);
@@ -150,7 +150,7 @@ public class CadastroUsuario extends JFrame {
 						TelaInicial ti = new TelaInicial();
 						ti.setVisible(true);
 					} else {
-						JOptionPane.showMessageDialog(null, "Falha ao cadadstar!", "Falha!", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Falha ao cadastar!", "Falha!", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Falha!",

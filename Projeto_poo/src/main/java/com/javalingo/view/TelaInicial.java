@@ -103,7 +103,7 @@ public class TelaInicial extends JFrame {
 		btSair.setFocusPainted(false);
 		btSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int i = JOptionPane.showConfirmDialog(null, "Deseja Realmente Sair?", "Selecione uma opção",
+				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente rair?", "Selecione uma opção",
 						JOptionPane.OK_CANCEL_OPTION);
 				if (i == JOptionPane.YES_OPTION) {
 					System.exit(0);
@@ -131,7 +131,7 @@ public class TelaInicial extends JFrame {
 		btSobre.setBounds(320, 11, 104, 23);
 		contentPane.add(btSobre);
 
-		JLabel lblinicial = new JLabel("Sobre Nos\r\n");
+		JLabel lblinicial = new JLabel("");
 		lblinicial.setForeground(Color.WHITE);
 		lblinicial.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
 		lblinicial.setBounds(0, 0, 434, 261);
