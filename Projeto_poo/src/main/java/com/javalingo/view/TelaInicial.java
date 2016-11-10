@@ -128,7 +128,7 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btSobre.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\tutorial2.png"));
+		btSobre.setIcon(new ImageIcon("C:\\img\\Icones\\tutorial2.png"));
 		btSobre.setForeground(Color.WHITE);
 		btSobre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btSobre.setBounds(320, 11, 104, 23);

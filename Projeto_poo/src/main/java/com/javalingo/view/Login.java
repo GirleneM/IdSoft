@@ -97,7 +97,7 @@ public class Login extends JFrame {
 		btnLogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnLogar.setBackground(new Color(100, 149, 237));
 		btnLogar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\login2.png"));
+				"C:\\img\\Icones\\login2.png"));
 		btnLogar.setBorder(null);
 		btnLogar.setFocusable(false);
 		btnLogar.setContentAreaFilled(false);
@@ -135,7 +135,7 @@ public class Login extends JFrame {
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\voltar2.png"));
+				"C:\\img\\Icones\\voltar2.png"));
 		btnVoltar.setBorder(null);
 		btnVoltar.setFocusable(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -155,7 +155,7 @@ public class Login extends JFrame {
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(
-				"C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo2.jpg"));
+				"C:\\img\\Icones\\fundo2.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}

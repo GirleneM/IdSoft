@@ -43,7 +43,7 @@ public class Sobre extends JFrame {
 	 * Create the frame.
 	 */
 	public Sobre() {
-		setTitle("Javalingo - Sobre ");
+		setTitle("Javalingo - Sobre");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -58,7 +58,7 @@ public class Sobre extends JFrame {
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\voltar2.png"));
+		btnVoltar.setIcon(new ImageIcon("C:\\img\\Icones\\voltar2.png"));
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setBorderPainted(false);
 		btnVoltar.setContentAreaFilled(false);
@@ -76,55 +76,55 @@ public class Sobre extends JFrame {
 		JLabel lblJavalingo = new JLabel("2016, Javalingo");
 		lblJavalingo.setForeground(Color.WHITE);
 		lblJavalingo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblJavalingo.setBounds(10, 11, 160, 23);
+		lblJavalingo.setBounds(331, 11, 103, 23);
 		contentPane.add(lblJavalingo);
 		
 		JLabel lblVerso = new JLabel("Versão 1.0");
 		lblVerso.setForeground(Color.WHITE);
 		lblVerso.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblVerso.setBounds(10, 38, 89, 23);
+		lblVerso.setBounds(362, 34, 70, 23);
 		contentPane.add(lblVerso);
 		
 		JLabel lblEquipeDeDesenvolvedores = new JLabel("Equipe de Desenvolvedores");
 		lblEquipeDeDesenvolvedores.setForeground(Color.WHITE);
 		lblEquipeDeDesenvolvedores.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEquipeDeDesenvolvedores.setBounds(250, 11, 174, 23);
+		lblEquipeDeDesenvolvedores.setBounds(10, 11, 174, 23);
 		contentPane.add(lblEquipeDeDesenvolvedores);
 		
 		JLabel lblRaphaelSanto = new JLabel("Raphael Santos");
 		lblRaphaelSanto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblRaphaelSanto.setForeground(Color.WHITE);
-		lblRaphaelSanto.setBounds(300, 40, 124, 23);
+		lblRaphaelSanto.setBounds(10, 45, 124, 23);
 		contentPane.add(lblRaphaelSanto);
 		
 		JLabel lblMateusDaniel = new JLabel("Mateus Daniel");
 		lblMateusDaniel.setForeground(Color.WHITE);
 		lblMateusDaniel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMateusDaniel.setBounds(300, 60, 124, 23);
+		lblMateusDaniel.setBounds(10, 66, 124, 23);
 		contentPane.add(lblMateusDaniel);
 		
 		JLabel lblBrunoAlisson = new JLabel("Bruno Alisson");
 		lblBrunoAlisson.setForeground(Color.WHITE);
 		lblBrunoAlisson.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblBrunoAlisson.setBounds(300, 80, 124, 23);
+		lblBrunoAlisson.setBounds(10, 89, 124, 23);
 		contentPane.add(lblBrunoAlisson);
 		
 		JLabel lblGirleneMaria = new JLabel("Girlene Maria");
 		lblGirleneMaria.setForeground(Color.WHITE);
 		lblGirleneMaria.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblGirleneMaria.setBounds(300, 100, 124, 23);
+		lblGirleneMaria.setBounds(10, 112, 124, 23);
 		contentPane.add(lblGirleneMaria);
 		
 		JLabel lblLucianoNeto = new JLabel("Luciano Neto");
 		lblLucianoNeto.setForeground(Color.WHITE);
 		lblLucianoNeto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblLucianoNeto.setBounds(300, 120, 124, 23);
+		lblLucianoNeto.setBounds(10, 135, 124, 23);
 		contentPane.add(lblLucianoNeto);
 		
 		JLabel label = new JLabel("");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		label.setForeground(Color.WHITE);
-		label.setIcon(new ImageIcon("C:\\Users\\mateus\\Documents\\workspace-sts-3.8.2.RELEASE\\POO_TRAB_JAVALINGO2.0\\src\\main\\java\\com\\javalingo\\img\\Icones\\fundo2.jpg"));
+		label.setIcon(new ImageIcon("C:\\img\\Imagens\\fundo2.jpg"));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
 	}
