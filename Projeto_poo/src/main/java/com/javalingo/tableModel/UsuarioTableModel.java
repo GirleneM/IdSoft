@@ -11,15 +11,16 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author IDsoft
+ * @author Idsoft
  */
 public class UsuarioTableModel extends AbstractTableModel {
   /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-private String nomeColunas[] = {"ID", "Nome", "Email", "Telefone"};
+	private String nomeColunas[] = {"ID", "Nome", "Email", "Usuario"};
     private List<Usuario> usuarios;
+        
     
     public UsuarioTableModel(List<Usuario> usuarios){
         this.usuarios = usuarios;
@@ -43,7 +44,6 @@ private String nomeColunas[] = {"ID", "Nome", "Email", "Telefone"};
         
             case 0:
                 return usuario.getIdUsuario();
-            
             case 1:
                 return usuario.getNome();
                 

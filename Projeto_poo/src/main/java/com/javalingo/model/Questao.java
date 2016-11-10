@@ -12,6 +12,22 @@ public class Questao {
 	@GeneratedValue
 	private Long idQuestao;
 	
+	public String getAltA() {
+		return altA;
+	}
+
+	public String getAltB() {
+		return altB;
+	}
+
+	public String getAltC() {
+		return altC;
+	}
+
+	public String getAltD() {
+		return altD;
+	}
+
 	@Column(nullable = false, length = 100)
 	private String questao;
 	

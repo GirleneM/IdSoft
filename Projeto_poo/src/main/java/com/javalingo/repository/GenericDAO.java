@@ -2,31 +2,36 @@ package com.javalingo.repository;
 
 import java.util.List;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import javax.swing.JOptionPane;
 import org.hibernate.criterion.Restrictions;
 
-import com.javalingo.HibernateUtil;
 
 public abstract class GenericDAO<T> implements DAO<T>{
 	
-	 private Session sessao;
-	    private Transaction transacao;
+	    private Session sessao;
 	    @SuppressWarnings("rawtypes")
 		private Class classe;
+		private List usuario;
 
-	    public GenericDAO(@SuppressWarnings("rawtypes") Class classe) {
+	    public GenericDAO(Class classe) {
 	        this.classe = classe;
 	    }
 
+	    SessionFactory getSession(){
+	    	return new Configuration().configure().buildSessionFactory();
+	    }
 	@Override
     public boolean salvar(T t) {
+		Session sessao = null;
         try {
-            sessao = HibernateUtil.getSessionFactory().openSession();
-            transacao = sessao.beginTransaction();
+            sessao = getSession().openSession();
+            sessao.beginTransaction();
             sessao.save(t);
 
-            transacao.commit();
+            sessao.getTransaction().commit();
         } catch (Exception e) {
             return false;
         } finally {
@@ -38,10 +43,11 @@ public abstract class GenericDAO<T> implements DAO<T>{
     @Override
     public boolean alterar(T t) {
         try {
-            sessao = HibernateUtil.getSessionFactory().openSession();
-            transacao = sessao.beginTransaction();
+        	Session sessao = null;
+            sessao = getSession().openSession();
+            sessao.beginTransaction();
             sessao.update(t);
-            transacao.commit();
+            sessao.getTransaction().commit();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Erro!");
@@ -56,11 +62,12 @@ public abstract class GenericDAO<T> implements DAO<T>{
 
     @Override
     public boolean remover(T t) {
+    	Session sessao = null;
         try {
-            sessao = HibernateUtil.getSessionFactory().openSession();
-            transacao = sessao.beginTransaction();
+            sessao = getSession().openSession();
+            sessao.beginTransaction();
             sessao.delete(t);
-            transacao.commit();
+            sessao.getTransaction().commit();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao excluir!", "Erro!", JOptionPane.ERROR_MESSAGE);
             return false;
@@ -70,38 +77,37 @@ public abstract class GenericDAO<T> implements DAO<T>{
         return true;
     }
 
-    @SuppressWarnings("unchecked")
+   
+
+	@SuppressWarnings("unchecked")
 	@Override
     public List<T> lista() {
         List<T> lista = null;
-
+        Session sessao = null;
         try {
-
-            sessao = HibernateUtil.getSessionFactory().openSession();
-            lista = sessao.createCriteria(Object.class).list();
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null, "Falha ao Listar!", "Erro!", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            sessao.close();
-        }
-        return lista;
-    }
+			sessao = getSession().openSession();
+			lista = sessao.createCriteria(classe).list();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			return null;
+		}
+		return lista;
+	}
 
     @SuppressWarnings("unchecked")
 	public List<T> listar(String campo, Object value) {
         List<T> lista = null;
+        Session sessao = null;
         try {
-            sessao = HibernateUtil.getSessionFactory().openSession();
-            lista = sessao.createCriteria(classe).add(Restrictions.eq(campo, value)).list();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro!");
-            return null;
-        } finally {
-            sessao.close();
-        }
-        return lista;
-    }
+			sessao = getSession().openSession();
+			lista = sessao.createCriteria(classe).add(Restrictions.eq(campo, value)).list();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			return null;
+		} finally {
+			sessao.close();
+		}
+		return lista;
+	}
 
 }
