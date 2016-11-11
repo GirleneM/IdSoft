@@ -1,5 +1,6 @@
 package com.javalingo.view;
 
+
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
