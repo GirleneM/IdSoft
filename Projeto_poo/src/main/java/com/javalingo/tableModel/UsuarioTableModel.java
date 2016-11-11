@@ -11,14 +11,14 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author IDsoft
+ * @author Idsoft
  */
 public class UsuarioTableModel extends AbstractTableModel {
   /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nomeColunas[] = {"ID", "Nome", "Email", "Usuário"};
+	private String nomeColunas[] = {"ID", "Nome", "Email", "Usuario", "Testes Feitos", "Questões Certas", "Questões Erradas", "Porcetagem Total"};
     private List<Usuario> usuarios;
         
     
@@ -52,6 +52,14 @@ public class UsuarioTableModel extends AbstractTableModel {
                 
             case 3:
                 return usuario.getUsuario();
+            case 4:
+            	return usuario.getTestesfeitos();
+            case 5:
+            	return usuario.getQuestaocerta();
+            case 6:
+            	return usuario.getQuestaoerrada();
+            case 7:
+            	return usuario.getPorcetagemtotal();
                 
         }
         return null;
@@ -69,6 +77,14 @@ public class UsuarioTableModel extends AbstractTableModel {
                 return nomeColunas[2];
             case 3:
                 return nomeColunas[3];
+            case 4:
+                return nomeColunas[4];
+            case 5:
+                return nomeColunas[5];
+            case 6:
+                return nomeColunas[6];
+            case 7:
+                return nomeColunas[7];
         }
         return "";
     }
