@@ -1,5 +1,6 @@
 package com.javalingo.view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
@@ -11,6 +12,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class Jogo extends JFrame {
 /**
@@ -53,35 +57,75 @@ protected static final String String = null;
 		contentPane.setLayout(null);
 		
 		
-		JLabel lblNvel = new JLabel("Nível: " + dificuldade);
-		lblNvel.setBounds(191, 11, 85, 14);
-		contentPane.add(lblNvel);
+		JLabel lblQuestao = new JLabel("<html><p align = justify>Questao: " + questao + "</p></html>");
+		lblQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblQuestao.setBounds(35, 11, 172, 203);
+		contentPane.add(lblQuestao);
 		
+		JButton btnAltA = new JButton(altA);
+		btnAltA.setBackground(new Color(139, 69, 19));
+		btnAltA.setBorderPainted(false);
+		btnAltA.setFocusPainted(false);
+		btnAltA.setForeground(Color.WHITE);
+		btnAltA.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAltA.setBounds(323, 227, 101, 23);
+		contentPane.add(btnAltA);
+		btnAltA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnAltA.setBounds(233, 34, 156, 23);
+		contentPane.add(btnAltA);
 		
-		JLabel label = new JLabel("Questao: " + questao);
-		label.setBounds(10, 63, 414, 42);
-		contentPane.add(label);
+		JButton btnAltB = new JButton(altB);
+		btnAltB.setBackground(new Color(139, 69, 19));
+		btnAltB.setBorderPainted(false);
+		btnAltB.setFocusPainted(false);
+		btnAltB.setForeground(Color.WHITE);
+		btnAltB.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAltB.setBounds(323, 227, 101, 23);
+		contentPane.add(btnAltB);
+		btnAltB.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAltB.setBounds(233, 90, 156, 23);
+		contentPane.add(btnAltB);
 		
-		JButton btnNewButton = new JButton(altA);
-		btnNewButton.setBounds(10, 193, 188, 23);
-		contentPane.add(btnNewButton);
+		JButton btnAltC = new JButton(altC);
+		btnAltC.setBackground(new Color(139, 69, 19));
+		btnAltC.setBorderPainted(false);
+		btnAltC.setFocusPainted(false);
+		btnAltC.setForeground(Color.WHITE);
+		btnAltC.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAltC.setBounds(323, 227, 101, 23);
+		contentPane.add(btnAltC);
+		btnAltC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAltC.setBounds(233, 146, 156, 23);
+		contentPane.add(btnAltC);
 		
-		JButton btnAlternativaB = new JButton(altB);
-		btnAlternativaB.setBounds(215, 193, 209, 23);
-		contentPane.add(btnAlternativaB);
+		JButton btnAltD = new JButton(altD);
+		btnAltD.setBackground(new Color(139, 69, 19));
+		btnAltD.setBorderPainted(false);
+		btnAltD.setFocusPainted(false);
+		btnAltD.setForeground(Color.WHITE);
+		btnAltD.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAltD.setBounds(323, 227, 101, 23);
+		contentPane.add(btnAltD);
+		btnAltD.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAltD.setBounds(233, 202, 156, 23);
+		contentPane.add(btnAltD);
 		
-		JButton button_1 = new JButton(altC);
-		button_1.setBounds(10, 227, 195, 23);
-		contentPane.add(button_1);
-		
-		JButton button_2 = new JButton(altD);
-		button_2.setBounds(215, 227, 209, 23);
-		contentPane.add(button_2);
-		
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
-		label_1.setBounds(0, 0, 434, 261);
-		contentPane.add(label_1);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro.png")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 		
 		
 		
