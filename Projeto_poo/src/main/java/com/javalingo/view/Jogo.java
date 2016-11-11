@@ -44,6 +44,7 @@ protected static final String String = null;
 	 * Create the frame.
 	 */
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD) {
+		setTitle("Javalingo - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
