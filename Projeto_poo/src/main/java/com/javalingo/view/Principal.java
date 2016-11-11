@@ -7,8 +7,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.javalingo.model.Questao;
+import com.javalingo.repository.QuestaoDAO;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -62,6 +67,8 @@ public class Principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		UIManager.put("OptionPane.noButtonText", "Difícil");
+		UIManager.put("OptionPane.yesButtonText", "Fácil");
 		
 		JLabel lblLogado = new JLabel("Bem Vindo, " + nomeUser);
 		lblLogado.setForeground(Color.WHITE);
@@ -113,8 +120,35 @@ public class Principal extends JFrame {
 
 		JButton btnJogar = new JButton("Jogar");
 		btnJogar.addActionListener(new ActionListener() {
+			@Autowired
 			public void actionPerformed(ActionEvent arg0) {
-				
+				int i = JOptionPane.showConfirmDialog(null, "Selecione o Nível", "Jogar!", JOptionPane.YES_NO_OPTION);
+				if(i==JOptionPane.YES_OPTION){
+					String facil = "Fácil";
+					QuestaoDAO questaoDAO = new QuestaoDAO();
+					Questao questao = new Questao();
+					questao = questaoDAO.Novaquestao("Fácil");
+					if(QuestaoDAO.NovaQuestao){
+					Jogo j = new Jogo(facil, questao.getQuestao(), questao.getResposta(),
+							questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD() );
+					j.setVisible(true);
+					dispose();
+					}
+					
+				}
+				else if(i==JOptionPane.NO_OPTION){
+					String dificil = "Difícil";
+					QuestaoDAO questaoDAO = new QuestaoDAO();
+					Questao questao = new Questao();
+					questao = questaoDAO.Novaquestao("Difícil");
+					if(QuestaoDAO.NovaQuestao){
+						Jogo j = new Jogo(dificil, questao.getQuestao(), questao.getResposta(),
+								questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD() );
+						j.setVisible(true);
+						dispose();
+						}
+					
+				}
 			}
 		});
 		btnJogar.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/play2.png")));
