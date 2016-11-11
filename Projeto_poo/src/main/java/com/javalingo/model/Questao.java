@@ -9,26 +9,10 @@ import javax.persistence.Id;
 public class Questao {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue 
 	private Long idQuestao;
 	
-	public String getAltA() {
-		return altA;
-	}
-
-	public String getAltB() {
-		return altB;
-	}
-
-	public String getAltC() {
-		return altC;
-	}
-
-	public String getAltD() {
-		return altD;
-	}
-
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, length = 200)
 	private String questao;
 	
 	@Column(nullable = false, length = 100)
@@ -48,6 +32,18 @@ public class Questao {
 	
 	@Column(nullable = false, length = 100)
 	private String altD;
+	
+	
+	@Column(nullable = false, length = 100)
+	private int questaofeita;
+
+	public int getQuestaofeita() {
+		return questaofeita;
+	}
+
+	public void setQuestaofeita(int questaofeita) {
+		this.questaofeita = questaofeita;
+	}
 
 	public String getDificuldade() {
 		return dificuldade;
@@ -81,6 +77,22 @@ public class Questao {
 		this.resposta = resposta;
 	}
 	
+	public String getAltA() {
+		return altA;
+	}
+
+	public String getAltB() {
+		return altB;
+	}
+
+	public String getAltC() {
+		return altC;
+	}
+
+	public String getAltD() {
+		return altD;
+	}
+
 	public void setAltA(String altA) {
 		this.altA = altA;
 	}
