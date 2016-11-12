@@ -59,6 +59,7 @@ protected static final String String = null;
 		
 		
 		JLabel lblQuestao = new JLabel("<html><p align = justify>Questao: " + questao + "</p></html>");
+		lblQuestao.setForeground(new Color(139, 69, 19));
 		lblQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblQuestao.setBounds(35, 11, 172, 203);
 		contentPane.add(lblQuestao);
@@ -69,14 +70,12 @@ protected static final String String = null;
 		btnAltA.setFocusPainted(false);
 		btnAltA.setForeground(Color.WHITE);
 		btnAltA.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltA.setBounds(323, 227, 101, 23);
+		btnAltA.setBounds(233, 23, 156, 46);
 		contentPane.add(btnAltA);
 		btnAltA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnAltA.setBounds(233, 34, 156, 23);
-		contentPane.add(btnAltA);
 		
 		JButton btnAltB = new JButton(altB);
 		btnAltB.setBackground(new Color(139, 69, 19));
@@ -84,14 +83,12 @@ protected static final String String = null;
 		btnAltB.setFocusPainted(false);
 		btnAltB.setForeground(Color.WHITE);
 		btnAltB.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltB.setBounds(323, 227, 101, 23);
+		btnAltB.setBounds(233, 80, 156, 46);
 		contentPane.add(btnAltB);
 		btnAltB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAltB.setBounds(233, 90, 156, 23);
-		contentPane.add(btnAltB);
 		
 		JButton btnAltC = new JButton(altC);
 		btnAltC.setBackground(new Color(139, 69, 19));
@@ -99,14 +96,12 @@ protected static final String String = null;
 		btnAltC.setFocusPainted(false);
 		btnAltC.setForeground(Color.WHITE);
 		btnAltC.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltC.setBounds(323, 227, 101, 23);
+		btnAltC.setBounds(233, 137, 156, 46);
 		contentPane.add(btnAltC);
 		btnAltC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAltC.setBounds(233, 146, 156, 23);
-		contentPane.add(btnAltC);
 		
 		JButton btnAltD = new JButton(altD);
 		btnAltD.setBackground(new Color(139, 69, 19));
@@ -114,23 +109,17 @@ protected static final String String = null;
 		btnAltD.setFocusPainted(false);
 		btnAltD.setForeground(Color.WHITE);
 		btnAltD.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltD.setBounds(323, 227, 101, 23);
+		btnAltD.setBounds(233, 194, 156, 46);
 		contentPane.add(btnAltD);
 		btnAltD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAltD.setBounds(233, 202, 156, 23);
-		contentPane.add(btnAltD);
 		
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro.png")));
 		lblFundo.setBounds(0, 0, 434, 261);
 		contentPane.add(lblFundo);
-		
-		
-		
-		
 		
 	}
 }
