@@ -224,10 +224,10 @@ public class ListaQuestao extends JFrame {
 		btnRefresh.setBounds(597, 11, 127, 23);
 		contentPane.add(btnRefresh);
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
-		label.setBounds(0, 0, 734, 561);
-		contentPane.add(label);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
+		lblFundo.setBounds(0, 0, 734, 561);
+		contentPane.add(lblFundo);
 		PreencherTabela();
 	}
 }

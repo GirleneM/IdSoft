@@ -77,7 +77,7 @@ public class AdicionarQuestao extends JFrame {
 		JLabel lblQuestao = new JLabel("Questão");
 		lblQuestao.setForeground(Color.WHITE);
 		lblQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblQuestao.setBounds(188, 0, 62, 24);
+		lblQuestao.setBounds(186, 0, 62, 24);
 		contentPane.add(lblQuestao);
 
 		ctQuestao = new JTextField();
@@ -88,7 +88,7 @@ public class AdicionarQuestao extends JFrame {
 		JLabel lblDificuldade = new JLabel("Dificuldade:");
 		lblDificuldade.setForeground(Color.WHITE);
 		lblDificuldade.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblDificuldade.setBounds(10, 90, 95, 24);
+		lblDificuldade.setBounds(103, 90, 95, 24);
 		contentPane.add(lblDificuldade);
 
 		JRadioButton difiFacil = new JRadioButton("Fácil");
@@ -100,7 +100,7 @@ public class AdicionarQuestao extends JFrame {
 		difiFacil.setBackground(new Color(90, 155, 213));
 		difiFacil.setForeground(Color.WHITE);
 		difiFacil.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		difiFacil.setBounds(92, 91, 51, 23);
+		difiFacil.setBounds(205, 90, 51, 23);
 		contentPane.add(difiFacil);
 
 		JRadioButton difiDificil = new JRadioButton("Difícil");
@@ -111,7 +111,7 @@ public class AdicionarQuestao extends JFrame {
 		difiDificil.setBackground(new Color(90, 155, 213));
 		difiDificil.setForeground(Color.WHITE);
 		difiDificil.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		difiDificil.setBounds(156, 90, 55, 23);
+		difiDificil.setBounds(264, 90, 55, 23);
 		contentPane.add(difiDificil);
 
 		ButtonGroup bp = new javax.swing.ButtonGroup();
@@ -123,7 +123,7 @@ public class AdicionarQuestao extends JFrame {
 		JLabel lblAlternativaCorreta = new JLabel("Alternativas");
 		lblAlternativaCorreta.setForeground(Color.WHITE);
 		lblAlternativaCorreta.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAlternativaCorreta.setBounds(176, 112, 81, 24);
+		lblAlternativaCorreta.setBounds(176, 112, 82, 24);
 		contentPane.add(lblAlternativaCorreta);
 
 		JRadioButton respA = new JRadioButton("A");
@@ -253,10 +253,10 @@ public class AdicionarQuestao extends JFrame {
 		contentPane.add(ctRespC);
 		ctRespC.setColumns(10);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
-		label.setBounds(0, 0, 434, 261);
-		contentPane.add(label);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 		
 	}
 	AdicionarQuestao(Questao questao) {		

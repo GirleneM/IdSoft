@@ -66,15 +66,15 @@ public class TelaInicial extends JFrame {
 		UIManager.put("OptionPane.messageForeground", Color.WHITE);
 		
 
-		JButton btLogin = new JButton("Login");
-		btLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btLogin.setForeground(Color.WHITE);
-		btLogin.setBackground(new Color(100, 149, 237));
-		btLogin.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/login2.png")));
-		btLogin.setBorderPainted(false);
-		btLogin.setContentAreaFilled(false);
-		btLogin.setFocusPainted(false);
-		btLogin.addActionListener(new ActionListener() {
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnLogin.setForeground(Color.WHITE);
+		btnLogin.setBackground(new Color(100, 149, 237));
+		btnLogin.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/login2.png")));
+		btnLogin.setBorderPainted(false);
+		btnLogin.setContentAreaFilled(false);
+		btnLogin.setFocusPainted(false);
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				Login l = new Login();
@@ -82,36 +82,36 @@ public class TelaInicial extends JFrame {
 				dispose();
 			}
 		});
-		btLogin.setBounds(161, 159, 120, 23);
-		contentPane.add(btLogin);
+		btnLogin.setBounds(129, 159, 88, 23);
+		contentPane.add(btnLogin);
 
-		JButton btCadastrar = new JButton("Cadastrar");
-		btCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btCadastrar.setBackground(new Color(100, 149, 237));
-		btCadastrar.setForeground(Color.WHITE);
-		btCadastrar.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/new.png")));
-		btCadastrar.setBorderPainted(false);
-		btCadastrar.setContentAreaFilled(false);
-		btCadastrar.setFocusPainted(false);
-		btCadastrar.addActionListener(new ActionListener() {
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCadastrar.setBackground(new Color(100, 149, 237));
+		btnCadastrar.setForeground(Color.WHITE);
+		btnCadastrar.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/new.png")));
+		btnCadastrar.setBorderPainted(false);
+		btnCadastrar.setContentAreaFilled(false);
+		btnCadastrar.setFocusPainted(false);
+		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CadastroUsuario c1 = new CadastroUsuario();
 				c1.setVisible(true);
 				dispose();
 			}
 		});
-		btCadastrar.setBounds(161, 193, 120, 23);
-		contentPane.add(btCadastrar);
+		btnCadastrar.setBounds(160, 193, 114, 23);
+		contentPane.add(btnCadastrar);
 
-		JButton btSair = new JButton("Sair");
-		btSair.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btSair.setBackground(new Color(100, 149, 237));
-		btSair.setForeground(Color.WHITE);
-		btSair.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/logout2.png")));
-		btSair.setBorderPainted(false);
-		btSair.setContentAreaFilled(false);
-		btSair.setFocusPainted(false);
-		btSair.addActionListener(new ActionListener() {
+		JButton btnSair = new JButton("Sair");
+		btnSair.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnSair.setBackground(new Color(100, 149, 237));
+		btnSair.setForeground(Color.WHITE);
+		btnSair.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/logout2.png")));
+		btnSair.setBorderPainted(false);
+		btnSair.setContentAreaFilled(false);
+		btnSair.setFocusPainted(false);
+		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente Sair?", "Selecione uma opção",
 						JOptionPane.OK_CANCEL_OPTION);
@@ -121,30 +121,47 @@ public class TelaInicial extends JFrame {
 				}
 			}
 		});
-		btSair.setBounds(161, 227, 120, 23);
-		contentPane.add(btSair);
 		
-		JButton btSobre = new JButton("Sobre");
-		btSobre.setBorderPainted(false);
-		btSobre.setContentAreaFilled(false);
-		btSobre.setFocusPainted(false);
-		btSobre.addActionListener(new ActionListener() {
+		JButton btnRank = new JButton("Rank");
+		btnRank.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Rank r1 = new Rank();
+				r1.setVisible(true);
+				dispose();
+			}
+		});
+		btnRank.setBorderPainted(false);
+		btnRank.setContentAreaFilled(false);
+		btnRank.setFocusPainted(false);
+		btnRank.setForeground(Color.WHITE);
+		btnRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRank.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/rank.png")));
+		btnRank.setBounds(217, 159, 88, 23);
+		contentPane.add(btnRank);
+		btnSair.setBounds(178, 227, 78, 23);
+		contentPane.add(btnSair);
+		
+		JButton btnSobre = new JButton("Sobre");
+		btnSobre.setBorderPainted(false);
+		btnSobre.setContentAreaFilled(false);
+		btnSobre.setFocusPainted(false);
+		btnSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Sobre s = new Sobre();
 				s.setVisible(true);
 				dispose();
 			}
 		});
-		btSobre.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/tutorial2.png")));
-		btSobre.setForeground(Color.WHITE);
-		btSobre.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btSobre.setBounds(320, 11, 104, 23);
-		contentPane.add(btSobre);
+		btnSobre.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/tutorial2.png")));
+		btnSobre.setForeground(Color.WHITE);
+		btnSobre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnSobre.setBounds(320, 11, 104, 23);
+		contentPane.add(btnSobre);
 
-		JLabel lblinicial = new JLabel("");
-		lblinicial.setForeground(Color.WHITE);
-		lblinicial.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		lblinicial.setBounds(0, 0, 434, 261);
-		contentPane.add(lblinicial);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setForeground(Color.WHITE);
+		lblFundo.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 }

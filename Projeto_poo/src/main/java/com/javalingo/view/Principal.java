@@ -160,10 +160,10 @@ public class Principal extends JFrame {
 		btnJogar.setBounds(174, 173, 102, 23);
 		contentPane.add(btnJogar);
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		lblNewLabel.setBounds(0, 0, 434, 261);
-		contentPane.add(lblNewLabel);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 
 

@@ -79,11 +79,11 @@ public class Sobre extends JFrame {
 		lblVerso.setBounds(325, 203, 107, 47);
 		contentPane.add(lblVerso);
 		
-		JLabel lblNewLabel = new JLabel("IDsotf");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(195, 0, 239, 30);
-		contentPane.add(lblNewLabel);
+		JLabel lblEmpresa = new JLabel("IDsotf");
+		lblEmpresa.setForeground(Color.WHITE);
+		lblEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEmpresa.setBounds(195, 0, 239, 30);
+		contentPane.add(lblEmpresa);
 		
 		JLabel lblEquipe = new JLabel("<html>Desenvolvimento:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
 				+ "Designer:<br><br>Luciano Gomes</html>");
@@ -98,11 +98,11 @@ public class Sobre extends JFrame {
 		lblEquipe2.setBounds(347, 36, 77, 117);
 		contentPane.add(lblEquipe2);
 		
-		JLabel label = new JLabel("");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		label.setForeground(Color.WHITE);
-		label.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Imagens/fundo1.jpg")));
-		label.setBounds(0, 0, 434, 261);
-		contentPane.add(label);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblFundo.setForeground(Color.WHITE);
+		lblFundo.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Imagens/fundo1.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 }

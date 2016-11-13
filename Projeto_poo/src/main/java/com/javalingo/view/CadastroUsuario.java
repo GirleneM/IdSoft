@@ -37,7 +37,7 @@ public class CadastroUsuario extends JFrame {
 	private JButton btSalvar;
 	private JButton btnVoltar;
 	private JPasswordField ctSenha;
-	private JLabel label;
+	private JLabel lblFundo;
 
 	/**
 	 * Launch the application.
@@ -73,11 +73,11 @@ public class CadastroUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblCadastrarse = new JLabel("Cadastro");
-		lblCadastrarse.setForeground(Color.WHITE);
-		lblCadastrarse.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCadastrarse.setBounds(184, 27, 68, 14);
-		contentPane.add(lblCadastrarse);
+		JLabel lblCadastro = new JLabel("Cadastro");
+		lblCadastro.setForeground(Color.WHITE);
+		lblCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCadastro.setBounds(183, 27, 68, 14);
+		contentPane.add(lblCadastro);
 
 		JLabel lblNome = new JLabel("Nome*   :");
 		lblNome.setForeground(Color.WHITE);
@@ -185,9 +185,9 @@ public class CadastroUsuario extends JFrame {
 		ctSenha.setBounds(88, 158, 336, 20);
 		contentPane.add(ctSenha);
 
-		label = new JLabel("");
-		label.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
-		label.setBounds(0, 0, 434, 261);
-		contentPane.add(label);
+		lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 }

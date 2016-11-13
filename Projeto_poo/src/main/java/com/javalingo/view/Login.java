@@ -153,10 +153,10 @@ public class Login extends JFrame {
 		ctSenha.setBounds(167, 184, 120, 20);
 		contentPane.add(ctSenha);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		label.setBounds(0, 0, 434, 261);
-		contentPane.add(label);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 
 	public void play(String nomedoaudio) {

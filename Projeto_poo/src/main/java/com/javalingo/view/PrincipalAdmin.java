@@ -139,10 +139,10 @@ public class PrincipalAdmin extends JFrame {
 		btnLogout.setBounds(335, 11, 99, 23);
 		contentPane.add(btnLogout);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		label.setBounds(0, 0, 434, 240);
-		contentPane.add(label);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setBounds(0, 0, 434, 240);
+		contentPane.add(lblFundo);
 	}
 
 	public void play(String nomedoaudio) {
