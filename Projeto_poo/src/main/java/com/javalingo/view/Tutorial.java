@@ -58,22 +58,6 @@ public class Tutorial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnVoltar = new JButton("Jogar");
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnVoltar.setForeground(Color.BLACK);
-		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/play.png")));
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBounds(312, 229, 89, 23);
-		contentPane.add(btnVoltar);
-		
 		JLabel lblTexto = new JLabel("<html><u><center>Tutorial</center></u><br><p align = justify>O Javalingo é um jogo destinado "
 				+ "a testar os conhecimentos e o grau de afinidade em JAVA. O usuário terá de responder as perguntas e "
 				+ "escolher a alternativa que julgue correta dentre as quatro que estarão disponíveis.</p></html>");
@@ -91,23 +75,23 @@ public class Tutorial extends JFrame {
 		lblTexto2.setBounds(229, 28, 172, 203);
 		contentPane.add(lblTexto2);
 		
-		JButton btnVoltar_1 = new JButton("Voltar");
-		btnVoltar_1.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Principal p = new Principal(nomeUser, idUser);
 				p.setVisible(true);
 				dispose();
 			}
 		});
-		btnVoltar_1.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar.png")));
-		btnVoltar_1.setForeground(Color.BLACK);
-		btnVoltar_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar_1.setFocusable(false);
-		btnVoltar_1.setContentAreaFilled(false);
-		btnVoltar_1.setBorder(null);
-		btnVoltar_1.setBackground(new Color(30, 144, 255));
-		btnVoltar_1.setBounds(37, 229, 89, 23);
-		contentPane.add(btnVoltar_1);
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar.png")));
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(37, 229, 89, 23);
+		contentPane.add(btnVoltar);
 		
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Imagens/livro.png")));
