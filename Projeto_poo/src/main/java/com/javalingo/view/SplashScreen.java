@@ -25,6 +25,7 @@ public class SplashScreen extends JWindow {
 	public void showSplash() {
 		JPanel content = (JPanel) getContentPane();
 		content.setBackground(Color.white);
+		
 
 		int width = 450;
 		int height = 300;
