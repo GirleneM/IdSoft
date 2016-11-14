@@ -35,14 +35,14 @@ public class Questao {
 	
 	
 	@Column(nullable = false, length = 100)
-	private int questaofeita;
+	private String questaofeita;
 
-	public int getQuestaofeita() {
+	public String getQuestaofeita() {
 		return questaofeita;
 	}
 
-	public void setQuestaofeita(int questaofeita) {
-		this.questaofeita = questaofeita;
+	public String setQuestaofeita(String questaofeita) {
+		return this.questaofeita = questaofeita;
 	}
 
 	public String getDificuldade() {

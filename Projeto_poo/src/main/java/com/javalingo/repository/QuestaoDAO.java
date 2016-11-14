@@ -12,7 +12,7 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 
 	public static boolean NovaQuestao;
 
-	public Questao Novaquestao(String dificuldade) {
+	public Questao Novaquestao(String dificuldade, String questaomarcada) {
 
 		Questao questao = new Questao();
 
@@ -23,10 +23,10 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javalingo?autoReconnect=true&useSSL=false", "root", "");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/javalingo", "root", "");
 			consulta = conn.createStatement();
 
-			tabela = consulta.executeQuery("SELECT * FROM questao WHERE dificuldade='"+dificuldade+"' ORDER BY rand() LIMIT 1");
+			tabela = consulta.executeQuery("SELECT * FROM questao WHERE questaofeita='"+questaomarcada+"' and dificuldade='"+dificuldade+"' ORDER BY rand() LIMIT 1");
 
 			if (tabela.next()) {
 				questao.setIdQuestao(tabela.getLong("idQuestao"));

@@ -56,7 +56,7 @@ public class Principal extends JFrame {
 	 */
 	public Principal(String nomeUser, String idUser) {
 		setTitle("Javalingo - Opções");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
 		int HEIGHT = 300;
@@ -127,12 +127,15 @@ public class Principal extends JFrame {
 					String facil = "Fácil";
 					QuestaoDAO questaoDAO = new QuestaoDAO();
 					Questao questao = new Questao();
-					questao = questaoDAO.Novaquestao("Fácil");
+					questao = questaoDAO.Novaquestao(facil, "0");
 					if(QuestaoDAO.NovaQuestao){
-					Jogo j = new Jogo(facil, questao.getQuestao(), questao.getResposta(),
-							questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD() );
+						String s = questao.setQuestaofeita("1");
+					Jogo1 j = new Jogo1(facil, questao.getQuestao(), questao.getResposta(),
+							questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD(), s, idUser, nomeUser);
 					j.setVisible(true);
 					dispose();
+					questao.setQuestaofeita("1");
+					questaoDAO.alterar(questao);
 					}
 					
 				}
@@ -140,12 +143,15 @@ public class Principal extends JFrame {
 					String dificil = "Difícil";
 					QuestaoDAO questaoDAO = new QuestaoDAO();
 					Questao questao = new Questao();
-					questao = questaoDAO.Novaquestao("Difícil");
+					questao = questaoDAO.Novaquestao(dificil, "0");
 					if(QuestaoDAO.NovaQuestao){
-						Jogo j = new Jogo(dificil, questao.getQuestao(), questao.getResposta(),
-								questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD() );
+						String s = questao.setQuestaofeita("1");
+						Jogo1 j = new Jogo1(dificil, questao.getQuestao(), questao.getResposta(),
+								questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD(), s , idUser, nomeUser);
 						j.setVisible(true);
 						dispose();
+						questao.setQuestaofeita("1");
+						questaoDAO.alterar(questao);
 						}
 					
 				}
@@ -160,10 +166,10 @@ public class Principal extends JFrame {
 		btnJogar.setBounds(174, 173, 102, 23);
 		contentPane.add(btnJogar);
 
-		JLabel lblFundo = new JLabel("");
-		lblFundo.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		lblFundo.setBounds(0, 0, 434, 261);
-		contentPane.add(lblFundo);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblNewLabel.setBounds(0, 0, 434, 261);
+		contentPane.add(lblNewLabel);
 	}
 
 
