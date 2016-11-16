@@ -37,7 +37,7 @@ public class Jogo extends JFrame {
 			public void run() {
 				try {
 					Jogo frame = new Jogo(String, String, String, String, String, String, String, String, String,
-							String, String, String);
+							String, String, String, String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class Jogo extends JFrame {
 	 */
 
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC,
-			String altD, String idQuestao, String idUser, String nomeUser, String certas, String erradas) {
+			String altD, String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
 		setTitle("Javalingo - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -83,19 +83,23 @@ public class Jogo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (resposta.equals("A")) {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Correta!");
 					long id = Long.parseLong(certas);
 					id++;
 					String certa = Long.toString(id);
-					proxima(dificuldade, idUser, nomeUser, certa, erradas);
+					proxima(dificuldade, idUser, nomeUser, certa, erradas, te);
 				} else {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Errada!");
 					long id2 = Long.parseLong(erradas);
 					id2++;
 					String errada = Long.toString(id2);
-					proxima(dificuldade, idUser, nomeUser, certas, errada);
+					proxima(dificuldade, idUser, nomeUser, certas, errada, te);
 
 				}
 			}
@@ -113,19 +117,23 @@ public class Jogo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (resposta.equals("B")) {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Correta!");
 					long id = Long.parseLong(certas);
 					id++;
 					String certa = Long.toString(id);
-					proxima(dificuldade, idUser, nomeUser, certa, erradas);
+					proxima(dificuldade, idUser, nomeUser, certa, erradas, te);
 				} else {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Errada!");
 					long id2 = Long.parseLong(erradas);
 					id2++;
 					String errada = Long.toString(id2);
-					proxima(dificuldade, idUser, nomeUser, certas, errada);
+					proxima(dificuldade, idUser, nomeUser, certas, errada, te);
 
 				}
 			}
@@ -143,19 +151,23 @@ public class Jogo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (resposta.equals("C")) {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Correta!");
 					long id = Long.parseLong(certas);
 					id++;
 					String certa = Long.toString(id);
-					proxima(dificuldade, idUser, nomeUser, certa, erradas);
+					proxima(dificuldade, idUser, nomeUser, certa, erradas, te);
 				} else {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Errada!");
 					long id2 = Long.parseLong(erradas);
 					id2++;
 					String errada = Long.toString(id2);
-					proxima(dificuldade, idUser, nomeUser, certas, errada);
+					proxima(dificuldade, idUser, nomeUser, certas, errada, te);
 
 				}
 			}
@@ -173,19 +185,23 @@ public class Jogo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (resposta.equals("D")) {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Correta!");
 					long id = Long.parseLong(certas);
 					id++;
 					String certa = Long.toString(id);
-					proxima(dificuldade, idUser, nomeUser, certa, erradas);
+					proxima(dificuldade, idUser, nomeUser, certa, erradas, te);
 				} else {
-
+					int telas = Integer.valueOf(tela).intValue();
+					telas++;
+					String te = Integer.toString(telas);
 					JOptionPane.showMessageDialog(null, "Errada!");
 					long id2 = Long.parseLong(erradas);
 					id2++;
 					String errada = Long.toString(id2);
-					proxima(dificuldade, idUser, nomeUser, certas, errada);
+					proxima(dificuldade, idUser, nomeUser, certas, errada, te);
 
 				}
 			}
@@ -194,6 +210,10 @@ public class Jogo extends JFrame {
 		JLabel label = new JLabel("");
 		label.setBounds(367, 11, 320, 420);
 		contentPane.add(label);
+		
+		JLabel lblTelasPassadas = new JLabel("Telas passadas: " + tela);
+		lblTelasPassadas.setBounds(440, 105, 190, 14);
+		contentPane.add(lblTelasPassadas);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro2.png")));
@@ -202,7 +222,9 @@ public class Jogo extends JFrame {
 
 	}
 
-	public void proxima(String dificuldade, String idUser, String nomeUser, String certas, String erradas) {
+	public void proxima(String dificuldade, String idUser, String nomeUser, String certas, String erradas, String telas) {
+		int tela = Integer.valueOf(telas).intValue();
+		if(tela <11){
 		QuestaoDAO questaoDAO = new QuestaoDAO();
 		Questao questao = new Questao();
 		questao = questaoDAO.Novaquestao(dificuldade, "0");
@@ -210,17 +232,18 @@ public class Jogo extends JFrame {
 			long id = questao.getIdQuestao();
 			String idQuestao = Long.toString(id);
 			Jogo j1 = new Jogo(dificuldade, questao.getQuestao(), questao.getResposta(), questao.getAltA(),
-					questao.getAltB(), questao.getAltC(), questao.getAltD(), idQuestao, idUser, nomeUser, certas, erradas);
+					questao.getAltB(), questao.getAltC(), questao.getAltD(), idQuestao, idUser, nomeUser, certas, erradas, telas);
 			j1.setVisible(true);
 			dispose();
 			questao.setQuestaofeita("1");
 			questaoDAO.alterar(questao);
+		}
 		} else {
+
 			FimJogo fj = new FimJogo(idUser, nomeUser, certas, erradas);
 			fj.setVisible(true);
 			dispose();
 		}
 
 	}
-
 }
