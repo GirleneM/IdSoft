@@ -26,7 +26,8 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/javalingo", "root", "");
 			consulta = conn.createStatement();
 
-			tabela = consulta.executeQuery("SELECT * FROM questao WHERE questaofeita='"+questaomarcada+"' and dificuldade='"+dificuldade+"' ORDER BY rand() LIMIT 1");
+			tabela = consulta.executeQuery("SELECT * FROM questao WHERE questaofeita='" + questaomarcada
+					+ "' and dificuldade='" + dificuldade + "' ORDER BY rand() LIMIT 1");
 
 			if (tabela.next()) {
 				questao.setIdQuestao(tabela.getLong("idQuestao"));
@@ -37,7 +38,7 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 				questao.setDificuldade(tabela.getString("dificuldade"));
 				questao.setQuestao(tabela.getString("questao"));
 				questao.setResposta(tabela.getString("resposta"));
-				
+
 				NovaQuestao = true;
 			} else {
 				NovaQuestao = false;
@@ -49,7 +50,7 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 		return questao;
 
 	}
-	
+
 	public QuestaoDAO() {
 		super(Questao.class);
 	}

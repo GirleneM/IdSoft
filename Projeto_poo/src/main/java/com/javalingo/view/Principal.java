@@ -33,6 +33,8 @@ public class Principal extends JFrame {
 	private static final long serialVersionUID = 1L;
 	protected static final String String = null;
 	private JPanel contentPane;
+	int certas = 0;
+	int erradas = 0;
 
 	/**
 	 * Launch the application.
@@ -69,7 +71,7 @@ public class Principal extends JFrame {
 		contentPane.setLayout(null);
 		UIManager.put("OptionPane.noButtonText", "Difícil");
 		UIManager.put("OptionPane.yesButtonText", "Fácil");
-		
+
 		JLabel lblLogado = new JLabel("Bem Vindo, " + nomeUser);
 		lblLogado.setForeground(Color.WHITE);
 		lblLogado.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -92,7 +94,7 @@ public class Principal extends JFrame {
 					TelaInicial ti = new TelaInicial();
 					ti.setVisible(true);
 					dispose();
-					
+
 				} else if (i == JOptionPane.NO_OPTION) {
 				}
 			}
@@ -123,37 +125,44 @@ public class Principal extends JFrame {
 			@Autowired
 			public void actionPerformed(ActionEvent arg0) {
 				int i = JOptionPane.showConfirmDialog(null, "Selecione o Nível", "Jogar!", JOptionPane.YES_NO_OPTION);
-				if(i==JOptionPane.YES_OPTION){
+				if (i == JOptionPane.YES_OPTION) {
 					String facil = "Fácil";
 					QuestaoDAO questaoDAO = new QuestaoDAO();
 					Questao questao = new Questao();
 					questao = questaoDAO.Novaquestao(facil, "0");
-					if(QuestaoDAO.NovaQuestao){
+					if (QuestaoDAO.NovaQuestao) {
 						String s = questao.setQuestaofeita("1");
-					Jogo1 j = new Jogo1(facil, questao.getQuestao(), questao.getResposta(),
-							questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD(), s, idUser, nomeUser);
-					j.setVisible(true);
-					dispose();
-					questao.setQuestaofeita("1");
-					questaoDAO.alterar(questao);
-					}
-					
-				}
-				else if(i==JOptionPane.NO_OPTION){
-					String dificil = "Difícil";
-					QuestaoDAO questaoDAO = new QuestaoDAO();
-					Questao questao = new Questao();
-					questao = questaoDAO.Novaquestao(dificil, "0");
-					if(QuestaoDAO.NovaQuestao){
-						String s = questao.setQuestaofeita("1");
-						Jogo1 j = new Jogo1(dificil, questao.getQuestao(), questao.getResposta(),
-								questao.getAltA(), questao.getAltB(),questao.getAltC(), questao.getAltD(), s , idUser, nomeUser);
+						long id = certas;
+						String certa = Long.toString(id);
+						long id2 = erradas;
+						String errada = Long.toString(id2);
+						Jogo j = new Jogo(facil, questao.getQuestao(), questao.getResposta(), questao.getAltA(),
+								questao.getAltB(), questao.getAltC(), questao.getAltD(), s, idUser, nomeUser, certa, errada);
 						j.setVisible(true);
 						dispose();
 						questao.setQuestaofeita("1");
 						questaoDAO.alterar(questao);
-						}
-					
+					}
+
+				} else if (i == JOptionPane.NO_OPTION) {
+					String dificil = "Difícil";
+					QuestaoDAO questaoDAO = new QuestaoDAO();
+					Questao questao = new Questao();
+					questao = questaoDAO.Novaquestao(dificil, "0");
+					if (QuestaoDAO.NovaQuestao) {
+						String s = questao.setQuestaofeita("1");
+						long id = certas;
+						String certa = Long.toString(id);
+						long id2 = erradas;
+						String errada = Long.toString(id2);
+						Jogo j = new Jogo(dificil, questao.getQuestao(), questao.getResposta(), questao.getAltA(),
+								questao.getAltB(), questao.getAltC(), questao.getAltD(), s, idUser, nomeUser, certa, errada);
+						j.setVisible(true);
+						dispose();
+						questao.setQuestaofeita("1");
+						questaoDAO.alterar(questao);
+					}
+
 				}
 			}
 		});
@@ -172,15 +181,10 @@ public class Principal extends JFrame {
 		contentPane.add(lblNewLabel);
 	}
 
-
 	public void play(String nomedoaudio) {
 		URL url = getClass().getResource(nomedoaudio + ".wav");
 		AudioClip audio = Applet.newAudioClip(url);
 		audio.play();
 	}
-	
 
-			
 }
-	
-

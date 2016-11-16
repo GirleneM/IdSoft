@@ -57,14 +57,13 @@ public class TelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		UIManager.getDefaults().put("OptionPane.background",new Color(100, 149, 237));
-		UIManager.put ("Panel.background", new Color(100, 149, 237));
+		UIManager.getDefaults().put("OptionPane.background", new Color(100, 149, 237));
+		UIManager.put("Panel.background", new Color(100, 149, 237));
 		UIManager.put("Button.background", new Color(100, 149, 237));
-		UIManager.put("Button.foreground", new Color(255, 255, 255));		
-		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("TAHOMA",Font.PLAIN,14)));
-		UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("TAHOMA",Font.PLAIN,14)));
+		UIManager.put("Button.foreground", new Color(255, 255, 255));
+		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("TAHOMA", Font.PLAIN, 14)));
+		UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("TAHOMA", Font.PLAIN, 14)));
 		UIManager.put("OptionPane.messageForeground", Color.WHITE);
-		
 
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -121,7 +120,7 @@ public class TelaInicial extends JFrame {
 				}
 			}
 		});
-		
+
 		JButton btnRank = new JButton("Rank");
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,7 +139,7 @@ public class TelaInicial extends JFrame {
 		contentPane.add(btnRank);
 		btnSair.setBounds(178, 227, 78, 23);
 		contentPane.add(btnSair);
-		
+
 		JButton btnSobre = new JButton("Sobre");
 		btnSobre.setBorderPainted(false);
 		btnSobre.setContentAreaFilled(false);

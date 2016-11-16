@@ -150,7 +150,7 @@ public class CadastroUsuario extends JFrame {
 						TelaInicial ti = new TelaInicial();
 						ti.setVisible(true);
 					} else {
-						JOptionPane.showMessageDialog(null, "Falha ao cadastar!", "Falha!", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Falha ao cadastrar!", "Falha!", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Falha!",
