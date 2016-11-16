@@ -75,7 +75,6 @@ public class TelaInicial extends JFrame {
 		btnLogin.setFocusPainted(false);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				Login l = new Login();
 				l.setVisible(true);
 				dispose();
@@ -121,11 +120,11 @@ public class TelaInicial extends JFrame {
 			}
 		});
 
-		JButton btnRank = new JButton("Rank");
+		JButton btnRank = new JButton("Top 3");
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Rank r1 = new Rank();
-				r1.setVisible(true);
+				Top3 t = new Top3();
+				t.setVisible(true);
 				dispose();
 			}
 		});
@@ -134,8 +133,8 @@ public class TelaInicial extends JFrame {
 		btnRank.setFocusPainted(false);
 		btnRank.setForeground(Color.WHITE);
 		btnRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRank.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/rank.png")));
-		btnRank.setBounds(217, 159, 88, 23);
+		btnRank.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/top.png")));
+		btnRank.setBounds(217, 159, 95, 23);
 		contentPane.add(btnRank);
 		btnSair.setBounds(178, 227, 78, 23);
 		contentPane.add(btnSair);

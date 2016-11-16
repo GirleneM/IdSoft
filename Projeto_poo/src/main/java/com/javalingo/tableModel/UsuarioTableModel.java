@@ -45,11 +45,9 @@ public class UsuarioTableModel extends AbstractTableModel {
             case 0:
                 return usuario.getIdUsuario();
             case 1:
-                return usuario.getNome();
-                
+                return usuario.getNome();   
             case 2:
                 return usuario.getEmail();
-                
             case 3:
                 return usuario.getUsuario();
             case 4:
