@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.TableRowSorter;
 
 import com.javalingo.repository.UsuarioDAO;
 import com.javalingo.tableModel.RankTableModel;
@@ -86,6 +87,9 @@ public class Rank extends JFrame {
 		scrollPane.setBounds(10, 36, 714, 488);
 		contentPane.add(scrollPane);
 		PreencherTabela();
+		
+		RankTableModel modelo = (RankTableModel) table.getModel();
+		table.setRowSorter(new TableRowSorter<>(modelo));
 
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(Color.WHITE);

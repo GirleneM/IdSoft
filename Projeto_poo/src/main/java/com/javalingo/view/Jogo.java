@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
 import com.javalingo.model.Questao;
@@ -51,7 +52,7 @@ public class Jogo extends JFrame {
 
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD,
 			String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
-		setTitle("Javalingo - Questão " + tela + " - " + dificuldade);
+		setTitle("Javalingo - Questão "+tela+" - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 750;
@@ -63,6 +64,8 @@ public class Jogo extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		UIManager.put("OptionPane.noButtonText", "Não");
+		UIManager.put("OptionPane.yesButtonText", "Desistir");
 
 		JLabel lblQuestao = new JLabel("<html><p align = center>" + questao + "</p></html>");
 		lblQuestao.setForeground(new Color(139, 69, 19));
@@ -205,6 +208,41 @@ public class Jogo extends JFrame {
 				}
 			}
 		});
+		
+		JButton btnVoltar = new JButton("Desistir");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair? Todo jogo feito será apagado", "Desistir!", JOptionPane.YES_NO_OPTION);
+				Principal p = new Principal(nomeUser, idUser);
+				p.setVisible(true);
+				dispose();
+				if(i == JOptionPane.YES_OPTION){
+					@SuppressWarnings("unused")
+					Questao q = new Questao();
+					QuestaoDAO qd = new QuestaoDAO();
+					q = qd.Zerarquestoes();
+					if(QuestaoDAO.zerarquestoes){
+					
+					}
+				}
+				else{
+					
+				}
+				
+				;
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Icones/ok.png")));
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(57, 402, 89, 23);
+		contentPane.add(btnVoltar);
 
 		JLabel label = new JLabel("");
 		label.setBounds(367, 11, 320, 420);

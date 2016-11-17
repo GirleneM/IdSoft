@@ -73,6 +73,10 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 				user.setQuestaocerta(tabela.getString("questaocerta"));
 				user.setQuestaoerrada(tabela.getString("questaoerrada"));
 				user.setPorcetagemtotal(tabela.getString("porcetagemtotal"));
+				user.setNome(tabela.getString("nome"));
+				user.setUsuario(tabela.getString("usuario"));
+				user.setEmail(tabela.getString("email"));
+				user.setSenha(tabela.getString("senha"));
 
 				buscaruser = true;
 			} else {

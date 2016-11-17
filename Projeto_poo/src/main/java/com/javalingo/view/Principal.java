@@ -13,7 +13,10 @@ import javax.swing.border.EmptyBorder;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.javalingo.model.Questao;
+import com.javalingo.model.Usuario;
 import com.javalingo.repository.QuestaoDAO;
+import com.javalingo.repository.UsuarioDAO;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -194,6 +197,29 @@ public class Principal extends JFrame {
 		btnJogar.setFocusPainted(false);
 		btnJogar.setBounds(174, 173, 102, 23);
 		contentPane.add(btnJogar);
+		
+		JButton btnAlterarDados = new JButton("Editar Perfil");
+		btnAlterarDados.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/user-options.png")));
+		btnAlterarDados.setForeground(Color.WHITE);
+		btnAlterarDados.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAlterarDados.setBorderPainted(false);
+		btnAlterarDados.setContentAreaFilled(false);
+		btnAlterarDados.setFocusPainted(false);
+		btnAlterarDados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				long id = Integer.valueOf(idUser).intValue();
+				Usuario u = new Usuario();
+				UsuarioDAO ud = new UsuarioDAO();
+				u = ud.Buscaruser(id);
+				if(UsuarioDAO.buscaruser){
+					EditarUsuario eu = new EditarUsuario(idUser, u.getNome(), u.getUsuario(), u.getEmail(), u.getSenha());
+					eu.setVisible(true);
+					dispose();
+				}
+			}
+		});
+		btnAlterarDados.setBounds(10, 33, 139, 23);
+		contentPane.add(btnAlterarDados);
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
@@ -208,5 +234,4 @@ public class Principal extends JFrame {
 		audio.play();
 
 	}
-
 }
