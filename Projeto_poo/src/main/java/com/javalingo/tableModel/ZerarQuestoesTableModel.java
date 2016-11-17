@@ -6,6 +6,8 @@
 package com.javalingo.tableModel;
 
 import com.javalingo.model.*;
+import com.javalingo.repository.QuestaoDAO;
+
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -13,15 +15,15 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author IDsoft
  */
-public class QuestaoTableModel extends AbstractTableModel {
+public class ZerarQuestoesTableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nomeColunas[] = { "ID", "Questão", "Resposta", "Dificuldade", "A", "B", "C", "D", };
+	private String nomeColunas[] = { "" };
 	private List<Questao> questoes;
 
-	public QuestaoTableModel(List<Questao> qustoes) {
+	public ZerarQuestoesTableModel(List<Questao> qustoes) {
 		this.questoes = qustoes;
 	}
 
@@ -37,25 +39,12 @@ public class QuestaoTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		Questao questao = questoes.get(rowIndex);
+		Questao que = questoes.get(rowIndex);
+		QuestaoDAO qd = new QuestaoDAO();
 		switch (columnIndex) {
-
 		case 0:
-			return questao.getIdQuestao();
-		case 1:
-			return questao.getQuestao();
-		case 2:
-			return questao.getResposta();
-		case 3:
-			return questao.getDificuldade();
-		case 4:
-			return questao.getAltA();
-		case 5:
-			return questao.getAltB();
-		case 6:
-			return questao.getAltC();
-		case 7:
-			return questao.getAltD();
+			que.setQuestaofeita("0");
+			qd.alterar(que);
 		}
 		return null;
 	}
@@ -66,21 +55,7 @@ public class QuestaoTableModel extends AbstractTableModel {
 		switch (column) {
 
 		case 0:
-			return nomeColunas[0];
-		case 1:
-			return nomeColunas[1];
-		case 2:
-			return nomeColunas[2];
-		case 3:
-			return nomeColunas[3];
-		case 4:
-			return nomeColunas[4];
-		case 5:
-			return nomeColunas[5];
-		case 6:
-			return nomeColunas[6];
-		case 7:
-			return nomeColunas[7];
+
 		}
 
 		return "";

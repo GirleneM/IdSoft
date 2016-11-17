@@ -75,9 +75,11 @@ public class TelaInicial extends JFrame {
 		btnLogin.setFocusPainted(false);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Login l = new Login();
 				l.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnLogin.setBounds(129, 159, 88, 23);
@@ -93,9 +95,11 @@ public class TelaInicial extends JFrame {
 		btnCadastrar.setFocusPainted(false);
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				CadastroUsuario c1 = new CadastroUsuario();
 				c1.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnCadastrar.setBounds(160, 193, 114, 23);
@@ -111,21 +115,25 @@ public class TelaInicial extends JFrame {
 		btnSair.setFocusPainted(false);
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente Sair?", "Selecione uma opção",
 						JOptionPane.OK_CANCEL_OPTION);
 				if (i == JOptionPane.YES_OPTION) {
 					System.exit(0);
 				} else if (i == JOptionPane.CANCEL_OPTION) {
 				}
+
 			}
 		});
 
-		JButton btnRank = new JButton("Top 3");
+		JButton btnRank = new JButton("Rank");
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Top3 t = new Top3();
-				t.setVisible(true);
+
+				Top3 t3 = new Top3();
+				t3.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnRank.setBorderPainted(false);
@@ -133,8 +141,8 @@ public class TelaInicial extends JFrame {
 		btnRank.setFocusPainted(false);
 		btnRank.setForeground(Color.WHITE);
 		btnRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRank.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/top.png")));
-		btnRank.setBounds(217, 159, 95, 23);
+		btnRank.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/rank.png")));
+		btnRank.setBounds(217, 159, 88, 23);
 		contentPane.add(btnRank);
 		btnSair.setBounds(178, 227, 78, 23);
 		contentPane.add(btnSair);
@@ -145,9 +153,11 @@ public class TelaInicial extends JFrame {
 		btnSobre.setFocusPainted(false);
 		btnSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Sobre s = new Sobre();
 				s.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnSobre.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Icones/tutorial2.png")));

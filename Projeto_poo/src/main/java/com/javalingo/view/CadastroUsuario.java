@@ -130,19 +130,26 @@ public class CadastroUsuario extends JFrame {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
+
 				Usuario u = new Usuario();
 
-				if (!ctNome.getText().isEmpty() && !ctUsuario.getText().isEmpty() && !ctEmail.getText().isEmpty() && !ctSenha.getText().isEmpty()) {
+				if (!ctNome.getText().isEmpty() && !ctUsuario.getText().isEmpty() && !ctEmail.getText().isEmpty()
+						&& !ctSenha.getText().isEmpty()) {
 					u.setNome(ctNome.getText().toString());
 					u.setUsuario(ctUsuario.getText().toString());
 					u.setEmail(ctEmail.getText().toString());
 					u.setSenha(ctSenha.getText().toString());
+					u.setPorcetagemtotal("0");
+					u.setQuestaocerta("0");
+					u.setQuestaoerrada("0");
+					u.setTestesfeitos("0");
 
 					DAO<Usuario> dao = new UsuarioDAO();
 					ctNome.setText(null);
 					ctUsuario.setText(null);
 					ctEmail.setText(null);
 					ctSenha.setText(null);
+
 					if (dao.salvar(u)) {
 						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Sucesso!",
 								JOptionPane.INFORMATION_MESSAGE);
@@ -173,9 +180,11 @@ public class CadastroUsuario extends JFrame {
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				TelaInicial ti = new TelaInicial();
 				ti.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setBounds(10, 227, 100, 23);

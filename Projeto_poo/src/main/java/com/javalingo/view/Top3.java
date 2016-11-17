@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -56,28 +55,30 @@ public class Top3 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblPrimeiro = new JLabel("Primeiro");
 		lblPrimeiro.setFont(new Font("Exotc350 Bd BT", Font.PLAIN, 18));
 		lblPrimeiro.setBounds(189, 63, 80, 14);
 		contentPane.add(lblPrimeiro);
-		
+
 		JLabel lblSegundo = new JLabel("Segundo");
 		lblSegundo.setFont(new Font("Exotc350 Bd BT", Font.PLAIN, 18));
-		lblSegundo.setBounds(67, 95, 64, 23);
+		lblSegundo.setBounds(56, 96, 80, 23);
 		contentPane.add(lblSegundo);
-		
+
 		JLabel lblTerceiro = new JLabel("Terceiro");
 		lblTerceiro.setFont(new Font("Exotc350 Bd BT", Font.PLAIN, 18));
 		lblTerceiro.setBounds(307, 119, 71, 14);
 		contentPane.add(lblTerceiro);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				TelaInicial ti = new TelaInicial();
 				ti.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar.png")));
@@ -89,18 +90,20 @@ public class Top3 extends JFrame {
 		btnVoltar.setBackground(new Color(30, 144, 255));
 		btnVoltar.setBounds(0, 227, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JLabel lblRank = new JLabel("Javalingo");
 		lblRank.setFont(new Font("Exotc350 Bd BT", Font.PLAIN, 18));
 		lblRank.setBounds(188, 205, 80, 17);
 		contentPane.add(lblRank);
-		
+
 		JButton btnRank = new JButton("Rank");
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Rank r = new Rank();
 				r.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -112,7 +115,7 @@ public class Top3 extends JFrame {
 		btnRank.setFocusPainted(false);
 		btnRank.setBounds(345, 227, 89, 23);
 		contentPane.add(btnRank);
-		
+
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Top3.class.getResource("/com/javalingo/img/Imagens/rank.jpg")));
 		lblFundo.setBounds(0, 0, 434, 261);

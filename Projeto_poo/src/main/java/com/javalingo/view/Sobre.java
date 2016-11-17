@@ -55,7 +55,7 @@ public class Sobre extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
@@ -65,39 +65,42 @@ public class Sobre extends JFrame {
 		btnVoltar.setFocusPainted(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				TelaInicial ti = new TelaInicial();
 				ti.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setBounds(10, 227, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JLabel lblVerso = new JLabel("<html><p align = right>Versão 1.0<br>2016, Javalingo</p></html>");
 		lblVerso.setForeground(Color.WHITE);
 		lblVerso.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblVerso.setBounds(325, 203, 107, 47);
 		contentPane.add(lblVerso);
-		
+
 		JLabel lblEmpresa = new JLabel("IDsotf");
 		lblEmpresa.setForeground(Color.WHITE);
 		lblEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblEmpresa.setBounds(195, 0, 239, 30);
 		contentPane.add(lblEmpresa);
-		
+
 		JLabel lblEquipe = new JLabel("<html>Desenvolvimento:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
 				+ "Designer:<br><br>Luciano Gomes</html>");
 		lblEquipe.setForeground(Color.WHITE);
 		lblEquipe.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblEquipe.setBounds(10, 36, 122, 180);
 		contentPane.add(lblEquipe);
-		
-		JLabel lblEquipe2 = new JLabel("<html><p align = right>Teste:<br><br>Girlene Maria<br>Bruno Allison</p></html>");
+
+		JLabel lblEquipe2 = new JLabel(
+				"<html><p align = right>Teste:<br><br>Girlene Maria<br>Bruno Allison</p></html>");
 		lblEquipe2.setForeground(Color.WHITE);
 		lblEquipe2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblEquipe2.setBounds(347, 36, 77, 117);
 		contentPane.add(lblEquipe2);
-		
+
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblFundo.setForeground(Color.WHITE);

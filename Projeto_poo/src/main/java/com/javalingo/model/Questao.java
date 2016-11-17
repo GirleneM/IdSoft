@@ -9,31 +9,30 @@ import javax.persistence.Id;
 public class Questao {
 
 	@Id
-	@GeneratedValue 
+	@GeneratedValue
 	private Long idQuestao;
-	
+
 	@Column(nullable = false, length = 200)
 	private String questao;
-	
+
 	@Column(nullable = false, length = 100)
 	private String resposta;
-	
+
 	@Column(nullable = false, length = 100)
 	private String dificuldade;
-	
+
 	@Column(nullable = false, length = 100)
 	private String altA;
-	
+
 	@Column(nullable = false, length = 100)
 	private String altB;
-	
+
 	@Column(nullable = false, length = 100)
 	private String altC;
-	
+
 	@Column(nullable = false, length = 100)
 	private String altD;
-	
-	
+
 	@Column(nullable = false, length = 100)
 	private String questaofeita;
 
@@ -76,7 +75,7 @@ public class Questao {
 	public void setResposta(String resposta) {
 		this.resposta = resposta;
 	}
-	
+
 	public String getAltA() {
 		return altA;
 	}
@@ -96,17 +95,17 @@ public class Questao {
 	public void setAltA(String altA) {
 		this.altA = altA;
 	}
-	
+
 	public void setAltB(String altB) {
 		this.altB = altB;
 	}
-	
+
 	public void setAltC(String altC) {
 		this.altC = altC;
 	}
-	
+
 	public void setAltD(String altD) {
 		this.altD = altD;
 	}
-	
+
 }

@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -57,30 +56,34 @@ public class Tutorial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblTexto = new JLabel("<html><u><center>Tutorial</center></u><br><p align = justify>O Javalingo é um jogo destinado "
-				+ "a testar os conhecimentos e o grau de afinidade em JAVA. O usuário terá de responder as perguntas e "
-				+ "escolher a alternativa que julgue correta dentre as quatro que estarão disponíveis.</p></html>");
+
+		JLabel lblTexto = new JLabel(
+				"<html><u><center>Tutorial</center></u><br><p align = justify>O Javalingo é um jogo destinado "
+						+ "a testar os conhecimentos e o grau de afinidade em JAVA. O usuário terá de responder as perguntas e "
+						+ "escolher a alternativa que julgue correta dentre as quatro que estarão disponíveis.</p></html>");
 		lblTexto.setForeground(Color.BLACK);
 		lblTexto.setVerticalAlignment(SwingConstants.TOP);
 		lblTexto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTexto.setBounds(38, 11, 172, 220);
 		contentPane.add(lblTexto);
-		
-		JLabel lblTexto2 = new JLabel("<html><p align = justify>Ao fim do questionário será exibido a quantidade de erros e acertos "
-				+ "e um percentual do quanto ele está apto a progrmar em JAVA.</p></html>");
+
+		JLabel lblTexto2 = new JLabel(
+				"<html><p align = justify>Ao fim do questionário será exibido a quantidade de erros e acertos "
+						+ "e um percentual do quanto ele está apto a progrmar em JAVA.</p></html>");
 		lblTexto2.setForeground(Color.BLACK);
 		lblTexto2.setVerticalAlignment(SwingConstants.TOP);
 		lblTexto2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblTexto2.setBounds(229, 28, 172, 203);
 		contentPane.add(lblTexto2);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Principal p = new Principal(nomeUser, idUser);
 				p.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar.png")));
@@ -92,7 +95,7 @@ public class Tutorial extends JFrame {
 		btnVoltar.setBackground(new Color(30, 144, 255));
 		btnVoltar.setBounds(37, 229, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Imagens/livro.png")));
 		lblFundo.setBounds(0, 0, 434, 261);

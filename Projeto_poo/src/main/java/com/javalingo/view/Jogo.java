@@ -11,7 +11,6 @@ import javax.swing.border.EmptyBorder;
 
 import com.javalingo.model.Questao;
 import com.javalingo.repository.QuestaoDAO;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -50,8 +49,8 @@ public class Jogo extends JFrame {
 	 * Create the frame.
 	 */
 
-	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC,
-			String altD, String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
+	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD,
+			String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
 		setTitle("Javalingo - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -210,10 +209,6 @@ public class Jogo extends JFrame {
 		JLabel label = new JLabel("");
 		label.setBounds(367, 11, 320, 420);
 		contentPane.add(label);
-		
-		JLabel lblTelasPassadas = new JLabel("Telas passadas: " + tela);
-		lblTelasPassadas.setBounds(440, 105, 190, 14);
-		contentPane.add(lblTelasPassadas);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro2.png")));
@@ -222,27 +217,37 @@ public class Jogo extends JFrame {
 
 	}
 
-	public void proxima(String dificuldade, String idUser, String nomeUser, String certas, String erradas, String telas) {
-		int tela = Integer.valueOf(telas).intValue();
-		if(tela <11){
-		QuestaoDAO questaoDAO = new QuestaoDAO();
-		Questao questao = new Questao();
-		questao = questaoDAO.Novaquestao(dificuldade, "0");
-		if (QuestaoDAO.NovaQuestao) {
-			long id = questao.getIdQuestao();
-			String idQuestao = Long.toString(id);
-			Jogo j1 = new Jogo(dificuldade, questao.getQuestao(), questao.getResposta(), questao.getAltA(),
-					questao.getAltB(), questao.getAltC(), questao.getAltD(), idQuestao, idUser, nomeUser, certas, erradas, telas);
-			j1.setVisible(true);
-			dispose();
-			questao.setQuestaofeita("1");
-			questaoDAO.alterar(questao);
-		}
-		} else {
+	public void proxima(String dificuldade, String idUser, String nomeUser, String certas, String erradas,
+			String telas) {
 
+		int tela = Integer.valueOf(telas).intValue();
+
+		if (tela < 11) {
+			QuestaoDAO questaoDAO = new QuestaoDAO();
+			Questao questao = new Questao();
+			questao = questaoDAO.Novaquestao(dificuldade, "0");
+			if (QuestaoDAO.NovaQuestao) {
+				long id = questao.getIdQuestao();
+				String idQuestao = Long.toString(id);
+				Jogo j1 = new Jogo(dificuldade, questao.getQuestao(), questao.getResposta(), questao.getAltA(),
+						questao.getAltB(), questao.getAltC(), questao.getAltD(), idQuestao, idUser, nomeUser, certas,
+						erradas, telas);
+				j1.setVisible(true);
+				dispose();
+				questao.setQuestaofeita("1");
+				questaoDAO.alterar(questao);
+			}
+		} else {
 			FimJogo fj = new FimJogo(idUser, nomeUser, certas, erradas);
 			fj.setVisible(true);
 			dispose();
+			@SuppressWarnings("unused")
+			Questao q = new Questao();
+			QuestaoDAO qd = new QuestaoDAO();
+			q = qd.Zerarquestoes();
+			if (QuestaoDAO.zerarquestoes) {
+
+			}
 		}
 
 	}

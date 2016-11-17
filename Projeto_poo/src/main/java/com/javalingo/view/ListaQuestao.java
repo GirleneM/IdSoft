@@ -38,6 +38,7 @@ public class ListaQuestao extends JFrame {
 		QuestaoTableModel qtm = new QuestaoTableModel(qd.lista());
 		table.setModel(qtm);
 	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -70,12 +71,12 @@ public class ListaQuestao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblListaDeQuestoes = new JLabel("Lista de Questões");
 		lblListaDeQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblListaDeQuestoes.setBounds(314, 11, 120, 28);
 		contentPane.add(lblListaDeQuestoes);
-		
+
 		table = new JTable();
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table.setBounds(10, 50, 414, 143);
@@ -84,7 +85,7 @@ public class ListaQuestao extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(10, 36, 714, 295);
 		contentPane.add(scrollPane);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBorder(null);
 		btnVoltar.setFocusable(false);
@@ -92,9 +93,11 @@ public class ListaQuestao extends JFrame {
 		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				PrincipalAdmin pa = new PrincipalAdmin();
 				pa.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
@@ -102,33 +105,34 @@ public class ListaQuestao extends JFrame {
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setBounds(10, 527, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.setBorder(null);
 		btnApagar.setFocusable(false);
 		btnApagar.setContentAreaFilled(false);
 		btnApagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				int linha = table.getSelectedRow();
-			    
-			    if(linha<0){
-			        JOptionPane.showMessageDialog(null, "Selecione uma Questão!", "Erro!", JOptionPane.ERROR_MESSAGE);
-			      }
-			    else{
-			        
-			        Object o = table.getValueAt(linha, 0);
-			        QuestaoDAO qd = new QuestaoDAO();
-			        Questao q = qd.listar("id", (long) o).get(0);
-			        
-			         if(JOptionPane.showConfirmDialog(rootPane, "Deseja Excluir?", "Excluir", JOptionPane.YES_NO_OPTION)== JOptionPane.YES_NO_OPTION) 
-			    
-			    {
-			    JOptionPane.showMessageDialog(rootPane, "Questão excluída com sucesso!");
-			      qd.remover(q);
-			      PreencherTabela();
-			      }
-			       }
-			   
+
+				if (linha < 0) {
+					JOptionPane.showMessageDialog(null, "Selecione uma Questão!", "Erro!", JOptionPane.ERROR_MESSAGE);
+				} else {
+
+					Object o = table.getValueAt(linha, 0);
+					QuestaoDAO qd = new QuestaoDAO();
+					Questao q = qd.listar("id", (long) o).get(0);
+
+					if (JOptionPane.showConfirmDialog(rootPane, "Deseja Excluir?", "Excluir",
+							JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
+
+					{
+						JOptionPane.showMessageDialog(rootPane, "Questão excluída com sucesso!");
+						qd.remover(q);
+						PreencherTabela();
+					}
+				}
+
 			}
 		});
 		btnApagar.setForeground(Color.WHITE);
@@ -136,13 +140,15 @@ public class ListaQuestao extends JFrame {
 		btnApagar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/eraser.png")));
 		btnApagar.setBounds(130, 529, 109, 23);
 		contentPane.add(btnApagar);
-		
+
 		JButton btnCriarQuesto = new JButton("Criar Questão");
 		btnCriarQuesto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				AdicionarQuestao aq = new AdicionarQuestao();
 				aq.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnCriarQuesto.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/plus (1).png")));
@@ -153,27 +159,28 @@ public class ListaQuestao extends JFrame {
 		btnCriarQuesto.setBorder(null);
 		btnCriarQuesto.setBounds(262, 529, 120, 23);
 		contentPane.add(btnCriarQuesto);
-		
+
 		JButton btnAlterarQuesto = new JButton("Alterar Questão");
 		btnAlterarQuesto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			       int linha = table.getSelectedRow();
-			        
-			        if(linha <0){
-			         JOptionPane.showMessageDialog(null, "Selecione um registro!", "Erro!", JOptionPane.ERROR_MESSAGE);
-			        }
-			        else{
-			            Object o = table.getValueAt(linha, 0);
-			            QuestaoDAO qd = new QuestaoDAO();
-			            Questao questao = qd.listar("id", (long) o).get(0);
-			            AdicionarQuestao aq = new AdicionarQuestao(questao);
-			            aq.setVisible(true);
-			            dispose();
-			           PreencherTabela();
-			        }
+
+				int linha = table.getSelectedRow();
+
+				if (linha < 0) {
+					JOptionPane.showMessageDialog(null, "Selecione um registro!", "Erro!", JOptionPane.ERROR_MESSAGE);
+				} else {
+					Object o = table.getValueAt(linha, 0);
+					QuestaoDAO qd = new QuestaoDAO();
+					Questao questao = qd.listar("id", (long) o).get(0);
+					AdicionarQuestao aq = new AdicionarQuestao(questao);
+					aq.setVisible(true);
+					dispose();
+					PreencherTabela();
+				}
 			}
 		});
-		btnAlterarQuesto.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/edit (2).png")));
+		btnAlterarQuesto
+				.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/edit (2).png")));
 		btnAlterarQuesto.setForeground(Color.WHITE);
 		btnAlterarQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAlterarQuesto.setFocusable(false);
@@ -181,21 +188,23 @@ public class ListaQuestao extends JFrame {
 		btnAlterarQuesto.setBorder(null);
 		btnAlterarQuesto.setBounds(413, 529, 127, 23);
 		contentPane.add(btnAlterarQuesto);
-		
+
 		JButton btnPesquisar = new JButton("Pesquisar Questão");
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(ctPesquisar.getText().isEmpty()){
-		            JOptionPane.showMessageDialog(null, "Preencha o campo!", "Falha", JOptionPane.ERROR_MESSAGE);
-		        }
-		        else{
-		            QuestaoDAO qd = new QuestaoDAO();
-		            QuestaoTableModel qtm = new QuestaoTableModel(qd.listar("questao", ctPesquisar.getText()));
-		            table.setModel(qtm);
-		        }
+
+				if (ctPesquisar.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Preencha o campo!", "Falha", JOptionPane.ERROR_MESSAGE);
+				} else {
+					QuestaoDAO qd = new QuestaoDAO();
+					QuestaoTableModel qtm = new QuestaoTableModel(qd.listar("questao", ctPesquisar.getText()));
+					table.setModel(qtm);
+				}
+
 			}
 		});
-		btnPesquisar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/musica-searcher.png")));
+		btnPesquisar.setIcon(
+				new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/musica-searcher.png")));
 		btnPesquisar.setForeground(Color.WHITE);
 		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnPesquisar.setFocusable(false);
@@ -203,16 +212,18 @@ public class ListaQuestao extends JFrame {
 		btnPesquisar.setBorder(null);
 		btnPesquisar.setBounds(571, 529, 140, 23);
 		contentPane.add(btnPesquisar);
-		
+
 		ctPesquisar = new JTextField();
 		ctPesquisar.setBounds(572, 498, 140, 20);
 		contentPane.add(ctPesquisar);
 		ctPesquisar.setColumns(10);
-		
+
 		JButton btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				PreencherTabela();
+
 			}
 		});
 		btnRefresh.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/reload (1).png")));
@@ -223,7 +234,7 @@ public class ListaQuestao extends JFrame {
 		btnRefresh.setBorder(null);
 		btnRefresh.setBounds(597, 11, 127, 23);
 		contentPane.add(btnRefresh);
-		
+
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
 		lblFundo.setBounds(0, 0, 734, 561);

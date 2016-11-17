@@ -72,9 +72,11 @@ public class PrincipalAdmin extends JFrame {
 		JMenuItem mntmQuesto = new JMenuItem("Questões");
 		mntmQuesto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				AdicionarQuestao aq = new AdicionarQuestao();
 				aq.setVisible(true);
 				dispose();
+
 			}
 		});
 		mntmQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -89,21 +91,25 @@ public class PrincipalAdmin extends JFrame {
 		JMenuItem mntmUsuarios = new JMenuItem("Usuários");
 		mntmUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				ListaUsuario lu = new ListaUsuario();
 				lu.setVisible(true);
 				dispose();
+
 			}
 		});
 		mntmUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		mntmUsuarios.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/user.png")));
 		mnLista.add(mntmUsuarios);
-		
+
 		JMenuItem mntmQuestoes = new JMenuItem("Questões");
 		mntmQuestoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ListaQuestao lq= new ListaQuestao();
+
+				ListaQuestao lq = new ListaQuestao();
 				lq.setVisible(true);
 				dispose();
+
 			}
 		});
 		mntmQuestoes.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/questao.png")));
@@ -120,16 +126,18 @@ public class PrincipalAdmin extends JFrame {
 		btnLogout.setFocusPainted(false);
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				int i = JOptionPane.showConfirmDialog(null, "Deseja Sair?", "Selecione uma Opção",
 						JOptionPane.OK_CANCEL_OPTION);
 				if (i == JOptionPane.YES_OPTION) {
 					JOptionPane.showMessageDialog(null, "Deslogado com Sucesso!", "Deslogado!",
 							JOptionPane.INFORMATION_MESSAGE);
 					dispose();
-					Login l =new Login();
+					Login l = new Login();
 					l.setVisible(true);
 				} else if (i == JOptionPane.NO_OPTION) {
 				}
+
 			}
 		});
 		btnLogout.setBackground(new Color(100, 149, 237));
@@ -146,8 +154,10 @@ public class PrincipalAdmin extends JFrame {
 	}
 
 	public void play(String nomedoaudio) {
+
 		URL url = getClass().getResource(nomedoaudio + ".wav");
 		AudioClip audio = Applet.newAudioClip(url);
 		audio.play();
+
 	}
 }

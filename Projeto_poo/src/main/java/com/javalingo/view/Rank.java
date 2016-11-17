@@ -29,7 +29,7 @@ public class Rank extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTable table;
-	
+
 	private void PreencherTabela() {
 		UsuarioDAO qd = new UsuarioDAO();
 		RankTableModel qtm = new RankTableModel(qd.lista());
@@ -68,23 +68,25 @@ public class Rank extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblRank = new JLabel("Rank");
 		lblRank.setForeground(Color.WHITE);
 		lblRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblRank.setBounds(347, 11, 40, 14);
 		contentPane.add(lblRank);
-		
+
 		table = new JTable();
+		table.setBackground(Color.WHITE);
+		table.setForeground(Color.BLACK);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table.setBounds(10, 50, 414, 143);
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 714, 295);
+		scrollPane.setBounds(10, 36, 714, 488);
 		contentPane.add(scrollPane);
 		PreencherTabela();
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
@@ -94,18 +96,20 @@ public class Rank extends JFrame {
 		btnVoltar.setFocusPainted(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Top3 ti = new Top3();
 				ti.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setBounds(10, 527, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Rank.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));
 		lblFundo.setBounds(0, 0, 734, 561);
 		contentPane.add(lblFundo);
-		
+
 	}
 }

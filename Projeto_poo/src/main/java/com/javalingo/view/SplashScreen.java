@@ -59,7 +59,7 @@ public class SplashScreen extends JWindow {
 		content.add(label, BorderLayout.CENTER);
 		content.add(copyrt, BorderLayout.SOUTH);
 		Color oraRed = new Color(0, 0, 128);
-		content.setBorder(BorderFactory.createLineBorder(oraRed, 10));
+		content.setBorder(BorderFactory.createLineBorder(oraRed, 8));
 
 		setVisible(true);
 

@@ -1,6 +1,5 @@
 package com.javalingo.view;
 
-
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
@@ -52,6 +51,7 @@ public class AdicionarQuestao extends JFrame {
 			}
 		});
 	}
+
 	{
 		this.questao = new Questao();
 	}
@@ -94,7 +94,6 @@ public class AdicionarQuestao extends JFrame {
 		JRadioButton difiFacil = new JRadioButton("Fácil");
 		difiFacil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 			}
 		});
 		difiFacil.setBackground(new Color(90, 155, 213));
@@ -168,10 +167,12 @@ public class AdicionarQuestao extends JFrame {
 		btnSalvar.setFocusPainted(false);
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Questao q = new Questao();
+
 				if (!ctQuestao.getText().isEmpty()) {
 					q.setQuestao(ctQuestao.getText().toString());
-					if(difiFacil.isSelected()) {
+					if (difiFacil.isSelected()) {
 						q.setDificuldade(difiFacil.getActionCommand().toString());
 					} else {
 						q.setDificuldade(difiDificil.getActionCommand().toString());
@@ -185,13 +186,14 @@ public class AdicionarQuestao extends JFrame {
 					} else {
 						q.setResposta(respD.getActionCommand().toString());
 					}
-					
+
 					q.setAltA(ctRespA.getText().toString());
 					q.setAltB(ctRespB.getText().toString());
 					q.setAltC(ctRespC.getText().toString());
 					q.setAltD(ctRespD.getText().toString());
-
+					q.setQuestaofeita("0");
 					DAO<Questao> dao = new QuestaoDAO();
+
 					if (dao.salvar(q)) {
 						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Sucesso!",
 								JOptionPane.INFORMATION_MESSAGE);
@@ -218,9 +220,11 @@ public class AdicionarQuestao extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
 				PrincipalAdmin pa = new PrincipalAdmin();
 				pa.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
@@ -232,22 +236,22 @@ public class AdicionarQuestao extends JFrame {
 		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.setBounds(10, 227, 101, 23);
 		contentPane.add(btnVoltar);
-		
+
 		ctRespB = new JTextField();
 		ctRespB.setBounds(45, 160, 379, 20);
 		contentPane.add(ctRespB);
 		ctRespB.setColumns(10);
-		
+
 		ctRespA = new JTextField();
 		ctRespA.setBounds(45, 140, 379, 20);
 		contentPane.add(ctRespA);
 		ctRespA.setColumns(10);
-		
+
 		ctRespD = new JTextField();
 		ctRespD.setBounds(45, 200, 379, 20);
 		contentPane.add(ctRespD);
 		ctRespD.setColumns(10);
-		
+
 		ctRespC = new JTextField();
 		ctRespC.setBounds(45, 180, 379, 20);
 		contentPane.add(ctRespC);
@@ -257,10 +261,11 @@ public class AdicionarQuestao extends JFrame {
 		lblFundo.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
 		lblFundo.setBounds(0, 0, 434, 261);
 		contentPane.add(lblFundo);
-		
+
 	}
-	AdicionarQuestao(Questao questao) {		
-        
+
+	AdicionarQuestao(Questao questao) {
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -293,7 +298,6 @@ public class AdicionarQuestao extends JFrame {
 		JRadioButton difiFacil = new JRadioButton("Fácil");
 		difiFacil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 			}
 		});
 		difiFacil.setBackground(new Color(90, 155, 213));
@@ -367,10 +371,10 @@ public class AdicionarQuestao extends JFrame {
 		btnSalvar.setFocusPainted(false);
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				if (!ctQuestao.getText().isEmpty()) {
 					questao.setQuestao(ctQuestao.getText().toString());
-					if(difiFacil.isSelected()) {
+					if (difiFacil.isSelected()) {
 						questao.setDificuldade(difiFacil.getActionCommand().toString());
 					} else {
 						questao.setDificuldade(difiDificil.getActionCommand().toString());
@@ -384,12 +388,12 @@ public class AdicionarQuestao extends JFrame {
 					} else {
 						questao.setResposta(respD.getActionCommand().toString());
 					}
-					
+
 					questao.setAltA(ctRespA.getText().toString());
 					questao.setAltB(ctRespB.getText().toString());
 					questao.setAltC(ctRespC.getText().toString());
 					questao.setAltD(ctRespD.getText().toString());
-
+					questao.setQuestaofeita("0");
 					DAO<Questao> dao = new QuestaoDAO();
 					if (dao.alterar(questao)) {
 						JOptionPane.showMessageDialog(null, "Questão alterada com sucesso!", "Sucesso!",
@@ -431,22 +435,22 @@ public class AdicionarQuestao extends JFrame {
 		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.setBounds(10, 227, 101, 23);
 		contentPane.add(btnVoltar);
-		
+
 		ctRespB = new JTextField();
 		ctRespB.setBounds(45, 160, 379, 20);
 		contentPane.add(ctRespB);
 		ctRespB.setColumns(10);
-		
+
 		ctRespA = new JTextField();
 		ctRespA.setBounds(45, 140, 379, 20);
 		contentPane.add(ctRespA);
 		ctRespA.setColumns(10);
-		
+
 		ctRespD = new JTextField();
 		ctRespD.setBounds(45, 200, 379, 20);
 		contentPane.add(ctRespD);
 		ctRespD.setColumns(10);
-		
+
 		ctRespC = new JTextField();
 		ctRespC.setBounds(45, 180, 379, 20);
 		contentPane.add(ctRespC);
@@ -456,15 +460,14 @@ public class AdicionarQuestao extends JFrame {
 		label.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
 		label.setBounds(0, 0, 434, 261);
 		contentPane.add(label);
-		
-       setTitle("Editar Questao: " + questao.getIdQuestao());
-       ctQuestao.setText(questao.getQuestao());
-       ctRespA.setText(questao.getAltA());
-       ctRespB.setText(questao.getAltB());
-       ctRespC.setText(questao.getAltC());
-       ctRespD.setText(questao.getAltD());
-       this.questao = questao;
-       
-       
+
+		setTitle("Editar Questao: " + questao.getIdQuestao());
+		ctQuestao.setText(questao.getQuestao());
+		ctRespA.setText(questao.getAltA());
+		ctRespB.setText(questao.getAltB());
+		ctRespC.setText(questao.getAltC());
+		ctRespD.setText(questao.getAltD());
+		this.questao = questao;
+
 	}
 }

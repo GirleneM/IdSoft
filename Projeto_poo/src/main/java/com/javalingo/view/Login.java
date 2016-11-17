@@ -103,26 +103,28 @@ public class Login extends JFrame {
 		btnLogar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
+
 				UsuarioDAO usuarioDAO = new UsuarioDAO();
 				Usuario usuario = new Usuario();
 				usuario = usuarioDAO.Acesso(ctUsuario.getText(), ctSenha.getText());
+
 				if (UsuarioDAO.acesso) {
-					JOptionPane.showMessageDialog(null, "Bem Vindo(a), " + usuario.getNome(), "Logado!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Bem Vindo(a), " + usuario.getNome(), "Logado!",
+							JOptionPane.INFORMATION_MESSAGE);
 					// Chama uma tela
 					long id = usuario.getIdUsuario();
 					String s = Long.toString(id);
 					Principal p = new Principal(usuario.getNome(), s);
 					p.setVisible(true);
 					dispose();
-					
-					
+
 				} else if (ctUsuario.getText().equals("idsoft") && ctSenha.getText().equals("javalingo")) {
 					JOptionPane.showMessageDialog(null, "Admin Logado!");
 					// Chama uma tela
 					PrincipalAdmin pa = new PrincipalAdmin();
 					pa.setVisible(true);
 					dispose();
-					
+
 				} else {
 					JOptionPane.showMessageDialog(null, "Login ou Senha Incorretos");
 				}
@@ -141,9 +143,11 @@ public class Login extends JFrame {
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				TelaInicial ti = new TelaInicial();
 				ti.setVisible(true);
 				dispose();
+
 			}
 		});
 		btnVoltar.setBounds(10, 227, 89, 23);
@@ -160,10 +164,11 @@ public class Login extends JFrame {
 	}
 
 	public void play(String nomedoaudio) {
+
 		URL url = getClass().getResource(nomedoaudio + ".wav");
 		AudioClip audio = Applet.newAudioClip(url);
 		audio.play();
-		
+
 	}
 
 	public JTextField getCtUsuario() {

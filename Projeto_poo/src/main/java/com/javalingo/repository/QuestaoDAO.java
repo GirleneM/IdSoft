@@ -23,7 +23,8 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/javalingo", "root", "");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost/javalingo?verifyServerCertificate=false&useSSL=true", "root", "");
 			consulta = conn.createStatement();
 
 			tabela = consulta.executeQuery("SELECT * FROM questao WHERE questaofeita='" + questaomarcada
@@ -42,6 +43,40 @@ public class QuestaoDAO extends GenericDAO<Questao> {
 				NovaQuestao = true;
 			} else {
 				NovaQuestao = false;
+			}
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		}
+		return questao;
+
+	}
+
+	public static boolean zerarquestoes;
+
+	public Questao Zerarquestoes() {
+
+		Questao questao = new Questao();
+		Connection conn = null;
+		Statement consulta = null;
+		Object tabela = null;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost/javalingo?verifyServerCertificate=false&useSSL=true", "root", "");
+			consulta = conn.createStatement();
+			String s = "pao";
+			tabela = consulta.executeUpdate("UPDATE questao SET questaofeita = 0  WHERE questaofeita = 1");
+
+			if (((ResultSet) tabela).next()) {
+
+				questao.setQuestaofeita(((ResultSet) tabela).getString(s));
+
+				zerarquestoes = true;
+			} else {
+				zerarquestoes = false;
 			}
 
 		} catch (ClassNotFoundException | SQLException e) {
