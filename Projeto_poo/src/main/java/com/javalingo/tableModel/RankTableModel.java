@@ -18,7 +18,7 @@ public class RankTableModel extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nomeColunas[] = { "Usuário", "Acertos", "Erros", "Percentual" };
+	private String nomeColunas[] = {"Usuário", "Acertos", "Erros", "Percentual"};
 	private List<Usuario> usuarios;
 
 	public RankTableModel(List<Usuario> usuarios) {

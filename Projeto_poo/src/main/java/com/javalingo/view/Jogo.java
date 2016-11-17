@@ -51,7 +51,7 @@ public class Jogo extends JFrame {
 
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD,
 			String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
-		setTitle("Javalingo - " + dificuldade);
+		setTitle("Javalingo - Questão " + tela + " - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 750;
