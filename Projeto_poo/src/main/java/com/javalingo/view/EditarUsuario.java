@@ -180,8 +180,8 @@ public class EditarUsuario extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				TelaInicial ti = new TelaInicial();
-				ti.setVisible(true);
+				Principal p = new Principal(nomeUser, idUser);
+				p.setVisible(true);
 				dispose();
 
 			}
