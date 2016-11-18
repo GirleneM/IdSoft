@@ -35,7 +35,7 @@ public class FimJogo extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FimJogo frame = new FimJogo(String, String, String, String);
+					FimJogo frame = new FimJogo(String, String, String, String, String);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class FimJogo extends JFrame {
 	 * Create the frame.
 	 */
 
-	public FimJogo(String idUser, String nomeUser, String certas, String erradas) {
+	public FimJogo(String idUser, String nomeUser, String certas, String erradas, String dificuldade) {
 		setTitle("Javalingo - Resultado");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -84,6 +84,7 @@ public class FimJogo extends JFrame {
 		double id = Double.valueOf(certas).doubleValue();
 		double id2 = Double.valueOf(erradas).doubleValue();
 		double porcetagem = 100 / (id + id2) * id;
+		String porceta = Double.toString(porcetagem);
 
 		JLabel lblPorcetagem = new JLabel("Porcetagem:" + porcetagem + "%");
 		lblPorcetagem.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -155,6 +156,21 @@ public class FimJogo extends JFrame {
 		});
 		btnTela.setBounds(94, 227, 256, 23);
 		contentPane_1.add(btnTela);
+		
+		JButton btnObterCertificado = new JButton("Obter Certificado");
+		btnObterCertificado.setForeground(Color.WHITE);
+		btnObterCertificado.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnObterCertificado.setBorderPainted(false);
+		btnObterCertificado.setContentAreaFilled(false);
+		btnObterCertificado.setFocusPainted(false);
+		btnObterCertificado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Certificado c = new  Certificado(nomeUser, dificuldade, porceta+"%");
+				c.setVisible(true);
+			}
+		});
+		btnObterCertificado.setBounds(153, 158, 140, 23);
+		contentPane_1.add(btnObterCertificado);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(FimJogo.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));

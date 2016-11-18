@@ -278,7 +278,7 @@ public class Jogo extends JFrame {
 				questaoDAO.alterar(questao);
 			}
 		} else {
-			FimJogo fj = new FimJogo(idUser, nomeUser, certas, erradas);
+			FimJogo fj = new FimJogo(idUser, nomeUser, certas, erradas, dificuldade);
 			fj.setVisible(true);
 			dispose();
 			@SuppressWarnings("unused")
