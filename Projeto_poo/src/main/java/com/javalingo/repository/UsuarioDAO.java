@@ -129,6 +129,41 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 		return user;
 
 	}
+	
+	public static boolean deletaruser;
+
+	public Usuario Deletaruser(long id) {
+
+		Usuario user = new Usuario();
+		Connection conn = null;
+		Statement consulta = null;
+		Object tabela = null;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost/javalingo?verifyServerCertificate=false&useSSL=true", "root", "");
+			consulta = conn.createStatement();
+
+			tabela = consulta.executeUpdate("DELETE FROM usuario WHERE idUsuario = '"+id+"'");
+
+			if (((ResultSet) tabela).next()) {
+
+				user.setIdUsuario(((ResultSet) tabela).getLong("idUsuario"));
+
+
+				atualizaruser1 = true;
+			} else {
+				atualizaruser1 = false;
+			}
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		}
+		return user;
+
+	}
 
 	public UsuarioDAO() {
 		super(Usuario.class);

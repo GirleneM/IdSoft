@@ -196,7 +196,22 @@ public class EditarUsuario extends JFrame {
 		JButton btnDeletarConta = new JButton("Deletar Conta");
 		btnDeletarConta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				long id = Long.parseLong(idUser);
+				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir sua conta?", "Excluir?", JOptionPane.OK_CANCEL_OPTION);
 				
+				if(i == JOptionPane.OK_OPTION){
+					TelaInicial ti = new TelaInicial();
+					ti.setVisible(true);
+					dispose();
+					@SuppressWarnings("unused")
+					Usuario u = new Usuario();
+					UsuarioDAO ud = new UsuarioDAO();
+					u = ud.Deletaruser(id);
+					if(UsuarioDAO.deletaruser){}
+				}
+				else{
+					
+				}
 			}
 		});
 		btnDeletarConta.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/trash-can.png")));
@@ -206,7 +221,7 @@ public class EditarUsuario extends JFrame {
 		btnDeletarConta.setContentAreaFilled(false);
 		btnDeletarConta.setBorderPainted(false);
 		btnDeletarConta.setBackground(new Color(100, 149, 237));
-		btnDeletarConta.setBounds(163, 227, 151, 23);
+		btnDeletarConta.setBounds(150, 227, 151, 23);
 		contentPane.add(btnDeletarConta);
 
 		lblFundo = new JLabel("");
