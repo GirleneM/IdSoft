@@ -66,7 +66,7 @@ public class FimJogo extends JFrame {
 		JLabel lblJogador = new JLabel("Jogador: " + nomeUser);
 		lblJogador.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblJogador.setForeground(Color.WHITE);
-		lblJogador.setBounds(154, 11, 176, 25);
+		lblJogador.setBounds(10, 11, 424, 25);
 		contentPane_1.add(lblJogador);
 
 		JLabel lblAcertos = new JLabel("Acertos:" + certas);
