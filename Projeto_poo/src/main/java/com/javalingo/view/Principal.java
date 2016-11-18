@@ -61,7 +61,7 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal(String nomeUser, String idUser) {
-		setTitle("Javalingo - Opções");
+		setTitle("Javalingo - " + nomeUser);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -212,7 +212,7 @@ public class Principal extends JFrame {
 				UsuarioDAO ud = new UsuarioDAO();
 				u = ud.Buscaruser(id);
 				if(UsuarioDAO.buscaruser){
-					EditarUsuario eu = new EditarUsuario(idUser, u.getNome(), u.getUsuario(), u.getEmail(), u.getSenha());
+					EditarUsuario eu = new EditarUsuario(idUser, u.getNome(), u.getUsuario(), u.getEmail(), u.getSenha(), u.getPorcetagemtotal(), u.getQuestaocerta(), u.getQuestaocerta(), u.getTestesfeitos());
 					eu.setVisible(true);
 					dispose();
 				}

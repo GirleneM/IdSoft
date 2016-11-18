@@ -213,18 +213,20 @@ public class Jogo extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair? Todo jogo feito será apagado", "Desistir!", JOptionPane.YES_NO_OPTION);
-				Principal p = new Principal(nomeUser, idUser);
-				p.setVisible(true);
-				dispose();
-				if(i == JOptionPane.YES_OPTION){
+				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair? Todo jogo feito será apagado", "Desistir?", JOptionPane.OK_CANCEL_OPTION);
+
+				if(i == JOptionPane.OK_OPTION){
+					Principal p = new Principal(nomeUser, idUser);
+					p.setVisible(true);
+					dispose();
 					@SuppressWarnings("unused")
 					Questao q = new Questao();
 					QuestaoDAO qd = new QuestaoDAO();
 					q = qd.Zerarquestoes();
+
 					if(QuestaoDAO.zerarquestoes){
-					
 					}
+
 				}
 				else{
 					
@@ -234,7 +236,7 @@ public class Jogo extends JFrame {
 
 			}
 		});
-		btnVoltar.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Icones/ok.png")));
+		btnVoltar.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Icones/cross (1).png")));
 		btnVoltar.setForeground(Color.BLACK);
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnVoltar.setFocusable(false);

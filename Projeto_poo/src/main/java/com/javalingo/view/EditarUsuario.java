@@ -46,7 +46,7 @@ public class EditarUsuario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EditarUsuario frame = new EditarUsuario(String, String, String, String, String);
+					EditarUsuario frame = new EditarUsuario(String, String, String, String, String, String, String, String, String);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -59,7 +59,7 @@ public class EditarUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditarUsuario(String idUser, String nomeUser, String usuario, String email, String senha) {
+	public EditarUsuario(String idUser, String nomeUser, String usuario, String email, String senha, String porcetagem, String certas, String erradas, String testesfeitos) {
 		setTitle("Javalingo - Cadastro");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -141,10 +141,10 @@ public class EditarUsuario extends JFrame {
 					u.setUsuario(ctUsuario.getText().toString());
 					u.setEmail(ctEmail.getText().toString());
 					u.setSenha(ctSenha.getText().toString());
-					u.setPorcetagemtotal("0");
-					u.setQuestaocerta("0");
-					u.setQuestaoerrada("0");
-					u.setTestesfeitos("0");
+					u.setPorcetagemtotal(porcetagem);
+					u.setQuestaocerta(certas);
+					u.setQuestaoerrada(erradas);
+					u.setTestesfeitos(testesfeitos);
 
 					DAO<Usuario> dao = new UsuarioDAO();
 
@@ -180,8 +180,8 @@ public class EditarUsuario extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Principal p = new Principal(nomeUser, idUser);
-				p.setVisible(true);
+				TelaInicial ti = new TelaInicial();
+				ti.setVisible(true);
 				dispose();
 
 			}
@@ -192,6 +192,22 @@ public class EditarUsuario extends JFrame {
 		ctSenha = new JPasswordField(senha);
 		ctSenha.setBounds(88, 158, 336, 20);
 		contentPane.add(ctSenha);
+		
+		JButton btnDeletarConta = new JButton("Deletar Conta");
+		btnDeletarConta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnDeletarConta.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/trash-can.png")));
+		btnDeletarConta.setForeground(Color.WHITE);
+		btnDeletarConta.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnDeletarConta.setFocusPainted(false);
+		btnDeletarConta.setContentAreaFilled(false);
+		btnDeletarConta.setBorderPainted(false);
+		btnDeletarConta.setBackground(new Color(100, 149, 237));
+		btnDeletarConta.setBounds(163, 227, 151, 23);
+		contentPane.add(btnDeletarConta);
 
 		lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));

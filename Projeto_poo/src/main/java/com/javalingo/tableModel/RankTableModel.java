@@ -18,7 +18,7 @@ public class RankTableModel extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nomeColunas[] = {"Usuário", "Acertos", "Erros", "Percentual"};
+	private String nomeColunas[] = {"Usuário", "Acertos", "Erros", "Percentual", "Testes Feitos"};
 	private List<Usuario> usuarios;
 
 	public RankTableModel(List<Usuario> usuarios) {
@@ -49,6 +49,8 @@ public class RankTableModel extends AbstractTableModel {
 			return usuario.getQuestaoerrada();
 		case 3:
 			return usuario.getPorcetagemtotal();
+		case 4:
+			return usuario.getTestesfeitos();
 
 		}
 		return null;
@@ -67,6 +69,8 @@ public class RankTableModel extends AbstractTableModel {
 			return nomeColunas[2];
 		case 3:
 			return nomeColunas[3];
+		case 4:
+			return nomeColunas[4];
 		}
 		return "";
 	}
