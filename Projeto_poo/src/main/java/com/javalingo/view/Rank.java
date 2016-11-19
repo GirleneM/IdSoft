@@ -101,7 +101,7 @@ public class Rank extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Top3 ti = new Top3();
+				TelaInicial ti = new TelaInicial();
 				ti.setVisible(true);
 				dispose();
 
