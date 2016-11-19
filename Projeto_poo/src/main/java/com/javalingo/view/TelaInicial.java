@@ -130,8 +130,8 @@ public class TelaInicial extends JFrame {
 		btnRank.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				Top3 t3 = new Top3();
-				t3.setVisible(true);
+				Rank r = new Rank();
+				r.setVisible(true);
 				dispose();
 
 			}

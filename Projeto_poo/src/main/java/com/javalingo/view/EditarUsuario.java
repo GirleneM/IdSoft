@@ -60,7 +60,7 @@ public class EditarUsuario extends JFrame {
 	 * Create the frame.
 	 */
 	public EditarUsuario(String idUser, String nomeUser, String usuario, String email, String senha, String porcetagem, String certas, String erradas, String testesfeitos) {
-		setTitle("Javalingo - Cadastro");
+		setTitle("Javalingo - Editar Usuário");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 450;
@@ -73,7 +73,7 @@ public class EditarUsuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblCadastro = new JLabel("Cadastro");
+		JLabel lblCadastro = new JLabel("Perfil");
 		lblCadastro.setForeground(Color.WHITE);
 		lblCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblCadastro.setBounds(183, 27, 68, 14);
@@ -149,14 +149,14 @@ public class EditarUsuario extends JFrame {
 					DAO<Usuario> dao = new UsuarioDAO();
 
 					if (dao.alterar(u)) {
-						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!", "Sucesso!",
+						JOptionPane.showMessageDialog(null, "Alterado com sucesso!", "Sucesso!",
 								JOptionPane.INFORMATION_MESSAGE);
 						dispose();
 						Login l = new Login();
 						l.setVisible(true);
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "Falha ao cadastrar!", "Falha!", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Falha ao alterar!", "Falha!", JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Falha!",
