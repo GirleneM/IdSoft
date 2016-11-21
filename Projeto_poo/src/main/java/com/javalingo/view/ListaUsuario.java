@@ -76,8 +76,9 @@ public class ListaUsuario extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblListaDeUsuarios = new JLabel("Lista de Usuários");
+		lblListaDeUsuarios.setForeground(Color.WHITE);
 		lblListaDeUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblListaDeUsuarios.setBounds(312, 11, 120, 28);
+		lblListaDeUsuarios.setBounds(312, 5, 120, 28);
 		contentPane.add(lblListaDeUsuarios);
 
 		table = new JTable();

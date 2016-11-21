@@ -73,8 +73,9 @@ public class ListaQuestao extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblListaDeQuestoes = new JLabel("Lista de Questões");
+		lblListaDeQuestoes.setForeground(Color.WHITE);
 		lblListaDeQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblListaDeQuestoes.setBounds(314, 11, 120, 28);
+		lblListaDeQuestoes.setBounds(314, 5, 120, 28);
 		contentPane.add(lblListaDeQuestoes);
 
 		table = new JTable();
