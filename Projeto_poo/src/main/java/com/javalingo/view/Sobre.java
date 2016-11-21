@@ -43,6 +43,7 @@ public class Sobre extends JFrame {
 	 * Create the frame.
 	 */
 	public Sobre() {
+		
 		setTitle("Javalingo - Sobre");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
