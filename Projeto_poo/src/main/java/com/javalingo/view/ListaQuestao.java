@@ -59,6 +59,7 @@ public class ListaQuestao extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaQuestao() {
+		
 		setTitle("Javalingo - Lista de Questões");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
