@@ -52,7 +52,7 @@ public class Jogo extends JFrame {
 
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD,
 			String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
-		setTitle("Javalingo - Questão "+tela+" - " + dificuldade);
+		setTitle("Javalingo - Questão "+ tela +" - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 750;
@@ -68,18 +68,18 @@ public class Jogo extends JFrame {
 		UIManager.put("OptionPane.yesButtonText", "Desistir");
 
 		JLabel lblQuestao = new JLabel("<html><p align = center>" + questao + "</p></html>");
-		lblQuestao.setForeground(new Color(139, 69, 19));
+		lblQuestao.setForeground(new Color(54, 74, 114));
 		lblQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblQuestao.setBounds(57, 21, 300, 370);
+		lblQuestao.setBounds(73, 21, 256, 362);
 		contentPane.add(lblQuestao);
 
 		JButton btnAltA = new JButton("<html>" + altA + "</html>");
-		btnAltA.setBackground(new Color(139, 69, 19));
+		btnAltA.setBackground(new Color(54, 74, 114));
 		btnAltA.setBorderPainted(false);
 		btnAltA.setFocusPainted(false);
 		btnAltA.setForeground(Color.WHITE);
 		btnAltA.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltA.setBounds(430, 26, 200, 70);
+		btnAltA.setBounds(437, 30, 200, 70);
 		contentPane.add(btnAltA);
 		btnAltA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -108,12 +108,12 @@ public class Jogo extends JFrame {
 		});
 
 		JButton btnAltB = new JButton("<html>" + altB + "</html>");
-		btnAltB.setBackground(new Color(139, 69, 19));
+		btnAltB.setBackground(new Color(54, 74, 114));
 		btnAltB.setBorderPainted(false);
 		btnAltB.setFocusPainted(false);
 		btnAltB.setForeground(Color.WHITE);
 		btnAltB.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltB.setBounds(430, 130, 200, 70);
+		btnAltB.setBounds(437, 134, 200, 70);
 		contentPane.add(btnAltB);
 		btnAltB.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -142,12 +142,12 @@ public class Jogo extends JFrame {
 		});
 
 		JButton btnAltC = new JButton("<html>" + altC + "</html>");
-		btnAltC.setBackground(new Color(139, 69, 19));
+		btnAltC.setBackground(new Color(54, 74, 114));
 		btnAltC.setBorderPainted(false);
 		btnAltC.setFocusPainted(false);
 		btnAltC.setForeground(Color.WHITE);
 		btnAltC.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltC.setBounds(430, 234, 200, 70);
+		btnAltC.setBounds(437, 238, 200, 70);
 		contentPane.add(btnAltC);
 		btnAltC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -176,12 +176,12 @@ public class Jogo extends JFrame {
 		});
 
 		JButton btnAltD = new JButton("<html>" + altD + "</html>");
-		btnAltD.setBackground(new Color(139, 69, 19));
+		btnAltD.setBackground(new Color(54, 74, 114));
 		btnAltD.setBorderPainted(false);
 		btnAltD.setFocusPainted(false);
 		btnAltD.setForeground(Color.WHITE);
 		btnAltD.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAltD.setBounds(430, 337, 200, 70);
+		btnAltD.setBounds(437, 341, 200, 70);
 		contentPane.add(btnAltD);
 		btnAltD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -243,15 +243,11 @@ public class Jogo extends JFrame {
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.setBorder(null);
 		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setBounds(57, 402, 89, 23);
+		btnVoltar.setBounds(42, 394, 89, 23);
 		contentPane.add(btnVoltar);
 
-		JLabel label = new JLabel("");
-		label.setBounds(367, 11, 320, 420);
-		contentPane.add(label);
-
 		JLabel lblFundo = new JLabel("");
-		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro2.png")));
+		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro5.jpg")));
 		lblFundo.setBounds(0, 0, 734, 441);
 		contentPane.add(lblFundo);
 

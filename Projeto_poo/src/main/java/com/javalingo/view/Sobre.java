@@ -87,7 +87,7 @@ public class Sobre extends JFrame {
 		lblEmpresa.setBounds(195, 0, 239, 30);
 		contentPane.add(lblEmpresa);
 
-		JLabel lblEquipe = new JLabel("<html>Desenvolvimento:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
+		JLabel lblEquipe = new JLabel("<html>Programador:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
 				+ "Designer:<br><br>Luciano Gomes</html>");
 		lblEquipe.setForeground(Color.WHITE);
 		lblEquipe.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -95,7 +95,7 @@ public class Sobre extends JFrame {
 		contentPane.add(lblEquipe);
 
 		JLabel lblEquipe2 = new JLabel(
-				"<html><p align = right>Teste:<br><br>Girlene Maria<br>Bruno Allison</p></html>");
+				"<html><p align = right>Testador:<br><br>Girlene Maria<br>Bruno Allison</p></html>");
 		lblEquipe2.setForeground(Color.WHITE);
 		lblEquipe2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblEquipe2.setBounds(347, 36, 77, 117);
