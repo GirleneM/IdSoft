@@ -121,9 +121,6 @@ public class PrincipalAdmin extends JFrame {
 		contentPane.setLayout(null);
 
 		JButton btnLogout = new JButton("Logout");
-		btnLogout.setBorderPainted(false);
-		btnLogout.setContentAreaFilled(false);
-		btnLogout.setFocusPainted(false);
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -140,11 +137,14 @@ public class PrincipalAdmin extends JFrame {
 
 			}
 		});
-		btnLogout.setBackground(new Color(100, 149, 237));
-		btnLogout.setForeground(new Color(255, 255, 255));
-		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnLogout.setIcon(new ImageIcon(PrincipalAdmin.class.getResource("/com/javalingo/img/Icones/logout2.png")));
-		btnLogout.setBounds(335, 11, 99, 23);
+		btnLogout.setForeground(Color.WHITE);
+		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnLogout.setFocusable(false);
+		btnLogout.setContentAreaFilled(false);
+		btnLogout.setBorder(null);
+		btnLogout.setBackground(new Color(30, 144, 255));
+		btnLogout.setBounds(358, 11, 66, 18);
 		contentPane.add(btnLogout);
 
 		JLabel lblFundo = new JLabel("");

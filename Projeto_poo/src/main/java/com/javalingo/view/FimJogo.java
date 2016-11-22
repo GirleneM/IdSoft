@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class FimJogo extends JFrame {
 
@@ -64,40 +65,41 @@ public class FimJogo extends JFrame {
 		contentPane_1.setLayout(null);
 
 		JLabel lblJogador = new JLabel("Jogador: " + nomeUser);
+		lblJogador.setHorizontalAlignment(SwingConstants.CENTER);
 		lblJogador.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblJogador.setForeground(Color.WHITE);
-		lblJogador.setBounds(10, 11, 424, 25);
+		lblJogador.setBounds(0, 20, 434, 25);
 		contentPane_1.add(lblJogador);
 
-		JLabel lblAcertos = new JLabel("Acertos:" + certas);
+		JLabel lblAcertos = new JLabel("Acertos: " + certas);
 		lblAcertos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblAcertos.setForeground(Color.WHITE);
-		lblAcertos.setBounds(10, 70, 158, 14);
+		lblAcertos.setBounds(131, 66, 86, 18);
 		contentPane_1.add(lblAcertos);
 
 		JLabel lblErros = new JLabel("Erros: " + erradas);
 		lblErros.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblErros.setForeground(Color.WHITE);
-		lblErros.setBounds(10, 100, 158, 14);
+		lblErros.setBounds(230, 66, 77, 18);
 		contentPane_1.add(lblErros);
 
 		double id = Double.valueOf(certas).doubleValue();
 		double id2 = Double.valueOf(erradas).doubleValue();
 		double porcetagem = 100 / (id + id2) * id;
+		
+		JLabel lblResultado = new JLabel("Resultado:");
+		lblResultado.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblResultado.setForeground(Color.WHITE);
+		lblResultado.setBounds(174, 105, 86, 18);
+		contentPane_1.add(lblResultado);
 
-		JLabel lblPorcetagem = new JLabel("Porcetagem:" + porcetagem + "%");
-		lblPorcetagem.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblPorcetagem = new JLabel(porcetagem + "%");
+		lblPorcetagem.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		lblPorcetagem.setForeground(Color.WHITE);
-		lblPorcetagem.setBounds(10, 130, 158, 22);
+		lblPorcetagem.setBounds(158, 152, 158, 38);
 		contentPane_1.add(lblPorcetagem);
-
-		JButton btnTela = new JButton("Tela Inicial de " + nomeUser);
-		btnTela.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnTela.setForeground(Color.WHITE);
-		btnTela.setBackground(new Color(100, 149, 237));
-		btnTela.setBorder(null);
-		btnTela.setFocusable(false);
-		btnTela.setContentAreaFilled(false);
+		
+		JButton btnTela = new JButton("GAME OVER!");
 		btnTela.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -153,11 +155,17 @@ public class FimJogo extends JFrame {
 				}
 			}
 		});
-		btnTela.setBounds(94, 227, 256, 23);
+		btnTela.setForeground(Color.WHITE);
+		btnTela.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnTela.setFocusable(false);
+		btnTela.setContentAreaFilled(false);
+		btnTela.setBorder(null);
+		btnTela.setBackground(new Color(30, 144, 255));
+		btnTela.setBounds(164, 232, 106, 18);
 		contentPane_1.add(btnTela);
 
 		JLabel lblFundo = new JLabel("");
-		lblFundo.setIcon(new ImageIcon(FimJogo.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setIcon(new ImageIcon(FimJogo.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
 		lblFundo.setBounds(0, 0, 434, 261);
 		contentPane_1.add(lblFundo);
 

@@ -93,7 +93,7 @@ public class Tutorial extends JFrame {
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.setBorder(null);
 		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setBounds(15, 222, 89, 23);
+		btnVoltar.setBounds(20, 228, 58, 18);
 		contentPane.add(btnVoltar);
 
 		JLabel lblFundo = new JLabel("");

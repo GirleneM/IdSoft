@@ -40,6 +40,7 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField ctUsuario;
 	private JPasswordField ctSenha;
+	private JButton btnLogar;
 
 	/**
 	 * Launch the application.
@@ -78,28 +79,44 @@ public class Login extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuário :");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblUsuario.setForeground(Color.WHITE);
-		lblUsuario.setBounds(100, 153, 57, 17);
+		lblUsuario.setBounds(125, 160, 56, 18);
 		contentPane.add(lblUsuario);
 
 		ctUsuario = new JTextField();
-		ctUsuario.setBounds(167, 153, 120, 20);
+		ctUsuario.setBounds(191, 160, 120, 20);
 		contentPane.add(ctUsuario);
 		ctUsuario.setColumns(10);
 
 		JLabel lblSenha = new JLabel("Senha   :");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblSenha.setForeground(Color.WHITE);
-		lblSenha.setBounds(100, 182, 57, 20);
+		lblSenha.setBounds(125, 190, 56, 18);
 		contentPane.add(lblSenha);
 
-		JButton btnLogar = new JButton("Logar");
-		btnLogar.setForeground(Color.WHITE);
-		btnLogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnLogar.setBackground(new Color(100, 149, 237));
-		btnLogar.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Icones/login2.png")));
-		btnLogar.setBorder(null);
-		btnLogar.setFocusable(false);
-		btnLogar.setContentAreaFilled(false);
+		ctSenha = new JPasswordField();
+		ctSenha.setBounds(191, 190, 120, 20);
+		contentPane.add(ctSenha);
+
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				TelaInicial ti = new TelaInicial();
+				ti.setVisible(true);
+				dispose();
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
+		contentPane.add(btnVoltar);
+		btnLogar = new JButton("Logar");
 		btnLogar.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent arg0) {
@@ -111,7 +128,6 @@ public class Login extends JFrame {
 				if (UsuarioDAO.acesso) {
 					JOptionPane.showMessageDialog(null, "Bem Vindo(a), " + usuario.getNome(), "Logado!",
 							JOptionPane.INFORMATION_MESSAGE);
-					// Chama uma tela
 					long id = usuario.getIdUsuario();
 					String s = Long.toString(id);
 					Principal p = new Principal(usuario.getNome(), s);
@@ -120,7 +136,6 @@ public class Login extends JFrame {
 
 				} else if (ctUsuario.getText().equals("idsoft") && ctSenha.getText().equals("javalingo")) {
 					JOptionPane.showMessageDialog(null, "Admin Logado!");
-					// Chama uma tela
 					PrincipalAdmin pa = new PrincipalAdmin();
 					pa.setVisible(true);
 					dispose();
@@ -130,32 +145,15 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnLogar.setBounds(335, 227, 89, 23);
+		btnLogar.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Icones/login2.png")));
+		btnLogar.setForeground(Color.WHITE);
+		btnLogar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnLogar.setFocusable(false);
+		btnLogar.setContentAreaFilled(false);
+		btnLogar.setBorder(null);
+		btnLogar.setBackground(new Color(30, 144, 255));
+		btnLogar.setBounds(364, 232, 58, 18);
 		contentPane.add(btnLogar);
-
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				TelaInicial ti = new TelaInicial();
-				ti.setVisible(true);
-				dispose();
-
-			}
-		});
-		btnVoltar.setBounds(10, 227, 89, 23);
-		contentPane.add(btnVoltar);
-
-		ctSenha = new JPasswordField();
-		ctSenha.setBounds(167, 184, 120, 20);
-		contentPane.add(ctSenha);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Login.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));

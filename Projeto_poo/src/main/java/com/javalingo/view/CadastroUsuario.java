@@ -34,8 +34,6 @@ public class CadastroUsuario extends JFrame {
 	private JLabel lblEmail;
 	private JTextField ctEmail;
 	private JLabel lblSenha;
-	private JButton btSalvar;
-	private JButton btnVoltar;
 	private JPasswordField ctSenha;
 	private JLabel lblFundo;
 
@@ -76,7 +74,7 @@ public class CadastroUsuario extends JFrame {
 		JLabel lblCadastro = new JLabel("Cadastro");
 		lblCadastro.setForeground(Color.WHITE);
 		lblCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCadastro.setBounds(183, 27, 68, 14);
+		lblCadastro.setBounds(188, 27, 58, 14);
 		contentPane.add(lblCadastro);
 
 		JLabel lblNome = new JLabel("Nome*   :");
@@ -118,15 +116,32 @@ public class CadastroUsuario extends JFrame {
 		lblSenha.setBounds(10, 159, 83, 14);
 		contentPane.add(lblSenha);
 
-		btSalvar = new JButton("Salvar");
-		btSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btSalvar.setForeground(Color.WHITE);
-		btSalvar.setBackground(new Color(100, 149, 237));
-		btSalvar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
-		btSalvar.setBorderPainted(false);
-		btSalvar.setContentAreaFilled(false);
-		btSalvar.setFocusPainted(false);
-		btSalvar.addActionListener(new ActionListener() {
+		ctSenha = new JPasswordField();
+		ctSenha.setBounds(88, 158, 336, 20);
+		contentPane.add(ctSenha);
+
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				TelaInicial ti = new TelaInicial();
+				ti.setVisible(true);
+				dispose();
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
+		contentPane.add(btnVoltar);
+
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -167,33 +182,16 @@ public class CadastroUsuario extends JFrame {
 
 			}
 		});
-		btSalvar.setBounds(324, 227, 100, 23);
-		contentPane.add(btSalvar);
-
-		btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				TelaInicial ti = new TelaInicial();
-				ti.setVisible(true);
-				dispose();
-
-			}
-		});
-		btnVoltar.setBounds(10, 227, 100, 23);
-		contentPane.add(btnVoltar);
-
-		ctSenha = new JPasswordField();
-		ctSenha.setBounds(88, 158, 336, 20);
-		contentPane.add(ctSenha);
-
+		btnSalvar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
+		btnSalvar.setForeground(Color.WHITE);
+		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnSalvar.setFocusable(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBorder(null);
+		btnSalvar.setBackground(new Color(30, 144, 255));
+		btnSalvar.setBounds(360, 232, 60, 18);
+		contentPane.add(btnSalvar);
+		
 		lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
 		lblFundo.setBounds(0, 0, 434, 261);

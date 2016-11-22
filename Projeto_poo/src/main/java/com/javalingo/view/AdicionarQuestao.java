@@ -35,6 +35,7 @@ public class AdicionarQuestao extends JFrame {
 	private JTextField ctRespD;
 	@SuppressWarnings("unused")
 	private Questao questao;
+	private JButton btnSalvar;
 
 	/**
 	 * Launch the application.
@@ -132,6 +133,11 @@ public class AdicionarQuestao extends JFrame {
 		respA.setBounds(6, 139, 41, 23);
 		contentPane.add(respA);
 
+		ctRespA = new JTextField();
+		ctRespA.setBounds(45, 140, 379, 20);
+		contentPane.add(ctRespA);
+		ctRespA.setColumns(10);
+
 		JRadioButton respB = new JRadioButton("B");
 		respB.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		respB.setBackground(new Color(90, 155, 213));
@@ -139,12 +145,22 @@ public class AdicionarQuestao extends JFrame {
 		respB.setBounds(6, 159, 41, 23);
 		contentPane.add(respB);
 
+		ctRespB = new JTextField();
+		ctRespB.setBounds(45, 160, 379, 20);
+		contentPane.add(ctRespB);
+		ctRespB.setColumns(10);
+
 		JRadioButton respC = new JRadioButton("C");
 		respC.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		respC.setBackground(new Color(90, 155, 213));
 		respC.setForeground(Color.WHITE);
 		respC.setBounds(6, 179, 41, 23);
 		contentPane.add(respC);
+
+		ctRespC = new JTextField();
+		ctRespC.setBounds(45, 180, 379, 20);
+		contentPane.add(ctRespC);
+		ctRespC.setColumns(10);
 
 		JRadioButton respD = new JRadioButton("D");
 		respD.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -161,10 +177,31 @@ public class AdicionarQuestao extends JFrame {
 			bp2.add(respC);
 			bp2.add(respD);
 		}
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setBorderPainted(false);
-		btnSalvar.setContentAreaFilled(false);
-		btnSalvar.setFocusPainted(false);
+		ctRespD = new JTextField();
+		ctRespD.setBounds(45, 200, 379, 20);
+		contentPane.add(ctRespD);
+		ctRespD.setColumns(10);
+
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				PrincipalAdmin pa = new PrincipalAdmin();
+				pa.setVisible(true);
+				dispose();
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
+		contentPane.add(btnVoltar);
+		btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -210,52 +247,15 @@ public class AdicionarQuestao extends JFrame {
 				}
 			}
 		});
+		btnSalvar.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
 		btnSalvar.setForeground(Color.WHITE);
 		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnSalvar.setBackground(new Color(100, 149, 237));
-		btnSalvar.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
-		btnSalvar.setBounds(323, 227, 101, 23);
+		btnSalvar.setFocusable(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBorder(null);
+		btnSalvar.setBackground(new Color(30, 144, 255));
+		btnSalvar.setBounds(364, 232, 60, 18);
 		contentPane.add(btnSalvar);
-
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				PrincipalAdmin pa = new PrincipalAdmin();
-				pa.setVisible(true);
-				dispose();
-
-			}
-		});
-		btnVoltar.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setBorderPainted(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.setFocusPainted(false);
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setBounds(10, 227, 101, 23);
-		contentPane.add(btnVoltar);
-
-		ctRespB = new JTextField();
-		ctRespB.setBounds(45, 160, 379, 20);
-		contentPane.add(ctRespB);
-		ctRespB.setColumns(10);
-
-		ctRespA = new JTextField();
-		ctRespA.setBounds(45, 140, 379, 20);
-		contentPane.add(ctRespA);
-		ctRespA.setColumns(10);
-
-		ctRespD = new JTextField();
-		ctRespD.setBounds(45, 200, 379, 20);
-		contentPane.add(ctRespD);
-		ctRespD.setColumns(10);
-
-		ctRespC = new JTextField();
-		ctRespC.setBounds(45, 180, 379, 20);
-		contentPane.add(ctRespC);
-		ctRespC.setColumns(10);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(AdicionarQuestao.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));

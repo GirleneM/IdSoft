@@ -52,7 +52,7 @@ public class Jogo extends JFrame {
 
 	public Jogo(String dificuldade, String questao, String resposta, String altA, String altB, String altC, String altD,
 			String idQuestao, String idUser, String nomeUser, String certas, String erradas, String tela) {
-		setTitle("Javalingo - Questão "+ tela +" - " + dificuldade);
+		setTitle("Javalingo - Questão " + tela + " - " + dificuldade);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		int WIDTH = 750;
@@ -208,14 +208,15 @@ public class Jogo extends JFrame {
 				}
 			}
 		});
-		
-		JButton btnVoltar = new JButton("Desistir");
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair? Todo jogo feito será apagado", "Desistir?", JOptionPane.OK_CANCEL_OPTION);
 
-				if(i == JOptionPane.OK_OPTION){
+		JButton btnDesistir = new JButton("Desistir");
+		btnDesistir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair? Todo jogo feito será apagado",
+						"Desistir?", JOptionPane.OK_CANCEL_OPTION);
+
+				if (i == JOptionPane.OK_OPTION) {
 					Principal p = new Principal(nomeUser, idUser);
 					p.setVisible(true);
 					dispose();
@@ -224,27 +225,26 @@ public class Jogo extends JFrame {
 					QuestaoDAO qd = new QuestaoDAO();
 					q = qd.Zerarquestoes();
 
-					if(QuestaoDAO.zerarquestoes){
+					if (QuestaoDAO.zerarquestoes) {
 					}
 
+				} else {
+
 				}
-				else{
-					
-				}
-				
+
 				;
 
 			}
 		});
-		btnVoltar.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Icones/cross (1).png")));
-		btnVoltar.setForeground(Color.BLACK);
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.setBorder(null);
-		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setBounds(42, 394, 89, 23);
-		contentPane.add(btnVoltar);
+		btnDesistir.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Icones/cross (1).png")));
+		btnDesistir.setForeground(Color.BLACK);
+		btnDesistir.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnDesistir.setFocusable(false);
+		btnDesistir.setContentAreaFilled(false);
+		btnDesistir.setBorder(null);
+		btnDesistir.setBackground(new Color(30, 144, 255));
+		btnDesistir.setBounds(42, 394, 66, 18);
+		contentPane.add(btnDesistir);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(Jogo.class.getResource("/com/javalingo/img/Imagens/livro5.jpg")));

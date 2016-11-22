@@ -34,11 +34,10 @@ public class EditarUsuario extends JFrame {
 	private JLabel lblEmail;
 	private JTextField ctEmail;
 	private JLabel lblSenha;
-	private JButton btSalvar;
-	private JButton btnVoltar;
 	private JPasswordField ctSenha;
 	private JLabel lblFundo;
 	private static final String String = null;
+
 	/**
 	 * Launch the application.
 	 */
@@ -46,7 +45,8 @@ public class EditarUsuario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EditarUsuario frame = new EditarUsuario(String, String, String, String, String, String, String, String, String);
+					EditarUsuario frame = new EditarUsuario(String, String, String, String, String, String, String,
+							String, String);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -59,7 +59,8 @@ public class EditarUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditarUsuario(String idUser, String nomeUser, String usuario, String email, String senha, String porcetagem, String certas, String erradas, String testesfeitos) {
+	public EditarUsuario(String idUser, String nomeUser, String usuario, String email, String senha, String porcetagem,
+			String certas, String erradas, String testesfeitos) {
 		setTitle("Javalingo - Editar Usuário");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -76,13 +77,13 @@ public class EditarUsuario extends JFrame {
 		JLabel lblCadastro = new JLabel("Perfil");
 		lblCadastro.setForeground(Color.WHITE);
 		lblCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCadastro.setBounds(183, 27, 68, 14);
+		lblCadastro.setBounds(202, 27, 30, 14);
 		contentPane.add(lblCadastro);
 
 		JLabel lblNome = new JLabel("Nome*   :");
 		lblNome.setForeground(Color.WHITE);
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNome.setBounds(10, 65, 68, 14);
+		lblNome.setBounds(10, 65, 77, 14);
 		contentPane.add(lblNome);
 
 		ctNome = new JTextField(nomeUser);
@@ -93,7 +94,7 @@ public class EditarUsuario extends JFrame {
 		JLabel lblUsuario = new JLabel("Usuário* :");
 		lblUsuario.setForeground(Color.WHITE);
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblUsuario.setBounds(10, 97, 83, 14);
+		lblUsuario.setBounds(10, 97, 77, 14);
 		contentPane.add(lblUsuario);
 
 		ctUsuario = new JTextField(usuario);
@@ -104,7 +105,7 @@ public class EditarUsuario extends JFrame {
 		lblEmail = new JLabel("E-mail*   :");
 		lblEmail.setForeground(Color.WHITE);
 		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEmail.setBounds(10, 128, 83, 14);
+		lblEmail.setBounds(10, 128, 77, 14);
 		contentPane.add(lblEmail);
 
 		ctEmail = new JTextField(email);
@@ -115,18 +116,67 @@ public class EditarUsuario extends JFrame {
 		lblSenha = new JLabel("Senha*   :");
 		lblSenha.setForeground(Color.WHITE);
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblSenha.setBounds(10, 159, 83, 14);
+		lblSenha.setBounds(10, 159, 77, 14);
 		contentPane.add(lblSenha);
 
-		btSalvar = new JButton("Salvar");
-		btSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btSalvar.setForeground(Color.WHITE);
-		btSalvar.setBackground(new Color(100, 149, 237));
-		btSalvar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
-		btSalvar.setBorderPainted(false);
-		btSalvar.setContentAreaFilled(false);
-		btSalvar.setFocusPainted(false);
-		btSalvar.addActionListener(new ActionListener() {
+		ctSenha = new JPasswordField(senha);
+		ctSenha.setBounds(88, 158, 336, 20);
+		contentPane.add(ctSenha);
+
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Principal p = new Principal(nomeUser, idUser);
+				p.setVisible(true);
+				dispose();
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
+		contentPane.add(btnVoltar);
+
+		JButton btnDeletar = new JButton("Excluir");
+		btnDeletar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				long id = Long.parseLong(idUser);
+				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir sua conta?", "Excluir?",
+						JOptionPane.OK_CANCEL_OPTION);
+
+				if (i == JOptionPane.OK_OPTION) {
+					TelaInicial ti = new TelaInicial();
+					ti.setVisible(true);
+					dispose();
+					@SuppressWarnings("unused")
+					Usuario u = new Usuario();
+					UsuarioDAO ud = new UsuarioDAO();
+					u = ud.Deletaruser(id);
+					if (UsuarioDAO.deletaruser) {
+					}
+				} else {
+
+				}
+			}
+		});
+		btnDeletar.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/trash-can.png")));
+		btnDeletar.setForeground(Color.WHITE);
+		btnDeletar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnDeletar.setFocusable(false);
+		btnDeletar.setContentAreaFilled(false);
+		btnDeletar.setBorder(null);
+		btnDeletar.setBackground(new Color(30, 144, 255));
+		btnDeletar.setBounds(186, 232, 62, 18);
+		contentPane.add(btnDeletar);
+
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
@@ -166,63 +216,15 @@ public class EditarUsuario extends JFrame {
 
 			}
 		});
-		btSalvar.setBounds(324, 227, 100, 23);
-		contentPane.add(btSalvar);
-
-		btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setBackground(new Color(100, 149, 237));
-		btnVoltar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				Principal p = new Principal(nomeUser, idUser);
-				p.setVisible(true);
-				dispose();
-
-			}
-		});
-		btnVoltar.setBounds(10, 227, 100, 23);
-		contentPane.add(btnVoltar);
-
-		ctSenha = new JPasswordField(senha);
-		ctSenha.setBounds(88, 158, 336, 20);
-		contentPane.add(ctSenha);
-		
-		JButton btnDeletarConta = new JButton("Deletar Conta");
-		btnDeletarConta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				long id = Long.parseLong(idUser);
-				int i = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir sua conta?", "Excluir?", JOptionPane.OK_CANCEL_OPTION);
-				
-				if(i == JOptionPane.OK_OPTION){
-					TelaInicial ti = new TelaInicial();
-					ti.setVisible(true);
-					dispose();
-					@SuppressWarnings("unused")
-					Usuario u = new Usuario();
-					UsuarioDAO ud = new UsuarioDAO();
-					u = ud.Deletaruser(id);
-					if(UsuarioDAO.deletaruser){}
-				}
-				else{
-					
-				}
-			}
-		});
-		btnDeletarConta.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/trash-can.png")));
-		btnDeletarConta.setForeground(Color.WHITE);
-		btnDeletarConta.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnDeletarConta.setFocusPainted(false);
-		btnDeletarConta.setContentAreaFilled(false);
-		btnDeletarConta.setBorderPainted(false);
-		btnDeletarConta.setBackground(new Color(100, 149, 237));
-		btnDeletarConta.setBounds(150, 227, 151, 23);
-		contentPane.add(btnDeletarConta);
+		btnSalvar.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));
+		btnSalvar.setForeground(Color.WHITE);
+		btnSalvar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnSalvar.setFocusable(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBorder(null);
+		btnSalvar.setBackground(new Color(30, 144, 255));
+		btnSalvar.setBounds(360, 232, 60, 18);
+		contentPane.add(btnSalvar);
 
 		lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));

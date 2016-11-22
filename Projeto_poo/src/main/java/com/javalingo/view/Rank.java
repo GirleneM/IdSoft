@@ -73,7 +73,7 @@ public class Rank extends JFrame {
 		JLabel lblRank = new JLabel("Rank");
 		lblRank.setForeground(Color.WHITE);
 		lblRank.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblRank.setBounds(347, 11, 40, 14);
+		lblRank.setBounds(347, 11, 34, 14);
 		contentPane.add(lblRank);
 
 		table = new JTable();
@@ -84,7 +84,7 @@ public class Rank extends JFrame {
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 714, 488);
+		scrollPane.setBounds(10, 36, 714, 244);
 		contentPane.add(scrollPane);
 		PreencherTabela();
 		
@@ -92,12 +92,6 @@ public class Rank extends JFrame {
 		table.setRowSorter(new TableRowSorter<>(modelo));
 
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBorderPainted(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.setFocusPainted(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -107,7 +101,14 @@ public class Rank extends JFrame {
 
 			}
 		});
-		btnVoltar.setBounds(10, 527, 89, 23);
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 535, 58, 18);
 		contentPane.add(btnVoltar);
 
 		JLabel lblFundo = new JLabel("");

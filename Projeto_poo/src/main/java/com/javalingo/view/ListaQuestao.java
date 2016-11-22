@@ -22,6 +22,8 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class ListaQuestao extends JFrame {
 
@@ -59,7 +61,7 @@ public class ListaQuestao extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaQuestao() {
-		
+
 		setTitle("Javalingo - Lista de Questões");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -74,25 +76,40 @@ public class ListaQuestao extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblListaDeQuestoes = new JLabel("Lista de Questões");
+		lblListaDeQuestoes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblListaDeQuestoes.setForeground(Color.WHITE);
 		lblListaDeQuestoes.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblListaDeQuestoes.setBounds(314, 5, 120, 28);
+		lblListaDeQuestoes.setBounds(307, 5, 120, 28);
 		contentPane.add(lblListaDeQuestoes);
+
+		JButton btnRefresh = new JButton("Refresh");
+		btnRefresh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				PreencherTabela();
+
+			}
+		});
+		btnRefresh.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/reload (1).png")));
+		btnRefresh.setForeground(Color.WHITE);
+		btnRefresh.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRefresh.setFocusable(false);
+		btnRefresh.setContentAreaFilled(false);
+		btnRefresh.setBorder(null);
+		btnRefresh.setBackground(new Color(30, 144, 255));
+		btnRefresh.setBounds(656, 10, 68, 18);
+		contentPane.add(btnRefresh);
 
 		table = new JTable();
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		table.setBounds(10, 50, 414, 143);
+		table.setBounds(1, 26, 695, 494);
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 714, 295);
+		scrollPane.setBounds(10, 44, 714, 476);
 		contentPane.add(scrollPane);
 
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.setBackground(new Color(100, 149, 237));
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -102,16 +119,17 @@ public class ListaQuestao extends JFrame {
 
 			}
 		});
-		btnVoltar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
 		btnVoltar.setForeground(Color.WHITE);
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBounds(10, 527, 89, 23);
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 531, 58, 18);
 		contentPane.add(btnVoltar);
 
 		JButton btnApagar = new JButton("Apagar");
-		btnApagar.setBorder(null);
-		btnApagar.setFocusable(false);
-		btnApagar.setContentAreaFilled(false);
 		btnApagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -125,6 +143,8 @@ public class ListaQuestao extends JFrame {
 					QuestaoDAO qd = new QuestaoDAO();
 					Questao q = qd.listar("id", (long) o).get(0);
 
+					UIManager.put("OptionPane.noButtonText", "Não");
+					UIManager.put("OptionPane.yesButtonText", "Sim");
 					if (JOptionPane.showConfirmDialog(rootPane, "Deseja Excluir?", "Excluir",
 							JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)
 
@@ -137,14 +157,18 @@ public class ListaQuestao extends JFrame {
 
 			}
 		});
+		btnApagar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/eraser.png")));
 		btnApagar.setForeground(Color.WHITE);
 		btnApagar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnApagar.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/eraser.png")));
-		btnApagar.setBounds(130, 529, 109, 23);
+		btnApagar.setFocusable(false);
+		btnApagar.setContentAreaFilled(false);
+		btnApagar.setBorder(null);
+		btnApagar.setBackground(new Color(30, 144, 255));
+		btnApagar.setBounds(150, 531, 66, 18);
 		contentPane.add(btnApagar);
 
-		JButton btnCriarQuesto = new JButton("Criar Questão");
-		btnCriarQuesto.addActionListener(new ActionListener() {
+		JButton btnCriarQuestao = new JButton("Nova Questão");
+		btnCriarQuestao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				AdicionarQuestao aq = new AdicionarQuestao();
@@ -153,17 +177,18 @@ public class ListaQuestao extends JFrame {
 
 			}
 		});
-		btnCriarQuesto.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/plus (1).png")));
-		btnCriarQuesto.setForeground(Color.WHITE);
-		btnCriarQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCriarQuesto.setFocusable(false);
-		btnCriarQuesto.setContentAreaFilled(false);
-		btnCriarQuesto.setBorder(null);
-		btnCriarQuesto.setBounds(262, 529, 120, 23);
-		contentPane.add(btnCriarQuesto);
+		btnCriarQuestao.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/plus (1).png")));
+		btnCriarQuestao.setForeground(Color.WHITE);
+		btnCriarQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCriarQuestao.setFocusable(false);
+		btnCriarQuestao.setContentAreaFilled(false);
+		btnCriarQuestao.setBorder(null);
+		btnCriarQuestao.setBackground(new Color(30, 144, 255));
+		btnCriarQuestao.setBounds(268, 531, 110, 18);
+		contentPane.add(btnCriarQuestao);
 
-		JButton btnAlterarQuesto = new JButton("Alterar Questão");
-		btnAlterarQuesto.addActionListener(new ActionListener() {
+		JButton btnAlterarQuestao = new JButton("Alterar");
+		btnAlterarQuestao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				int linha = table.getSelectedRow();
@@ -181,17 +206,17 @@ public class ListaQuestao extends JFrame {
 				}
 			}
 		});
-		btnAlterarQuesto
-				.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/edit (2).png")));
-		btnAlterarQuesto.setForeground(Color.WHITE);
-		btnAlterarQuesto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnAlterarQuesto.setFocusable(false);
-		btnAlterarQuesto.setContentAreaFilled(false);
-		btnAlterarQuesto.setBorder(null);
-		btnAlterarQuesto.setBounds(413, 529, 127, 23);
-		contentPane.add(btnAlterarQuesto);
+		btnAlterarQuestao.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/edit (2).png")));
+		btnAlterarQuestao.setForeground(Color.WHITE);
+		btnAlterarQuestao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnAlterarQuestao.setFocusable(false);
+		btnAlterarQuestao.setContentAreaFilled(false);
+		btnAlterarQuestao.setBorder(null);
+		btnAlterarQuestao.setBackground(new Color(30, 144, 255));
+		btnAlterarQuestao.setBounds(434, 531, 62, 18);
+		contentPane.add(btnAlterarQuestao);
 
-		JButton btnPesquisar = new JButton("Pesquisar Questão");
+		JButton btnPesquisar = new JButton("");
 		btnPesquisar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -212,30 +237,13 @@ public class ListaQuestao extends JFrame {
 		btnPesquisar.setFocusable(false);
 		btnPesquisar.setContentAreaFilled(false);
 		btnPesquisar.setBorder(null);
-		btnPesquisar.setBounds(571, 529, 140, 23);
+		btnPesquisar.setBounds(706, 531, 18, 18);
 		contentPane.add(btnPesquisar);
 
 		ctPesquisar = new JTextField();
-		ctPesquisar.setBounds(572, 498, 140, 20);
+		ctPesquisar.setBounds(554, 531, 140, 20);
 		contentPane.add(ctPesquisar);
 		ctPesquisar.setColumns(10);
-
-		JButton btnRefresh = new JButton("Refresh");
-		btnRefresh.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				PreencherTabela();
-
-			}
-		});
-		btnRefresh.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/reload (1).png")));
-		btnRefresh.setForeground(Color.WHITE);
-		btnRefresh.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnRefresh.setFocusable(false);
-		btnRefresh.setContentAreaFilled(false);
-		btnRefresh.setBorder(null);
-		btnRefresh.setBounds(597, 11, 127, 23);
-		contentPane.add(btnRefresh);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));

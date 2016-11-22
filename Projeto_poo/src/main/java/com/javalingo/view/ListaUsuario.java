@@ -34,6 +34,7 @@ public class ListaUsuario extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField ctPesquisar;
+	private JButton btnRefresh;
 
 	private void PreencherTabela() {
 		UsuarioDAO ud = new UsuarioDAO();
@@ -81,64 +82,7 @@ public class ListaUsuario extends JFrame {
 		lblListaDeUsuarios.setBounds(312, 5, 120, 28);
 		contentPane.add(lblListaDeUsuarios);
 
-		table = new JTable();
-		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		table.setBounds(10, 50, 414, 143);
-		contentPane.add(table);
-
-		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 714, 295);
-		contentPane.add(scrollPane);
-
-		JButton btnPesquisar = new JButton("Pesquisar Usuário");
-		btnPesquisar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				if (ctPesquisar.getText().isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Preencha o campo!", "Falha", JOptionPane.ERROR_MESSAGE);
-				} else {
-					UsuarioDAO ud = new UsuarioDAO();
-					UsuarioTableModel utm = new UsuarioTableModel(ud.listar("nome", ctPesquisar.getText()));
-					table.setModel(utm);
-				}
-			}
-		});
-		btnPesquisar.setIcon(
-				new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/musica-searcher.png")));
-		btnPesquisar.setForeground(Color.WHITE);
-		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnPesquisar.setFocusable(false);
-		btnPesquisar.setContentAreaFilled(false);
-		btnPesquisar.setBorder(null);
-		btnPesquisar.setBounds(570, 529, 141, 23);
-		contentPane.add(btnPesquisar);
-
-		ctPesquisar = new JTextField();
-		ctPesquisar.setBounds(570, 498, 142, 20);
-		contentPane.add(ctPesquisar);
-		ctPesquisar.setColumns(10);
-
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBorder(null);
-		btnVoltar.setFocusable(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				PrincipalAdmin pa = new PrincipalAdmin();
-				pa.setVisible(true);
-				dispose();
-
-			}
-		});
-		btnVoltar.setForeground(new Color(255, 255, 255));
-		btnVoltar.setBackground(new Color(30, 144, 255));
-		btnVoltar.setIcon(new ImageIcon(ListaUsuario.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBounds(10, 527, 89, 23);
-		contentPane.add(btnVoltar);
-
-		JButton btnRefresh = new JButton("Refresh");
+		btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -153,8 +97,65 @@ public class ListaUsuario extends JFrame {
 		btnRefresh.setContentAreaFilled(false);
 		btnRefresh.setBorder(null);
 		btnRefresh.setBackground(new Color(30, 144, 255));
-		btnRefresh.setBounds(635, 11, 89, 23);
+		btnRefresh.setBounds(656, 10, 68, 18);
 		contentPane.add(btnRefresh);
+
+		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		table.setBounds(10, 50, 414, 143);
+		contentPane.add(table);
+
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(10, 36, 714, 295);
+		contentPane.add(scrollPane);
+
+		JButton btnPesquisar = new JButton("");
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if (ctPesquisar.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Preencha o campo!", "Falha", JOptionPane.ERROR_MESSAGE);
+				} else {
+					UsuarioDAO ud = new UsuarioDAO();
+					UsuarioTableModel utm = new UsuarioTableModel(ud.listar("nome", ctPesquisar.getText()));
+					table.setModel(utm);
+				}
+			}
+		});
+
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				PrincipalAdmin pa = new PrincipalAdmin();
+				pa.setVisible(true);
+				dispose();
+
+			}
+		});
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 531, 58, 18);
+		contentPane.add(btnVoltar);
+		btnPesquisar.setIcon(
+				new ImageIcon(ListaQuestao.class.getResource("/com/javalingo/img/Icones/musica-searcher.png")));
+		btnPesquisar.setForeground(Color.WHITE);
+		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisar.setFocusable(false);
+		btnPesquisar.setContentAreaFilled(false);
+		btnPesquisar.setBorder(null);
+		btnPesquisar.setBounds(706, 531, 18, 18);
+		contentPane.add(btnPesquisar);
+
+		ctPesquisar = new JTextField();
+		ctPesquisar.setBounds(554, 531, 142, 20);
+		contentPane.add(ctPesquisar);
+		ctPesquisar.setColumns(10);
 
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(ListaUsuario.class.getResource("/com/javalingo/img/Imagens/fundo 4.jpg")));

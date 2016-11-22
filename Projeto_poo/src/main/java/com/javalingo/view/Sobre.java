@@ -57,12 +57,6 @@ public class Sobre extends JFrame {
 		contentPane.setLayout(null);
 
 		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setIcon(new ImageIcon(Sobre.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
-		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnVoltar.setBorderPainted(false);
-		btnVoltar.setContentAreaFilled(false);
-		btnVoltar.setFocusPainted(false);
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -72,19 +66,26 @@ public class Sobre extends JFrame {
 
 			}
 		});
-		btnVoltar.setBounds(10, 227, 89, 23);
+		btnVoltar.setIcon(new ImageIcon(Tutorial.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
 		contentPane.add(btnVoltar);
 
 		JLabel lblVerso = new JLabel("<html><p align = right>Versão 1.0<br>2016, Javalingo</p></html>");
 		lblVerso.setForeground(Color.WHITE);
 		lblVerso.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblVerso.setBounds(325, 203, 107, 47);
+		lblVerso.setBounds(327, 203, 107, 47);
 		contentPane.add(lblVerso);
 
 		JLabel lblEmpresa = new JLabel("IDsotf");
 		lblEmpresa.setForeground(Color.WHITE);
 		lblEmpresa.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblEmpresa.setBounds(195, 0, 239, 30);
+		lblEmpresa.setBounds(197, 14, 40, 18);
 		contentPane.add(lblEmpresa);
 
 		JLabel lblEquipe = new JLabel("<html>Programador:<br><br>Raphael Oliveira<br>Mateus Daniel<br><br>"
