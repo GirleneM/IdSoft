@@ -180,40 +180,49 @@ public class EditarUsuario extends JFrame {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-
-				Usuario u = new Usuario();
-
-				if (!ctNome.getText().isEmpty() && !ctUsuario.getText().isEmpty() && !ctEmail.getText().isEmpty()
-						&& !ctSenha.getText().isEmpty()) {
-					long id = Long.parseLong(idUser);
-					u.setIdUsuario(id);
-					u.setNome(ctNome.getText().toString());
-					u.setUsuario(ctUsuario.getText().toString());
-					u.setEmail(ctEmail.getText().toString());
-					u.setSenha(ctSenha.getText().toString());
-					u.setPorcetagemtotal(porcetagem);
-					u.setQuestaocerta(certas);
-					u.setQuestaoerrada(erradas);
-					u.setTestesfeitos(testesfeitos);
-
-					DAO<Usuario> dao = new UsuarioDAO();
-
-					if (dao.alterar(u)) {
-						JOptionPane.showMessageDialog(null, "Alterado com sucesso!", "Sucesso!",
-								JOptionPane.INFORMATION_MESSAGE);
-						dispose();
-						Login l = new Login();
-						l.setVisible(true);
-						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "Falha ao alterar!", "Falha!", JOptionPane.ERROR_MESSAGE);
-					}
+				@SuppressWarnings("unused")
+				Usuario usuario = new Usuario();
+				UsuarioDAO usuarioDAO = new UsuarioDAO();
+				usuario = usuarioDAO.Verificauser(ctUsuario.getText());
+				if (UsuarioDAO.verificauser) {
+					JOptionPane.showMessageDialog(null,
+							"Nome de usuário já existente, por favor, altere seu nome de usuário!");
 				} else {
-					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Falha!",
-							JOptionPane.ERROR_MESSAGE);
-					ctNome.requestFocus();
-				}
 
+					Usuario u = new Usuario();
+
+					if (!ctNome.getText().isEmpty() && !ctUsuario.getText().isEmpty() && !ctEmail.getText().isEmpty()
+							&& !ctSenha.getText().isEmpty()) {
+						long id = Long.parseLong(idUser);
+						u.setIdUsuario(id);
+						u.setNome(ctNome.getText().toString());
+						u.setUsuario(ctUsuario.getText().toString());
+						u.setEmail(ctEmail.getText().toString());
+						u.setSenha(ctSenha.getText().toString());
+						u.setPorcetagemtotal(porcetagem);
+						u.setQuestaocerta(certas);
+						u.setQuestaoerrada(erradas);
+						u.setTestesfeitos(testesfeitos);
+
+						DAO<Usuario> dao = new UsuarioDAO();
+
+						if (dao.alterar(u)) {
+							JOptionPane.showMessageDialog(null, "Alterado com sucesso!", "Sucesso!",
+									JOptionPane.INFORMATION_MESSAGE);
+							dispose();
+							Login l = new Login();
+							l.setVisible(true);
+							dispose();
+						} else {
+							JOptionPane.showMessageDialog(null, "Falha ao alterar!", "Falha!",
+									JOptionPane.ERROR_MESSAGE);
+						}
+					} else {
+						JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Falha!",
+								JOptionPane.ERROR_MESSAGE);
+						ctNome.requestFocus();
+					}
+				}
 			}
 		});
 		btnSalvar.setIcon(new ImageIcon(EditarUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));

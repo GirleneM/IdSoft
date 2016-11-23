@@ -145,7 +145,14 @@ public class CadastroUsuario extends JFrame {
 
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-
+				@SuppressWarnings("unused")
+				Usuario usuario = new Usuario();
+				UsuarioDAO usuarioDAO = new UsuarioDAO();
+				usuario = usuarioDAO.Verificauser(ctUsuario.getText());
+				if(UsuarioDAO.verificauser){
+				JOptionPane.showMessageDialog(null, "Nome de usuário já existente, por favor, altere seu nome de usuário!");	
+				}
+				else{
 				Usuario u = new Usuario();
 
 				if (!ctNome.getText().isEmpty() && !ctUsuario.getText().isEmpty() && !ctEmail.getText().isEmpty()
@@ -179,7 +186,7 @@ public class CadastroUsuario extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					ctNome.requestFocus();
 				}
-
+				}
 			}
 		});
 		btnSalvar.setIcon(new ImageIcon(CadastroUsuario.class.getResource("/com/javalingo/img/Icones/salvar2.png")));

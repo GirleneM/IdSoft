@@ -47,6 +47,41 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 		return user;
 
 	}
+	
+	public static boolean verificauser;
+
+	public Usuario Verificauser(String usuario) {
+
+		Usuario user = new Usuario();
+
+		Connection conn = null;
+		Statement consulta = null;
+		ResultSet tabela = null;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost/javalingo?verifyServerCertificate=false&useSSL=true", "root", "");
+			consulta = conn.createStatement();
+
+			tabela = consulta.executeQuery("SELECT usuario FROM usuario WHERE usuario ='"+usuario+"'");
+
+			if (tabela.next()) {
+				
+				user.setUsuario(tabela.getString("usuario"));
+
+				verificauser = true;
+			} else {
+				verificauser = false;
+			}
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		}
+		return user;
+
+	}
 
 	public static boolean buscaruser;
 
