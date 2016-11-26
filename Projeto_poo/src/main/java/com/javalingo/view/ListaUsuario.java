@@ -106,7 +106,7 @@ public class ListaUsuario extends JFrame {
 		contentPane.add(table);
 
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(10, 36, 714, 295);
+		scrollPane.setBounds(10, 36, 714, 484);
 		contentPane.add(scrollPane);
 
 		JButton btnPesquisar = new JButton("");

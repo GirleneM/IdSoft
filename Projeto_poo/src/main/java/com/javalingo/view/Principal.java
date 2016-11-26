@@ -124,7 +124,7 @@ public class Principal extends JFrame {
 			}
 		});
 		btnAlterarCadastro
-				.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/user-options.png")));
+				.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/edit-user.png")));
 		btnAlterarCadastro.setForeground(Color.WHITE);
 		btnAlterarCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAlterarCadastro.setFocusable(false);
@@ -134,6 +134,31 @@ public class Principal extends JFrame {
 		btnAlterarCadastro.setBounds(10, 36, 90, 18);
 		contentPane.add(btnAlterarCadastro);
 
+		
+		JButton btnPontuacao = new JButton("Pontuação");
+		btnPontuacao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				long id = Integer.valueOf(idUser).intValue();
+				Usuario u = new Usuario();
+				UsuarioDAO ud = new UsuarioDAO();
+				u = ud.Buscaruser(id);
+				if (UsuarioDAO.buscaruser) {
+					PontuacaoIndividual pi = new PontuacaoIndividual(u.getNome(), u.getQuestaocerta(), u.getQuestaoerrada(), u.getPorcetagemtotal(), u.getTestesfeitos(), idUser);
+					pi.setVisible(true);
+				}
+
+			}
+		});
+		btnPontuacao.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Icones/user-options.png")));
+		btnPontuacao.setForeground(Color.WHITE);
+		btnPontuacao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPontuacao.setFocusable(false);
+		btnPontuacao.setContentAreaFilled(false);
+		btnPontuacao.setBorder(null);
+		btnPontuacao.setBackground(new Color(30, 144, 255));
+		btnPontuacao.setBounds(10, 65, 88, 18);
+		contentPane.add(btnPontuacao);
+		
 		JButton btnJogar = new JButton("Jogar");
 		btnJogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -225,10 +250,10 @@ public class Principal extends JFrame {
 		btnTutorial.setBounds(183, 210, 68, 18);
 		contentPane.add(btnTutorial);
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
-		lblNewLabel.setBounds(0, 0, 434, 261);
-		contentPane.add(lblNewLabel);
+		JLabel lblFundo = new JLabel("");
+		lblFundo.setIcon(new ImageIcon(Principal.class.getResource("/com/javalingo/img/Imagens/fundo2.jpg")));
+		lblFundo.setBounds(0, 0, 434, 261);
+		contentPane.add(lblFundo);
 	}
 
 	public void play(String nomedoaudio) {
