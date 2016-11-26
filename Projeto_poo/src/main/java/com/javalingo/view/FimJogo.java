@@ -68,19 +68,19 @@ public class FimJogo extends JFrame {
 		lblJogador.setHorizontalAlignment(SwingConstants.CENTER);
 		lblJogador.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblJogador.setForeground(Color.WHITE);
-		lblJogador.setBounds(0, 20, 434, 25);
+		lblJogador.setBounds(0, 26, 434, 25);
 		contentPane_1.add(lblJogador);
 
 		JLabel lblAcertos = new JLabel("Acertos: " + certas);
 		lblAcertos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblAcertos.setForeground(Color.WHITE);
-		lblAcertos.setBounds(131, 66, 86, 18);
+		lblAcertos.setBounds(146, 66, 86, 18);
 		contentPane_1.add(lblAcertos);
 
 		JLabel lblErros = new JLabel("Erros: " + erradas);
 		lblErros.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblErros.setForeground(Color.WHITE);
-		lblErros.setBounds(230, 66, 77, 18);
+		lblErros.setBounds(229, 66, 77, 18);
 		contentPane_1.add(lblErros);
 
 		double id = Double.valueOf(certas).doubleValue();
@@ -94,13 +94,15 @@ public class FimJogo extends JFrame {
 		contentPane_1.add(lblResultado);
 
 		JLabel lblPorcetagem = new JLabel(porcetagem + "%");
+		lblPorcetagem.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPorcetagem.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		lblPorcetagem.setForeground(Color.WHITE);
-		lblPorcetagem.setBounds(158, 152, 158, 38);
+		lblPorcetagem.setBounds(0, 152, 434, 38);
 		contentPane_1.add(lblPorcetagem);
 		
-		JButton btnTela = new JButton("GAME OVER!");
-		btnTela.addActionListener(new ActionListener() {
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setIcon(new ImageIcon(FimJogo.class.getResource("/com/javalingo/img/Icones/voltar2.png")));
+		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				Principal p = new Principal(nomeUser, idUser);
@@ -155,14 +157,14 @@ public class FimJogo extends JFrame {
 				}
 			}
 		});
-		btnTela.setForeground(Color.WHITE);
-		btnTela.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnTela.setFocusable(false);
-		btnTela.setContentAreaFilled(false);
-		btnTela.setBorder(null);
-		btnTela.setBackground(new Color(30, 144, 255));
-		btnTela.setBounds(164, 232, 106, 18);
-		contentPane_1.add(btnTela);
+		btnVoltar.setForeground(Color.WHITE);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnVoltar.setFocusable(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBorder(null);
+		btnVoltar.setBackground(new Color(30, 144, 255));
+		btnVoltar.setBounds(10, 232, 58, 18);
+		contentPane_1.add(btnVoltar);
 
 		JLabel lblFundo = new JLabel("");
 		lblFundo.setIcon(new ImageIcon(FimJogo.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));
