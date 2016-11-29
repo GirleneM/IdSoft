@@ -9,9 +9,14 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import com.javalingo.model.Usuario;
+import com.javalingo.repository.UsuarioDAO;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -57,8 +62,10 @@ public class PontuacaoIndividual extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		UIManager.put("OptionPane.noButtonText", "Não");
+		UIManager.put("OptionPane.yesButtonText", "Sim");
 		
-		JLabel lblJogador = new JLabel("Jogador: "+ nomeUser);
+		JLabel lblJogador = new JLabel("Jogador(a): "+nomeUser);
 		lblJogador.setHorizontalAlignment(SwingConstants.CENTER);
 		lblJogador.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblJogador.setForeground(Color.WHITE);
@@ -93,6 +100,8 @@ public class PontuacaoIndividual extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Principal p =new Principal(nomeUser, idUser);
+				p.setVisible(true);
 				dispose();
 			}
 		});
@@ -105,6 +114,35 @@ public class PontuacaoIndividual extends JFrame {
 		btnVoltar.setBackground(new Color(30, 144, 255));
 		btnVoltar.setBounds(10, 232, 58, 18);
 		contentPane.add(btnVoltar);
+		
+		JButton btnZerarPontuao = new JButton("Zerar Pontuação");
+		btnZerarPontuao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int i = JOptionPane.showConfirmDialog(null, "Deseja realmente zerar sua pontuação? toda sua estatística será reiniciada", "Zerar?", JOptionPane.YES_NO_OPTION);
+				if(i == JOptionPane.YES_OPTION){
+					JOptionPane.showMessageDialog(null, "Pontuação Zerada!, por favor logue-se novamente");
+					Login l = new Login();
+					l.setVisible(true);
+					dispose();
+					long id = Long.parseLong(idUser);
+					@SuppressWarnings("unused")
+					Usuario usuario = new Usuario();
+					UsuarioDAO usuarioDAO = new UsuarioDAO();
+					usuario = usuarioDAO.Zerarpontuacao(id);
+					if(UsuarioDAO.zerarpontuacao){
+					}
+				}
+			}
+		});
+		btnZerarPontuao.setIcon(new ImageIcon(PontuacaoIndividual.class.getResource("/com/javalingo/img/Icones/circular-refresh-arrow.png")));
+		btnZerarPontuao.setForeground(Color.WHITE);
+		btnZerarPontuao.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnZerarPontuao.setFocusable(false);
+		btnZerarPontuao.setContentAreaFilled(false);
+		btnZerarPontuao.setBorder(null);
+		btnZerarPontuao.setBackground(new Color(30, 144, 255));
+		btnZerarPontuao.setBounds(146, 232, 130, 18);
+		contentPane.add(btnZerarPontuao);
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(PontuacaoIndividual.class.getResource("/com/javalingo/img/Imagens/fundo3.jpg")));

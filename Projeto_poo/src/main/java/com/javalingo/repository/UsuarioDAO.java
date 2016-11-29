@@ -200,6 +200,42 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 
 	}
 
+	
+	public static boolean zerarpontuacao;
+
+	public Usuario Zerarpontuacao(long id) {
+
+		Usuario user = new Usuario();
+		Connection conn = null;
+		Statement consulta = null;
+		Object tabela = null;
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost/javalingo?verifyServerCertificate=false&useSSL=true", "root", "");
+			consulta = conn.createStatement();
+
+			tabela = consulta.executeUpdate("UPDATE usuario SET porcetagemtotal = 0, questaocerta = 0, questaoerrada = 0, testesfeitos = 0 WHERE idUsuario ='"+id+"'");
+
+			if (((ResultSet) tabela).next()) {
+
+				user.setIdUsuario(((ResultSet) tabela).getLong("idUsuario"));
+
+
+				zerarpontuacao = true;
+			} else {
+				zerarpontuacao = false;
+			}
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+		}
+		return user;
+
+	}
+	
 	public UsuarioDAO() {
 		super(Usuario.class);
 	}

@@ -145,6 +145,7 @@ public class Principal extends JFrame {
 				if (UsuarioDAO.buscaruser) {
 					PontuacaoIndividual pi = new PontuacaoIndividual(u.getNome(), u.getQuestaocerta(), u.getQuestaoerrada(), u.getPorcetagemtotal(), u.getTestesfeitos(), idUser);
 					pi.setVisible(true);
+					dispose();
 				}
 
 			}
