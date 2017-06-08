@@ -34,8 +34,6 @@ public class SplashScreen extends JWindow {
 		int y = (screen.height - height) / 2;
 		setBounds(x, y, width, height);
 		
-		Login l = new Login();
-		l.play("start");
 
 		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon(TelaInicial.class.getResource("/com/javalingo/img/Imagens/fundo1.jpg")));
